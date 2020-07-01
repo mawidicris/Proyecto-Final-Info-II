@@ -1,0 +1,16 @@
+release/capuchoblanco.o
+release/capuchonegro.o
+release/esmad.o
+release/main.o
+release/mainwindow.o
+release/papas.o
+release/piedras.o
+release/policia.o
+release/qrc_imagenes.o
+release/moc_capuchoblanco.o
+release/moc_capuchonegro.o
+release/moc_esmad.o
+release/moc_mainwindow.o
+release/moc_papas.o
+release/moc_piedras.o
+release/moc_policia.o
