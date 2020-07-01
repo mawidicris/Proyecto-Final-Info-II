@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fondo.tiff</file>
+        <file>capucho negro.png</file>
+        <file>capucho blanco.png</file>
+        <file>esmad.png</file>
+        <file>papa.png</file>
+        <file>piedra.png</file>
+        <file>policia.png</file>
+    </qresource>
+</RCC>
