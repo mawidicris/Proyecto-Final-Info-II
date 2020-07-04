@@ -16,23 +16,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    baretos.cpp \
     capuchoblanco.cpp \
     capuchonegro.cpp \
     esmad.cpp \
     main.cpp \
     mainwindow.cpp \
+    misil.cpp \
     papas.cpp \
     piedras.cpp \
-    policia.cpp
+    policia.cpp \
+    tanqueta.cpp
 
 HEADERS += \
+    baretos.h \
     capuchoblanco.h \
     capuchonegro.h \
     esmad.h \
     mainwindow.h \
+    misil.h \
     papas.h \
     piedras.h \
-    policia.h
+    policia.h \
+    tanqueta.h
 
 FORMS += \
     mainwindow.ui

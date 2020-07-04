@@ -10,6 +10,9 @@
 #include "piedras.h"
 #include "papas.h"
 #include "policia.h"
+#include "baretos.h"
+#include "tanqueta.h"
+#include "misil.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,5 +36,8 @@ private:
     piedras *roca;
     papas *papabomba;
     policia *pol;
+    baretos *baret;
+    tanqueta *tanque;
+    misil *balaa;
 };
 #endif // MAINWINDOW_H
