@@ -14,8 +14,8 @@ public:
     explicit misil(QObject *parent = nullptr);
     QPixmap *bala;
     QTimer *timer;
-    //double vxo=-2,vyo=2,vx,vy,xo=100,yo=300,x,y,a=-9.8,T=0.00001,yd;
-    //int n=0;
+    double vxo,vyo,vx=0,vy=0,xo,yo,y,x,a,T,yd=0;
+    int n=0;
 
     float ancho,alto;
     QRectF boundingRect() const;

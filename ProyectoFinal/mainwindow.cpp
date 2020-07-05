@@ -10,13 +10,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setScene(escena);
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
-    escena->addItem(fondo);
+    //escena->addItem(fondo);
     capuchoN= new capuchonegro;
     capuchoB= new capuchoblanco;
     capuchoN->setPos(500,300);
     //escena->addItem(capuchoN);
     capuchoB->setPos(500,450);
-//escena->addItem(capuchoB);
+    escena->addItem(capuchoB);
     agenteesmad= new esmad;
     agenteesmad->setPos(1130,430);
     //escena->addItem(agenteesmad);
@@ -28,16 +28,16 @@ MainWindow::MainWindow(QWidget *parent)
     //escena->addItem(papabomba);
     pol=new policia;
     pol->setPos(1130,300);
-    //escena->addItem(pol);
+    escena->addItem(pol);
     baret= new baretos;
     baret->setPos(500,50);
-   //scena->addItem(baret);
+    //scena->addItem(baret);
     tanque= new tanqueta;
     tanque->setPos(1233,450);
-  //escena->addItem(tanque);
+    //escena->addItem(tanque);
     balaa=new misil;
     balaa->setPos(1000,300);
-    escena->addItem(balaa);
+   // escena->addItem(balaa);
 }
 
 MainWindow::~MainWindow()

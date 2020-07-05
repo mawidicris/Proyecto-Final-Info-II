@@ -4,6 +4,16 @@ misil::misil(QObject *parent) : QObject(parent)
 {
     ancho=55;
     alto=55;
+
+    vxo=30;
+    vyo=60;
+    xo=30;
+    yo=230;
+    //x=xo;
+    //y=yo;
+    a=-9.8;
+    T=0.0001;
+
     bala= new QPixmap(":/misil.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&misil::mover);
@@ -22,17 +32,20 @@ void misil::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 void misil::mover()
 {
-   /* double rela=0.0002;
+   /* double rela=0.002;
+    n++;
     vx=vxo;
     vy=vyo+a*(n*T);
-    x=xo+vxo*(n*T);
-    y=yo+vyo*(n*T)-(a/2)*(n*T)*(n*T);
-    yd=yo-y;
-     n++;*/
-  /* double rela=0.002;
+    x=xo+vx*(n*T);
+    y=yo+vy*(n*T)-(a/2)*(n*T)*(n*T);
+    yd=yo-y;*/
+
+   //double rela=0.02;
+
+   vx=vxo;
    vy+=(a*T);
-   x+=vx*T;
-   y+=vy*T-(a/2)*T*T;
-   //yd=2*300-y;
-   setPos(int(x*rela),int(yd*rela));*/
+   x+=vxo*T;
+   y+=vy*T-(a/2)*(T*T);
+   yd=2*yo-y;
+   setPos(x,yd);
 }
