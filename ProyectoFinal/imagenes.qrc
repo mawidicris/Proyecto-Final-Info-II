@@ -10,5 +10,6 @@
         <file>baretin.png</file>
         <file>tanqueta.png</file>
         <file>misil.png</file>
+        <file>gamin.png</file>
     </qresource>
 </RCC>
