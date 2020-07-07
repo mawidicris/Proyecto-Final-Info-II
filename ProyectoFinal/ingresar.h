@@ -1,20 +1,32 @@
 #ifndef INGRESAR_H
 #define INGRESAR_H
-#include "registro.h"
+
+using namespace std;
+#include <QWidget>
 #include <fstream>
 #include <iostream>
-#include <QObject>
+#include <QDebug>
+#include "registro.h"
 
-class ingresar : public QObject
+namespace Ui {
+class ingresar;
+}
+
+class ingresar : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit ingresar(QObject *parent = nullptr);
-    fstream leer;
-    bool comprobar();
+    explicit ingresar(QWidget *parent = nullptr);
+    ~ingresar();
+    bool comprobar(string clave,string usser);
 
-signals:
+private slots:
+    void on_ingresar_2_clicked();
 
+private:
+    Ui::ingresar *ui;
+    ifstream leer;
 };
 
 #endif // INGRESAR_H

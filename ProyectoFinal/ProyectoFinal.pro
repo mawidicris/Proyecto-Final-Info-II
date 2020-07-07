@@ -47,6 +47,7 @@ HEADERS += \
     tanqueta.h
 
 FORMS += \
+    ingresar.ui \
     mainwindow.ui \
     registro.ui
 

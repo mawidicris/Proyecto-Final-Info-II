@@ -5,7 +5,6 @@ using namespace std;
 #include <QWidget>
 #include <fstream>
 #include <iostream>
-#include <Qdebug>
 namespace Ui {
 class registro;
 }

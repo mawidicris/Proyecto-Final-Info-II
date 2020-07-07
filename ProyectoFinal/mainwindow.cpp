@@ -36,12 +36,11 @@ MainWindow::MainWindow(QWidget *parent)
     tanque->setPos(1233,450);
     //escena->addItem(tanque);
     balaa=new misil;
-    balaa->setPos(1000,300);
-    //escena->addItem(balaa);
+    //balaa->setPos(1000,300);
+    escena->addItem(balaa);
     gamin= new Gamines;
     gamin->setPos(800,50);
     //escena->addItem(gamin);
-   // ui->guardar->setHidden(true);
 
 }
 
@@ -65,28 +64,18 @@ MainWindow::~MainWindow()
 void MainWindow::on_ingresar_clicked()
 {
     ingresar *ingreso = new ingresar;
-   /* leer.open("usuarios.txt");
-    QString usu,cla;
-    usu= ui->usuario->toPlainText();
-    cla= ui->contra->toPlainText();
-    std::string usuario1=usu.toUtf8().constData();
-    std::string clave1=cla.toUtf8().constData();
-  while (!leer.eof()){
-        leer>>usuario>>clave;
-        qDebug()<<usuario;
-    }*/
-
+    ingreso->show();
+    ui->ingresar->setHidden(true);
+    ui->registrarse->setHidden(true);
+    this->close();
 }
-
-
 
 void MainWindow::on_registrarse_clicked()
 {
-    registro *registrar=new registro(0);
+    registro *registrar=new registro;
     registrar->show();
-
-
 }
+
 
 
 

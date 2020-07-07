@@ -56,6 +56,6 @@ private:
     misil *balaa;
     Gamines *gamin;
     QList <piedras*> lanzarpiedras;
-    ifstream leer;
+
 };
 #endif // MAINWINDOW_H

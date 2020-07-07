@@ -6,6 +6,11 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
+#include <math.h>
+
+
+#define dt 0.08
+
 
 class misil : public QObject,public QGraphicsItem
 {
@@ -14,9 +19,11 @@ public:
     explicit misil(QObject *parent = nullptr);
     QPixmap *bala;
     QTimer *timer;
-    //double vxo=-2,vyo=2,vx,vy,xo=100,yo=300,x,y,a=-9.8,T=0.00001,yd;
+    float vx,vy,x,y,a=9.8,yd;
 
     float ancho,alto;
+    float px,py;
+    float acum;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
@@ -26,3 +33,4 @@ public slots:
 };
 
 #endif // MISIL_H
+
