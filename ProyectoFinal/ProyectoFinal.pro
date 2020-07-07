@@ -21,6 +21,7 @@ SOURCES += \
     capuchonegro.cpp \
     esmad.cpp \
     gamines.cpp \
+    ingresar.cpp \
     main.cpp \
     mainwindow.cpp \
     misil.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     capuchonegro.h \
     esmad.h \
     gamines.h \
+    ingresar.h \
     mainwindow.h \
     misil.h \
     papas.h \

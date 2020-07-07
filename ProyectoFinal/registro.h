@@ -5,7 +5,7 @@ using namespace std;
 #include <QWidget>
 #include <fstream>
 #include <iostream>
-
+#include <Qdebug>
 namespace Ui {
 class registro;
 }
@@ -19,7 +19,9 @@ public:
     ~registro();
 
 private slots:
-    void on_registrarse_clicked();
+
+
+    void on_registrar_clicked();
 
 private:
     Ui::registro *ui;

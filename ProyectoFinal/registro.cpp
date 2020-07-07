@@ -13,13 +13,20 @@ registro::~registro()
     delete ui;
 }
 
-void registro::on_registrarse_clicked()
+
+
+
+
+void registro::on_registrar_clicked()
 {
     QString usu=ui->usuario->toPlainText();
     QString cla=ui->contra->toPlainText();
     std::string usuario=usu.toUtf8().constData();
     std::string clave=cla.toUtf8().constData();
-    guardar.open("usuarios", ios::app);
-    guardar <<usuario<<" "<<clave;
+    guardar.open("usuarios.txt", ios::app);
+    guardar <<usuario<<" "<<clave<<endl;
     guardar.close();
+    this->close();
+
+
 }
