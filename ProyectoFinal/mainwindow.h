@@ -1,7 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+using namespace std;
+
 #include <QMainWindow>
+#include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include "capuchonegro.h"
@@ -13,6 +16,9 @@
 #include "baretos.h"
 #include "tanqueta.h"
 #include "misil.h"
+#include "gamines.h"
+#include "registro.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,6 +31,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+
+private slots:
+    void on_ingresar_clicked();
+
+
+    void on_registrarse_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -39,5 +52,7 @@ private:
     baretos *baret;
     tanqueta *tanque;
     misil *balaa;
+    Gamines *gamin;
+    QList <piedras*> lanzarpiedras;
 };
 #endif // MAINWINDOW_H

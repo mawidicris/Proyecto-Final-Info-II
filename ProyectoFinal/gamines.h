@@ -6,10 +6,11 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
+
 class Gamines : public QObject,public QGraphicsItem
 {
+     Q_OBJECT
 public:
-    Gamines();
     explicit Gamines(QObject *parent = nullptr);
     QPixmap *Gamine;
     QTimer *timer;

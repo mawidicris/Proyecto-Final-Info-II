@@ -1,15 +1,15 @@
-#include "gamines.h"
+﻿#include "gamines.h"
 
-Gamines::Gamines()
+Gamines::Gamines(QObject *parent)
 {
-    ancho=70;
-    alto=70;
+    ancho=60;
+    alto=90;
     Gamine= new QPixmap(":/gamin.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&Gamines::caida);
     timer->start(200);
-
 }
+
 QRectF Gamines::boundingRect() const
 {
      return QRectF(-ancho/2,-alto/2,ancho,alto);

@@ -27,6 +27,7 @@ SOURCES += \
     papas.cpp \
     piedras.cpp \
     policia.cpp \
+    registro.cpp \
     tanqueta.cpp
 
 HEADERS += \
@@ -40,10 +41,12 @@ HEADERS += \
     papas.h \
     piedras.h \
     policia.h \
+    registro.h \
     tanqueta.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    registro.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
+#include <QList>
 
 class piedras : public QObject,public QGraphicsItem
 {
@@ -13,15 +14,15 @@ class piedras : public QObject,public QGraphicsItem
 public:
     explicit piedras(QObject *parent = nullptr);
     QPixmap *piedra;
-    QTimer *timer;
+    //QTimer *timer;
 
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 signals:
-public slots:
-    void mover();
+//public slots:
+  //  void mover();
 
 };
 
