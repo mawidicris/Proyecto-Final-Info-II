@@ -64,36 +64,28 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_ingresar_clicked()
 {
-
+    ingresar *ingreso = new ingresar;
+   /* leer.open("usuarios.txt");
     QString usu,cla;
     usu= ui->usuario->toPlainText();
     cla= ui->contra->toPlainText();
-    std::string usuario=usu.toUtf8().constData();
-    std::string clave=cla.toUtf8().constData();
+    std::string usuario1=usu.toUtf8().constData();
+    std::string clave1=cla.toUtf8().constData();
+  while (!leer.eof()){
+        leer>>usuario>>clave;
+        qDebug()<<usuario;
+    }*/
+
 }
 
-/*void MainWindow::on_guardar_clicked()
-{
-    QString usu,cla;
-    ui->ingresar->setHidden(false);
-    ui->registrarse->setHidden(false);
-    ui->guardar->setHidden(true);
-    std::string usuario=usu.toUtf8().constData();
-    std::string clave=cla.toUtf8().constData();
-}*/
+
 
 void MainWindow::on_registrarse_clicked()
 {
     registro *registrar=new registro(0);
     registrar->show();
-    /*QString usu,cla;
-    ui->ingresar->setHidden(true);
-    ui->registrarse->setHidden(true);
-    //ui->guardar->setHidden(false);
-    usu= ui->usuario->toPlainText();
-    cla= ui->contra->toPlainText();
-    std::string usuario=usu.toUtf8().constData();
-    std::string clave=cla.toUtf8().constData();*/
+
+
 }
 
 

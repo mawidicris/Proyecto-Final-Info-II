@@ -18,6 +18,8 @@ using namespace std;
 #include "misil.h"
 #include "gamines.h"
 #include "registro.h"
+#include "ingresar.h"
+
 
 
 QT_BEGIN_NAMESPACE
@@ -54,5 +56,6 @@ private:
     misil *balaa;
     Gamines *gamin;
     QList <piedras*> lanzarpiedras;
+    ifstream leer;
 };
 #endif // MAINWINDOW_H
