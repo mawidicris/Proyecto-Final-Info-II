@@ -6,24 +6,27 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
+#include <QGraphicsScene>
 #include <math.h>
+#include "capuchoblanco.h"
+#include "capuchonegro.h"
+#include <QList>
 
-
-#define dt 0.08
+#define dt 0.1
 
 
 class misil : public QObject,public QGraphicsItem
 {
+
     Q_OBJECT
 public:
     explicit misil(QObject *parent = nullptr);
     QPixmap *bala;
     QTimer *timer;
-    float vx,vy,x,y,a=9.8,yd;
+    double v=80,vx,vy,x=1000,y=-250,a=9.8,yd,angulo=40;
+
 
     float ancho,alto;
-    float px,py;
-    float acum;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 

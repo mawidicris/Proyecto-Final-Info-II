@@ -4,17 +4,20 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+
 {
     ui->setupUi(this);
     escena= new QGraphicsScene;
     ui->graphicsView->setScene(escena);
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
-    //escena->addItem(fondo);
+    escena->addItem(fondo);
     capuchoN= new capuchonegro;
     capuchoB= new capuchoblanco;
-    capuchoN->setPos(500,300);
-    //escena->addItem(capuchoN);
+    capuchoN->setPos(400,300);
+    escena->addItem(capuchoN);
     capuchoB->setPos(500,450);
     //escena->addItem(capuchoB);
     agenteesmad= new esmad;
@@ -34,13 +37,15 @@ MainWindow::MainWindow(QWidget *parent)
     //scena->addItem(baret);
     tanque= new tanqueta;
     tanque->setPos(1233,450);
-    //escena->addItem(tanque);
+    escena->addItem(tanque);
     balaa=new misil;
-    //balaa->setPos(1000,300);
-    //escena->addItem(balaa);
+    //balaa->setPos(tanque->x(),500);
+    escena->addItem(balaa);
     gamin= new Gamines;
     gamin->setPos(800,50);
     //escena->addItem(gamin);
+    ui->ingresar->setHidden(true);
+    ui->registrarse->setHidden(true);
 
 }
 
@@ -65,9 +70,9 @@ void MainWindow::on_ingresar_clicked()
 {
     ingresar *ingreso = new ingresar;
     ingreso->show();
-    //ui->ingresar->setHidden(true);
-    //ui->registrarse->setHidden(true);
-    //this->close();
+    this->hide();
+    ui->ingresar->setHidden(true);
+    ui->registrarse->setHidden(true);
 }
 
 void MainWindow::on_registrarse_clicked()
@@ -75,8 +80,6 @@ void MainWindow::on_registrarse_clicked()
     registro *registrar=new registro;
     registrar->show();
 }
-
-
 
 
 

@@ -33,11 +33,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    //QTimer *tiempo;
 
 
 private slots:
     void on_ingresar_clicked();
-
 
     void on_registrarse_clicked();
 

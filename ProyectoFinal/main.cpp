@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 
+#include "misil.h"
 #include <QApplication>
+#include <QGraphicsScene>
 
 int main(int argc, char *argv[])
 {

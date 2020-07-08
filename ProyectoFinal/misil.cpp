@@ -7,7 +7,7 @@ misil::misil(QObject *parent) : QObject(parent)
     bala= new QPixmap(":/misil.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&misil::mover);
-    timer->start(10);
+    timer->start(20);
 }
 
 QRectF misil::boundingRect() const
@@ -23,17 +23,22 @@ void misil::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 void misil::mover()
 {
+    setPos(x,-y);
+    vx=v*cos(angulo);
+    vy=v*sin(angulo)-a*dt;
+    angulo=atan2(vy,vx);
+    v= sqrt(vx*vx+ vy*vy);
+    x+=vx*dt;
+    y+=vy*dt-(a/2)*dt*dt;
 
-//implementacion de ecuaciones en diferencias
-  /* vy+=(a*dt);
-   x+=vx*dt;
-   y+=vy*dt-(a/2)*dt*dt;
-   //yd=2*300-y;
-   setPos(x,y);*/
+    QList<QGraphicsItem*>balitas= collidingItems();
+    for (int i=0,n=balitas.size();i<n;i++){
+        if(typeid (*(balitas[i]))==typeid(capuchonegro)){
+            scene()->removeItem(this);
+        }
+        else if (typeid (*(balitas[i]))==typeid(capuchoblanco)){
+            scene()->removeItem(this);
+    }
+ }
 
-//implementacion de ecuaciones paramétricas
-    /*x+=cos(1.39)*dt;
-    y+=sin(1.39)*dt-(a/2)*dt*dt;
-    yd=-y;
-    setPos(x,yd);*/
 }

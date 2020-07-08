@@ -18,6 +18,7 @@ ingresar::~ingresar()
 void ingresar::on_ingresar_2_clicked()
 {
 
+    MainWindow *jueguito=new MainWindow;
     QString usu=ui->usuario->text();
     QString cla=ui->contra->text();
     std::string usuari=usu.toUtf8().constData();
@@ -28,40 +29,20 @@ void ingresar::on_ingresar_2_clicked()
       getline(leer,usuario,',');
       getline(leer,clave);
 
-      if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
-       this->close();
-       //return true;
-         }
+    if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
+    this->close();
+    jueguito->show();
+
+    }
 
       else {
           ui->error->setHidden(false);
-        //return false;
           }
        }
        leer.close();
 
 }
 
-bool ingresar::comprobar(string usuari,string clav,bool correcto)
-{
- /* string usuario,clave;
-  leer.open("usuarios.txt", ios::app);
-  while (!leer.eof()){
-  getline(leer,usuario,',');
-  getline(leer,clave);
 
-  if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
-   this->close();
-   return true;
-     }
-
-  else {
-      ui->error->setHidden(false);
-    return false;
-      }
-   }
-   leer.close(); */
-}
-//if(correcto) w.show();
 
 

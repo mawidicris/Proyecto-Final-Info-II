@@ -16,3 +16,5 @@ void tanqueta::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 {
     painter->drawPixmap(-ancho/2,-alto/2,*carro,0,0,ancho,alto);
 }
+
+

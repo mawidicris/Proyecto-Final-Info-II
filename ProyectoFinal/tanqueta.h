@@ -5,6 +5,10 @@
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QRectF>
+#include <QTimer>
+//#include "capuchoblanco.h"
+//#include "capuchonegro.h"
+//#include "misil.h"
 
 class tanqueta : public QObject, public QGraphicsItem
 {
@@ -18,6 +22,7 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 signals:
+public slots:
 
 };
 

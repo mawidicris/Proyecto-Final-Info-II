@@ -6,7 +6,9 @@ using namespace std;
 #include <fstream>
 #include <iostream>
 #include <QDebug>
+#include <QGraphicsScene>
 #include "registro.h"
+#include "mainwindow.h"
 
 
 namespace Ui {
@@ -20,7 +22,6 @@ class ingresar : public QWidget
 public:
     explicit ingresar(QWidget *parent = nullptr);
     ~ingresar();
-    bool comprobar(string clave,string usser,bool correcto);
 
 private slots:
     void on_ingresar_2_clicked();
