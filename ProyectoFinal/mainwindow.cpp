@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
     //escena->addItem(tanque);
     balaa=new misil;
     //balaa->setPos(1000,300);
-    escena->addItem(balaa);
+    //escena->addItem(balaa);
     gamin= new Gamines;
     gamin->setPos(800,50);
     //escena->addItem(gamin);

@@ -19,7 +19,7 @@ class ingresar : public QWidget
 public:
     explicit ingresar(QWidget *parent = nullptr);
     ~ingresar();
-    bool comprobar(string clave,string usser);
+    bool comprobar(string clave,string usser,bool correcto);
 
 private slots:
     void on_ingresar_2_clicked();

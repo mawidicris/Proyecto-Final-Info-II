@@ -25,7 +25,7 @@ void ingresar::on_ingresar_2_clicked()
 
 }
 
-bool ingresar::comprobar(string usuari,string clav)
+bool ingresar::comprobar(string usuari,string clav,bool correcto)
 {
   string usuario,clave;
   leer.open("usuarios.txt", ios::app);
@@ -35,14 +35,16 @@ bool ingresar::comprobar(string usuari,string clav)
 
   if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
    this->close();
-   return true;
+   correcto= true;
      }
 
   else {
       ui->error->setHidden(false);
-      return false;
+    correcto=false;
       }
-
    }
    leer.close();
 }
+//if(correcto) w.show();
+
+
