@@ -65,9 +65,9 @@ void MainWindow::on_ingresar_clicked()
 {
     ingresar *ingreso = new ingresar;
     ingreso->show();
-    ui->ingresar->setHidden(true);
-    ui->registrarse->setHidden(true);
-    this->close();
+    //ui->ingresar->setHidden(true);
+    //ui->registrarse->setHidden(true);
+    //this->close();
 }
 
 void MainWindow::on_registrarse_clicked()

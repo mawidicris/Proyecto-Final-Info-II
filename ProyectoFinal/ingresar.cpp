@@ -22,12 +22,29 @@ void ingresar::on_ingresar_2_clicked()
     QString cla=ui->contra->text();
     std::string usuari=usu.toUtf8().constData();
     std::string clav=cla.toUtf8().constData();
+    string usuario,clave;
+      leer.open("usuarios.txt", ios::app);
+      while (!leer.eof()){
+      getline(leer,usuario,',');
+      getline(leer,clave);
+
+      if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
+       this->close();
+       //return true;
+         }
+
+      else {
+          ui->error->setHidden(false);
+        //return false;
+          }
+       }
+       leer.close();
 
 }
 
 bool ingresar::comprobar(string usuari,string clav,bool correcto)
 {
-  string usuario,clave;
+ /* string usuario,clave;
   leer.open("usuarios.txt", ios::app);
   while (!leer.eof()){
   getline(leer,usuario,',');
@@ -35,15 +52,15 @@ bool ingresar::comprobar(string usuari,string clav,bool correcto)
 
   if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
    this->close();
-   correcto= true;
+   return true;
      }
 
   else {
       ui->error->setHidden(false);
-    correcto=false;
+    return false;
       }
    }
-   leer.close();
+   leer.close(); */
 }
 //if(correcto) w.show();
 
