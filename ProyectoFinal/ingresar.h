@@ -8,6 +8,7 @@ using namespace std;
 #include <QDebug>
 #include "registro.h"
 
+
 namespace Ui {
 class ingresar;
 }

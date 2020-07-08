@@ -12,8 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,9 +23,9 @@ class Ui_registro
 public:
     QLabel *label;
     QLabel *label_2;
-    QTextEdit *usuario;
-    QTextEdit *contra;
     QPushButton *registrar;
+    QLineEdit *usuario;
+    QLineEdit *contra;
 
     void setupUi(QWidget *registro)
     {
@@ -92,82 +92,43 @@ public:
         palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
         label_2->setPalette(palette2);
         label_2->setFont(font);
-        usuario = new QTextEdit(registro);
-        usuario->setObjectName(QString::fromUtf8("usuario"));
-        usuario->setGeometry(QRect(280, 120, 161, 41));
-        QPalette palette3;
-        palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
-        palette3.setBrush(QPalette::Active, QPalette::Text, brush);
-        palette3.setBrush(QPalette::Active, QPalette::Base, brush3);
-        palette3.setBrush(QPalette::Active, QPalette::Window, brush3);
-        QBrush brush5(QColor(0, 0, 0, 128));
-        brush5.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette::Active, QPalette::PlaceholderText, brush5);
-#endif
-        palette3.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
-        palette3.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        palette3.setBrush(QPalette::Inactive, QPalette::Base, brush3);
-        palette3.setBrush(QPalette::Inactive, QPalette::Window, brush3);
-        QBrush brush6(QColor(0, 0, 0, 128));
-        brush6.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush6);
-#endif
-        palette3.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
-        palette3.setBrush(QPalette::Disabled, QPalette::Text, brush);
-        palette3.setBrush(QPalette::Disabled, QPalette::Base, brush3);
-        palette3.setBrush(QPalette::Disabled, QPalette::Window, brush3);
-        QBrush brush7(QColor(0, 0, 0, 128));
-        brush7.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush7);
-#endif
-        usuario->setPalette(palette3);
-        contra = new QTextEdit(registro);
-        contra->setObjectName(QString::fromUtf8("contra"));
-        contra->setGeometry(QRect(280, 170, 161, 41));
-        QPalette palette4;
-        palette4.setBrush(QPalette::Active, QPalette::Text, brush);
-        palette4.setBrush(QPalette::Active, QPalette::ButtonText, brush);
-        palette4.setBrush(QPalette::Active, QPalette::Base, brush3);
-        palette4.setBrush(QPalette::Active, QPalette::Window, brush3);
-        QBrush brush8(QColor(0, 0, 0, 128));
-        brush8.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette4.setBrush(QPalette::Active, QPalette::PlaceholderText, brush8);
-#endif
-        palette4.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        palette4.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
-        palette4.setBrush(QPalette::Inactive, QPalette::Base, brush3);
-        palette4.setBrush(QPalette::Inactive, QPalette::Window, brush3);
-        QBrush brush9(QColor(0, 0, 0, 128));
-        brush9.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette4.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush9);
-#endif
-        palette4.setBrush(QPalette::Disabled, QPalette::Text, brush);
-        palette4.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
-        palette4.setBrush(QPalette::Disabled, QPalette::Base, brush3);
-        palette4.setBrush(QPalette::Disabled, QPalette::Window, brush3);
-        QBrush brush10(QColor(0, 0, 0, 128));
-        brush10.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette4.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush10);
-#endif
-        contra->setPalette(palette4);
         registrar = new QPushButton(registro);
         registrar->setObjectName(QString::fromUtf8("registrar"));
         registrar->setGeometry(QRect(290, 250, 131, 61));
-        QPalette palette5;
-        palette5.setBrush(QPalette::Active, QPalette::ButtonText, brush);
-        palette5.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
-        palette5.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
-        registrar->setPalette(palette5);
+        QPalette palette3;
+        palette3.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette3.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette3.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
+        registrar->setPalette(palette3);
         QFont font1;
         font1.setFamily(QString::fromUtf8("Playbill"));
         font1.setPointSize(14);
         registrar->setFont(font1);
+        usuario = new QLineEdit(registro);
+        usuario->setObjectName(QString::fromUtf8("usuario"));
+        usuario->setGeometry(QRect(290, 120, 181, 31));
+        QPalette palette4;
+        palette4.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette4.setBrush(QPalette::Active, QPalette::Base, brush3);
+        palette4.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette4.setBrush(QPalette::Inactive, QPalette::Base, brush3);
+        palette4.setBrush(QPalette::Disabled, QPalette::Text, brush);
+        palette4.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        usuario->setPalette(palette4);
+        usuario->setFont(font);
+        contra = new QLineEdit(registro);
+        contra->setObjectName(QString::fromUtf8("contra"));
+        contra->setGeometry(QRect(290, 170, 181, 31));
+        QPalette palette5;
+        palette5.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette5.setBrush(QPalette::Active, QPalette::Base, brush3);
+        palette5.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette5.setBrush(QPalette::Inactive, QPalette::Base, brush3);
+        palette5.setBrush(QPalette::Disabled, QPalette::Text, brush);
+        palette5.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        contra->setPalette(palette5);
+        contra->setFont(font);
+        contra->setEchoMode(QLineEdit::Password);
 
         retranslateUi(registro);
 
