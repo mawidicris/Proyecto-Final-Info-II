@@ -26,8 +26,10 @@ SOURCES += \
     mainwindow.cpp \
     misil.cpp \
     papas.cpp \
+    partidas.cpp \
     piedras.cpp \
     policia.cpp \
+    puntaje.cpp \
     registro.cpp \
     tanqueta.cpp
 
@@ -41,14 +43,17 @@ HEADERS += \
     mainwindow.h \
     misil.h \
     papas.h \
+    partidas.h \
     piedras.h \
     policia.h \
+    puntaje.h \
     registro.h \
     tanqueta.h
 
 FORMS += \
     ingresar.ui \
     mainwindow.ui \
+    partidas.ui \
     registro.ui
 
 # Default rules for deployment.

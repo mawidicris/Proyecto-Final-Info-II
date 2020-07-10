@@ -7,7 +7,7 @@ misil::misil(QObject *parent) : QObject(parent)
     bala= new QPixmap(":/misil.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&misil::mover);
-    timer->start(20);
+    timer->start(5);
 }
 
 QRectF misil::boundingRect() const
@@ -23,6 +23,7 @@ void misil::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 void misil::mover()
 {
+    int randomValue = qrand() % 60;
     setPos(x,-y);
     vx=v*cos(angulo);
     vy=v*sin(angulo)-a*dt;
@@ -34,11 +35,26 @@ void misil::mover()
     QList<QGraphicsItem*>balitas= collidingItems();
     for (int i=0,n=balitas.size();i<n;i++){
         if(typeid (*(balitas[i]))==typeid(capuchonegro)){
-            scene()->removeItem(this);
+            balitas.append(this);
+            x=1000;
+            y=-250;
+            v=80;
+            angulo=randomValue;
+            balitas.last()->setPos(x,-y);
+            scene()->addItem(balitas.last());
+            if(n==2)scene()->removeItem(balitas.at(i));
         }
         else if (typeid (*(balitas[i]))==typeid(capuchoblanco)){
-            scene()->removeItem(this);
+            balitas.append(this);
+            x=1000;
+            y=-250;
+            v=80;
+            angulo=randomValue;
+            balitas.last()->setPos(x,-y);
+            scene()->addItem(balitas.last());
+            scene()->removeItem(balitas.at(i));
     }
- }
-
+  }
 }
+
+

@@ -6,9 +6,6 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
-//#include "capuchoblanco.h"
-//#include "capuchonegro.h"
-//#include "misil.h"
 
 class tanqueta : public QObject, public QGraphicsItem
 {

@@ -2,7 +2,7 @@
 #include "ui_ingresar.h"
 
 ingresar::ingresar(QWidget *parent) :
-    QWidget(parent),
+    QMainWindow(parent),
     ui(new Ui::ingresar)
 {
     ui->setupUi(this);
@@ -17,8 +17,7 @@ ingresar::~ingresar()
 
 void ingresar::on_ingresar_2_clicked()
 {
-
-    MainWindow *jueguito=new MainWindow;
+    partidas *partida=new partidas;
     QString usu=ui->usuario->text();
     QString cla=ui->contra->text();
     std::string usuari=usu.toUtf8().constData();
@@ -31,8 +30,7 @@ void ingresar::on_ingresar_2_clicked()
 
     if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
     this->close();
-    jueguito->show();
-
+    partida->show();
     }
 
       else {

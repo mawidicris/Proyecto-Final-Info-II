@@ -2,20 +2,22 @@
 #define INGRESAR_H
 
 using namespace std;
+
+#include <QMainWindow>
 #include <QWidget>
 #include <fstream>
 #include <iostream>
 #include <QDebug>
 #include <QGraphicsScene>
 #include "registro.h"
-#include "mainwindow.h"
+#include "partidas.h"
 
 
 namespace Ui {
 class ingresar;
 }
 
-class ingresar : public QWidget
+class ingresar : public QMainWindow
 {
     Q_OBJECT
 

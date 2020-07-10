@@ -23,4 +23,22 @@ void papas::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 void papas::mover()
 {
   setPos(x()+15,y());
+
+QList<QGraphicsItem*>papass= collidingItems();
+
+  for (int i=0,n=papass.size();i<n;i++){
+      if(typeid (*(papass[i]))==typeid(esmad)){
+          papass.append(this);
+          papass.last()->setPos(300,450);
+          if(n==4) scene()->removeItem(papass.at(i));
+      }
+      else if (typeid (*(papass[i]))==typeid(policia)){
+          papass.append(this);
+          papass.last()->setPos(capucho->x(),capucho->y());
+          if(n==2) scene()->removeItem(papass.at(i));
+    }
+  }
+
 }
+
+

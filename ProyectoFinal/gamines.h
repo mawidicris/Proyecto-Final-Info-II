@@ -6,6 +6,9 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
+#include <QList>
+#include <QGraphicsScene>
+
 
 class Gamines : public QObject,public QGraphicsItem
 {
@@ -13,7 +16,7 @@ class Gamines : public QObject,public QGraphicsItem
 public:
     explicit Gamines(QObject *parent = nullptr);
     QPixmap *Gamine;
-    QTimer *timer;
+    QTimer *timer,*timer2;
 
     float ancho,alto;
     QRectF boundingRect() const;
@@ -21,7 +24,8 @@ public:
 
 signals:
 public slots:
-void caida();
+    void caida();
+    void generar();
 };
 
 #endif // GAMINES_H

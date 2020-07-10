@@ -6,9 +6,6 @@
 #include <QPainter>
 #include <QRectF>
 #include <QGraphicsScene>
-//#include <QTimer>
-#include <piedras.h>
-
 
 class capuchoblanco : public QObject,public QGraphicsItem
 {
@@ -16,16 +13,12 @@ class capuchoblanco : public QObject,public QGraphicsItem
 public:
     explicit capuchoblanco(QObject *parent = nullptr);
     QPixmap *cblanco;
-    //QTimer *timer;
+
 
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    void lanzar(QList<piedras *> &piedritas,QGraphicsScene *escena);
-
 signals:
-//public slots:
-  //   void disparar(QList<piedras *> &lanzarpiedras,QGraphicsScene *escena);
 };
 
 #endif // CAPUCHOBLANCO_H

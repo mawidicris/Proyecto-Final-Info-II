@@ -8,9 +8,10 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <math.h>
+#include <QList>
 #include "capuchoblanco.h"
 #include "capuchonegro.h"
-#include <QList>
+
 
 #define dt 0.1
 

@@ -6,6 +6,12 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
+#include <QGraphicsScene>
+#include <QList>
+#include "esmad.h"
+#include "policia.h"
+#include "capuchonegro.h"
+
 
 class papas : public QObject, public QGraphicsItem
 {
@@ -18,10 +24,12 @@ public:
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    capuchonegro *capucho;
 
 signals:
 public slots:
     void mover();
+
 };
 
 #endif // PAPAS_H

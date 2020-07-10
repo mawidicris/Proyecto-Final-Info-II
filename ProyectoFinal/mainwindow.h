@@ -55,7 +55,8 @@ private:
     tanqueta *tanque;
     misil *balaa;
     Gamines *gamin;
-    QList <piedras*> lanzarpiedras;
+
+
 
 };
 #endif // MAINWINDOW_H

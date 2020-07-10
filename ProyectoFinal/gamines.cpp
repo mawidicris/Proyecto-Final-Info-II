@@ -6,8 +6,11 @@ Gamines::Gamines(QObject *parent)
     alto=90;
     Gamine= new QPixmap(":/gamin.png");
     timer= new QTimer;
+    timer2= new QTimer;
     connect(timer,&QTimer::timeout,this,&Gamines::caida);
+    connect(timer2,&QTimer::timeout,this,&Gamines::generar);
     timer->start(200);
+    timer2->start(3500);
 }
 
 QRectF Gamines::boundingRect() const
@@ -21,6 +24,15 @@ void Gamines::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
 void Gamines::caida()
 {
-   setPos(x(),y()+15);
+    setPos(x(),y()+20);
+}
+
+void Gamines::generar()
+{
+    int randomValue = qrand() % 1200;
+    QList<QGraphicsItem*>gamines;
+    gamines.append(this);
+    gamines.last()->setPos(randomValue,50);
+    scene()->addItem(gamines.last());
 }
 
