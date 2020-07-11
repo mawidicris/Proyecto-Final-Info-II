@@ -8,9 +8,9 @@ baretos::baretos(QObject *parent) : QObject(parent)
     timer= new QTimer;
     timer2=new QTimer;
     connect(timer,&QTimer::timeout,this,&baretos::caida);
-    connect(timer2,&QTimer::timeout,this,&baretos::generar);
+  // connect(timer2,&QTimer::timeout,this,&baretos::generar);
     timer->start(200);
-    timer2->start(2500);
+    //timer2->start(2500);
 }
 
 QRectF baretos::boundingRect() const
@@ -34,5 +34,5 @@ void baretos::generar()
     QList<QGraphicsItem*>bareti;
     bareti.append(this);
     bareti.last()->setPos(randomValue,50);
-    scene()->addItem(bareti.last());
+
 }

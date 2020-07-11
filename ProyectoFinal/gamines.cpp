@@ -29,10 +29,10 @@ void Gamines::caida()
 
 void Gamines::generar()
 {
-    int randomValue = qrand() % 1200;
     QList<QGraphicsItem*>gamines;
-    gamines.append(this);
+    int randomValue = qrand() % 1200;
+    gamines.push_back(this);
     gamines.last()->setPos(randomValue,50);
-    scene()->addItem(gamines.last());
+
 }
 

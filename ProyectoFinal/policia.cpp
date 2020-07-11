@@ -32,7 +32,7 @@ void policia::actualizar()
         columnas=0;
     }
 
-    this->update(-ancho/2,-alto/2,ancho,alto);
+this->update(-ancho/2,-alto/2,ancho,alto);
 }
 
 void policia::mover()

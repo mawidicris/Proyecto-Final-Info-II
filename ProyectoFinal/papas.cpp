@@ -30,7 +30,7 @@ QList<QGraphicsItem*>papass= collidingItems();
       if(typeid (*(papass[i]))==typeid(esmad)){
           papass.append(this);
           papass.last()->setPos(300,450);
-          if(n==4) scene()->removeItem(papass.at(i));
+         if(n==3) scene()->removeItem(papass.at(i));
       }
       else if (typeid (*(papass[i]))==typeid(policia)){
           papass.append(this);
@@ -38,7 +38,6 @@ QList<QGraphicsItem*>papass= collidingItems();
           if(n==2) scene()->removeItem(papass.at(i));
     }
   }
-
 }
 
 
