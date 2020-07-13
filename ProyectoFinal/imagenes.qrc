@@ -11,5 +11,6 @@
         <file>tanqueta.png</file>
         <file>misil.png</file>
         <file>gamin.png</file>
+        <file>explo.png</file>
     </qresource>
 </RCC>

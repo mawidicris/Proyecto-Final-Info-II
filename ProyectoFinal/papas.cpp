@@ -28,6 +28,8 @@ QList<QGraphicsItem*>papass= collidingItems();
 
   for (int i=0,n=papass.size();i<n;i++){
       if(typeid (*(papass[i]))==typeid(esmad)){
+          pum->setPos(ujum->x(),ujum->y());
+          scene()->addItem(new Explosion);
           papass.append(this);
           papass.last()->setPos(300,450);
          if(n==3) scene()->removeItem(papass.at(i));

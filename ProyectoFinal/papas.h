@@ -11,6 +11,7 @@
 #include "esmad.h"
 #include "policia.h"
 #include "capuchonegro.h"
+#include "explosion.h"
 
 
 class papas : public QObject, public QGraphicsItem
@@ -25,6 +26,8 @@ public:
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     capuchonegro *capucho;
+    Explosion *pum;
+    esmad *ujum;
 
 signals:
 public slots:

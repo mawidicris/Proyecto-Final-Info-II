@@ -25,6 +25,7 @@ public slots:
     void actualizar();
     void mover();
 
+
 };
 
 #endif // ESMAD_H

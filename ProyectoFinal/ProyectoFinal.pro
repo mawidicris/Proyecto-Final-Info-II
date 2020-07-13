@@ -20,6 +20,7 @@ SOURCES += \
     capuchoblanco.cpp \
     capuchonegro.cpp \
     esmad.cpp \
+    explosion.cpp \
     gamines.cpp \
     ingresar.cpp \
     main.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     capuchoblanco.h \
     capuchonegro.h \
     esmad.h \
+    explosion.h \
     gamines.h \
     ingresar.h \
     mainwindow.h \

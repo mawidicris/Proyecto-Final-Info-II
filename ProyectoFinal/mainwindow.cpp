@@ -43,8 +43,10 @@ MainWindow::MainWindow(QWidget *parent)
     gamin= new Gamines;
     //gamin->setPos(800,50);
   // escena->addItem(gamin);
+
     ui->ingresar->setHidden(true);
     ui->registrarse->setHidden(true);
+
 
 }
 

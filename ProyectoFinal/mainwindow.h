@@ -19,6 +19,7 @@ using namespace std;
 #include "gamines.h"
 #include "registro.h"
 #include "ingresar.h"
+#include "explosion.h"
 
 
 
@@ -55,6 +56,7 @@ private:
     tanqueta *tanque;
     misil *balaa;
     Gamines *gamin;
+    Explosion *bomba;
 
 
 
