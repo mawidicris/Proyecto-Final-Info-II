@@ -7,6 +7,8 @@ using namespace std;
 #include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsSceneMouseEvent>
+#include <QMouseEvent>
 #include "capuchonegro.h"
 #include "capuchoblanco.h"
 #include "esmad.h"
@@ -43,6 +45,7 @@ private slots:
     void on_registrarse_clicked();
 
 private:
+    //void mouseMoveEvent (QGraphicsSceneMouseEvent *event);
     Ui::MainWindow *ui;
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;

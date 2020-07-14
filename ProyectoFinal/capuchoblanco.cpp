@@ -17,3 +17,20 @@ void capuchoblanco::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     painter->drawPixmap(-ancho/2,-alto/2,*cblanco,0,0,ancho,alto);
 }
 
+void capuchoblanco::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setPos(mapToScene(event->pos()));
+}
+
+void capuchoblanco::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setCursor(QCursor(Qt::ClosedHandCursor));
+       Q_UNUSED(event);
+}
+
+void capuchoblanco::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setCursor(QCursor(Qt::ArrowCursor));
+    Q_UNUSED(event);
+}
+

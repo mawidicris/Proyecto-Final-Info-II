@@ -16,3 +16,20 @@ void capuchonegro::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 {
    painter->drawPixmap(-ancho/2,-alto/2,*cnegro,0,0,ancho,alto);
 }
+
+void capuchonegro::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setPos(mapToScene(event->pos()));
+}
+
+void capuchonegro::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setCursor(QCursor(Qt::ClosedHandCursor));
+       Q_UNUSED(event);
+}
+
+void capuchonegro::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setCursor(QCursor(Qt::ArrowCursor));
+    Q_UNUSED(event);
+}

@@ -11,6 +11,9 @@
 #include "policia.h"
 #include "esmad.h"
 #include "capuchoblanco.h"
+#include "math.h"
+
+#define dt 0.1
 
 class piedras : public QObject,public QGraphicsItem
 {
@@ -19,6 +22,7 @@ public:
     explicit piedras(QObject *parent = nullptr);
     QPixmap *piedra;
     QTimer *timer;
+    double v=80,vx,vy,px=1000,py=-450,a=9.8,yd,angulo=40;
 
     float ancho,alto;
     QRectF boundingRect() const;

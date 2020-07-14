@@ -25,9 +25,7 @@ public:
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    capuchonegro *capucho;
-    Explosion *pum;
-    esmad *ujum;
+
 
 signals:
 public slots:

@@ -8,6 +8,9 @@
 #include <QTimer>
 #include <QList>
 #include <QGraphicsScene>
+#include <QGraphicsSceneMouseEvent>
+#include <QCursor>
+#include <QDebug>
 
 
 class Gamines : public QObject,public QGraphicsItem
@@ -19,8 +22,11 @@ public:
     QTimer *timer,*timer2;
 
     float ancho,alto;
+    int gamin=0;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
 signals:
 public slots:

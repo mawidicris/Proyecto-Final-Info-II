@@ -11,6 +11,7 @@
 #include <QList>
 #include "capuchoblanco.h"
 #include "capuchonegro.h"
+#include "explosion.h"
 
 
 #define dt 0.1

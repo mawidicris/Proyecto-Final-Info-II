@@ -17,18 +17,18 @@ MainWindow::MainWindow(QWidget *parent)
     capuchoN= new capuchonegro;
     capuchoB= new capuchoblanco;
     capuchoN->setPos(300,450);
-    escena->addItem(capuchoN);
-    capuchoB->setPos(500,450);
-   //escena->addItem(capuchoB);
+    //escena->addItem(capuchoN);
+    capuchoB->setPos(300,450);
+    //escena->addItem(capuchoB);
     agenteesmad= new esmad;
-    agenteesmad->setPos(1130,430);
-     escena->addItem(agenteesmad);
+    agenteesmad->setPos(1130,450);
+    //escena->addItem(agenteesmad);
     roca=new piedras;
     roca->setPos(capuchoB->x(),capuchoB->y());
     //escena->addItem(roca);
     papabomba=new papas;
     papabomba->setPos(capuchoN->x(),capuchoN->y());
-   escena->addItem(papabomba);
+    //escena->addItem(papabomba);
     pol=new policia;
     pol->setPos(1130,300);
    //escena->addItem(pol);
@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     //escena->addItem(balaa);
     gamin= new Gamines;
     //gamin->setPos(800,50);
-  // escena->addItem(gamin);
+    escena->addItem(gamin);
 
     ui->ingresar->setHidden(true);
     ui->registrarse->setHidden(true);
@@ -81,6 +81,13 @@ void MainWindow::on_registrarse_clicked()
     registro *registrar=new registro;
     registrar->show();
 }
+
+/*void MainWindow::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+     capuchoB->setPos(mapToScene(event->pos()));
+}*/
+
+
 
 
 

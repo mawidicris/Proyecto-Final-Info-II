@@ -34,7 +34,10 @@ void misil::mover()
 
     QList<QGraphicsItem*>balitas= collidingItems();
     for (int i=0,n=balitas.size();i<n;i++){
+         Explosion *pum= new Explosion;
         if(typeid (*(balitas[i]))==typeid(capuchonegro)){
+            pum->setPos(balitas.at(i)->x(),balitas.at(i)->y());
+            scene()->addItem(pum);
             balitas.append(this);
             x=1000;
             y=-250;

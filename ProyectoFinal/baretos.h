@@ -8,6 +8,8 @@
 #include <QTimer>
 #include <QList>
 #include <QGraphicsScene>
+#include <QGraphicsSceneMouseEvent>
+#include <QCursor>
 
 class baretos : public QObject, public QGraphicsItem
 {
@@ -17,11 +19,12 @@ public:
     QPixmap *bareto;
     QTimer *timer,*timer2;
 
-
+    int bare=0;
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
 signals:
 public slots:
