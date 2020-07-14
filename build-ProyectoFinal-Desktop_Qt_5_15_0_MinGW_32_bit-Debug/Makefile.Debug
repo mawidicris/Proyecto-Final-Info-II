@@ -323,6 +323,10 @@ debug/moc_baretos.cpp: ../ProyectoFinal/baretos.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\baretos.h -o debug\moc_baretos.cpp
@@ -429,6 +433,10 @@ debug/moc_capuchoblanco.cpp: ../ProyectoFinal/capuchoblanco.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\capuchoblanco.h -o debug\moc_capuchoblanco.cpp
@@ -533,6 +541,10 @@ debug/moc_capuchonegro.cpp: ../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qfont.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qfontmetrics.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\capuchonegro.h -o debug\moc_capuchonegro.cpp
@@ -857,6 +869,11 @@ debug/moc_gamines.cpp: ../ProyectoFinal/gamines.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\gamines.h -o debug\moc_gamines.cpp
@@ -980,12 +997,16 @@ debug/moc_ingresar.cpp: ../ProyectoFinal/ingresar.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QMouseEvent \
 		../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QPainter \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainter.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
 		../ProyectoFinal/capuchoblanco.h \
 		../ProyectoFinal/esmad.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QTimer \
@@ -995,12 +1016,12 @@ debug/moc_ingresar.cpp: ../ProyectoFinal/ingresar.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/papas.h \
+		../ProyectoFinal/explosion.h \
 		../ProyectoFinal/baretos.h \
 		../ProyectoFinal/tanqueta.h \
 		../ProyectoFinal/misil.h \
 		../ProyectoFinal/gamines.h \
 		../ProyectoFinal/ingresar.h \
-		../ProyectoFinal/explosion.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\ingresar.h -o debug\moc_ingresar.cpp
@@ -1119,12 +1140,16 @@ debug/moc_mainwindow.cpp: ../ProyectoFinal/mainwindow.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QMouseEvent \
 		../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QPainter \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainter.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
 		../ProyectoFinal/capuchoblanco.h \
 		../ProyectoFinal/esmad.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QTimer \
@@ -1134,17 +1159,17 @@ debug/moc_mainwindow.cpp: ../ProyectoFinal/mainwindow.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/papas.h \
+		../ProyectoFinal/explosion.h \
 		../ProyectoFinal/baretos.h \
 		../ProyectoFinal/tanqueta.h \
 		../ProyectoFinal/misil.h \
 		../ProyectoFinal/gamines.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/registro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QWidget \
 		../ProyectoFinal/ingresar.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/partidas.h \
 		../ProyectoFinal/mainwindow.h \
-		../ProyectoFinal/explosion.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1256,7 +1281,12 @@ debug/moc_misil.cpp: ../ProyectoFinal/misil.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/capuchoblanco.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
 		../ProyectoFinal/capuchonegro.h \
+		../ProyectoFinal/explosion.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\misil.h -o debug\moc_misil.cpp
@@ -1370,6 +1400,11 @@ debug/moc_papas.cpp: ../ProyectoFinal/papas.h \
 		../ProyectoFinal/esmad.h \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/capuchonegro.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
+		../ProyectoFinal/explosion.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\papas.h -o debug\moc_papas.cpp
@@ -1490,12 +1525,16 @@ debug/moc_partidas.cpp: ../ProyectoFinal/partidas.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QMouseEvent \
 		../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QPainter \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainter.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
 		../ProyectoFinal/capuchoblanco.h \
 		../ProyectoFinal/esmad.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QTimer \
@@ -1505,15 +1544,15 @@ debug/moc_partidas.cpp: ../ProyectoFinal/partidas.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/papas.h \
+		../ProyectoFinal/explosion.h \
 		../ProyectoFinal/baretos.h \
 		../ProyectoFinal/tanqueta.h \
 		../ProyectoFinal/misil.h \
 		../ProyectoFinal/gamines.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/registro.h \
 		../ProyectoFinal/ingresar.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/partidas.h \
-		../ProyectoFinal/explosion.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\partidas.h -o debug\moc_partidas.cpp
@@ -1627,6 +1666,10 @@ debug/moc_piedras.cpp: ../ProyectoFinal/piedras.h \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/esmad.h \
 		../ProyectoFinal/capuchoblanco.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_32/bin/moc.exe
 	C:\Qt\5.15.0\mingw81_32\bin\moc.exe $(DEFINES) --include "C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/build-ProyectoFinal-Desktop_Qt_5_15_0_MinGW_32_bit-Debug/debug/moc_predefs.h" -IC:/Qt/5.15.0/mingw81_32/mkspecs/win32-g++ -I"C:/Users/ASUS/Desktop/Universidad/Nivel 2/Informática II/Proyecto final/Proyecto-Final-Info-II/ProyectoFinal" -IC:/Qt/5.15.0/mingw81_32/include -IC:/Qt/5.15.0/mingw81_32/include/QtWidgets -IC:/Qt/5.15.0/mingw81_32/include/QtGui -IC:/Qt/5.15.0/mingw81_32/include/QtANGLE -IC:/Qt/5.15.0/mingw81_32/include/QtCore -I. -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_32/i686-w64-mingw32/include ..\ProyectoFinal\piedras.h -o debug\moc_piedras.cpp
@@ -2151,7 +2194,11 @@ debug/baretos.o: ../ProyectoFinal/baretos.cpp ../ProyectoFinal/baretos.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/qbasictimer.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsScene \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\baretos.o ..\ProyectoFinal\baretos.cpp
 
 debug/capuchoblanco.o: ../ProyectoFinal/capuchoblanco.cpp ../ProyectoFinal/capuchoblanco.h \
@@ -2255,7 +2302,11 @@ debug/capuchoblanco.o: ../ProyectoFinal/capuchoblanco.cpp ../ProyectoFinal/capuc
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qfontmetrics.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsScene \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\capuchoblanco.o ..\ProyectoFinal\capuchoblanco.cpp
 
 debug/capuchonegro.o: ../ProyectoFinal/capuchonegro.cpp ../ProyectoFinal/capuchonegro.h \
@@ -2357,7 +2408,11 @@ debug/capuchonegro.o: ../ProyectoFinal/capuchonegro.cpp ../ProyectoFinal/capucho
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qfontinfo.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qfont.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qfontmetrics.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\capuchonegro.o ..\ProyectoFinal\capuchonegro.cpp
 
 debug/esmad.o: ../ProyectoFinal/esmad.cpp ../ProyectoFinal/esmad.h \
@@ -2675,7 +2730,12 @@ debug/gamines.o: ../ProyectoFinal/gamines.cpp ../ProyectoFinal/gamines.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/qbasictimer.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsScene \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\gamines.o ..\ProyectoFinal\gamines.cpp
 
 debug/ingresar.o: ../ProyectoFinal/ingresar.cpp ../ProyectoFinal/ingresar.h \
@@ -2797,12 +2857,16 @@ debug/ingresar.o: ../ProyectoFinal/ingresar.cpp ../ProyectoFinal/ingresar.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QMouseEvent \
 		../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QPainter \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainter.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
 		../ProyectoFinal/capuchoblanco.h \
 		../ProyectoFinal/esmad.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QTimer \
@@ -2812,11 +2876,11 @@ debug/ingresar.o: ../ProyectoFinal/ingresar.cpp ../ProyectoFinal/ingresar.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/papas.h \
+		../ProyectoFinal/explosion.h \
 		../ProyectoFinal/baretos.h \
 		../ProyectoFinal/tanqueta.h \
 		../ProyectoFinal/misil.h \
 		../ProyectoFinal/gamines.h \
-		../ProyectoFinal/explosion.h \
 		ui_ingresar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\ingresar.o ..\ProyectoFinal\ingresar.cpp
 
@@ -2934,12 +2998,16 @@ debug/main.o: ../ProyectoFinal/main.cpp ../ProyectoFinal/mainwindow.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QMouseEvent \
 		../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QPainter \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainter.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
 		../ProyectoFinal/capuchoblanco.h \
 		../ProyectoFinal/esmad.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QTimer \
@@ -2949,16 +3017,16 @@ debug/main.o: ../ProyectoFinal/main.cpp ../ProyectoFinal/mainwindow.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/papas.h \
+		../ProyectoFinal/explosion.h \
 		../ProyectoFinal/baretos.h \
 		../ProyectoFinal/tanqueta.h \
 		../ProyectoFinal/misil.h \
 		../ProyectoFinal/gamines.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/registro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QWidget \
 		../ProyectoFinal/ingresar.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/partidas.h \
-		../ProyectoFinal/explosion.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QApplication \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/qcoreapplication.h \
@@ -3082,12 +3150,16 @@ debug/mainwindow.o: ../ProyectoFinal/mainwindow.cpp ../ProyectoFinal/mainwindow.
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QMouseEvent \
 		../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QPainter \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainter.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
 		../ProyectoFinal/capuchoblanco.h \
 		../ProyectoFinal/esmad.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QTimer \
@@ -3097,16 +3169,16 @@ debug/mainwindow.o: ../ProyectoFinal/mainwindow.cpp ../ProyectoFinal/mainwindow.
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/papas.h \
+		../ProyectoFinal/explosion.h \
 		../ProyectoFinal/baretos.h \
 		../ProyectoFinal/tanqueta.h \
 		../ProyectoFinal/misil.h \
 		../ProyectoFinal/gamines.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/registro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QWidget \
 		../ProyectoFinal/ingresar.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/partidas.h \
-		../ProyectoFinal/explosion.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\ProyectoFinal\mainwindow.cpp
 
@@ -3217,7 +3289,12 @@ debug/misil.o: ../ProyectoFinal/misil.cpp ../ProyectoFinal/misil.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/capuchoblanco.h \
-		../ProyectoFinal/capuchonegro.h
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
+		../ProyectoFinal/capuchonegro.h \
+		../ProyectoFinal/explosion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\misil.o ..\ProyectoFinal\misil.cpp
 
 debug/papas.o: ../ProyectoFinal/papas.cpp ../ProyectoFinal/papas.h \
@@ -3328,7 +3405,12 @@ debug/papas.o: ../ProyectoFinal/papas.cpp ../ProyectoFinal/papas.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/esmad.h \
 		../ProyectoFinal/policia.h \
-		../ProyectoFinal/capuchonegro.h
+		../ProyectoFinal/capuchonegro.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h \
+		../ProyectoFinal/explosion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\papas.o ..\ProyectoFinal\papas.cpp
 
 debug/partidas.o: ../ProyectoFinal/partidas.cpp ../ProyectoFinal/partidas.h \
@@ -3447,12 +3529,16 @@ debug/partidas.o: ../ProyectoFinal/partidas.cpp ../ProyectoFinal/partidas.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsPixmapItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsitem.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QMouseEvent \
 		../ProyectoFinal/capuchonegro.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/QPainter \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qpainter.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QRectF \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
 		../ProyectoFinal/capuchoblanco.h \
 		../ProyectoFinal/esmad.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QTimer \
@@ -3462,14 +3548,14 @@ debug/partidas.o: ../ProyectoFinal/partidas.cpp ../ProyectoFinal/partidas.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtCore/QList \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/papas.h \
+		../ProyectoFinal/explosion.h \
 		../ProyectoFinal/baretos.h \
 		../ProyectoFinal/tanqueta.h \
 		../ProyectoFinal/misil.h \
 		../ProyectoFinal/gamines.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
 		../ProyectoFinal/registro.h \
 		../ProyectoFinal/ingresar.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtCore/QDebug \
-		../ProyectoFinal/explosion.h \
 		ui_partidas.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\partidas.o ..\ProyectoFinal\partidas.cpp
 
@@ -3581,7 +3667,11 @@ debug/piedras.o: ../ProyectoFinal/piedras.cpp ../ProyectoFinal/piedras.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicsscene.h \
 		../ProyectoFinal/policia.h \
 		../ProyectoFinal/esmad.h \
-		../ProyectoFinal/capuchoblanco.h
+		../ProyectoFinal/capuchoblanco.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qgraphicssceneevent.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/QCursor \
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qcursor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\piedras.o ..\ProyectoFinal\piedras.cpp
 
 debug/policia.o: ../ProyectoFinal/policia.cpp ../ProyectoFinal/policia.h \

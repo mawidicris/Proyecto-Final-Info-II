@@ -13,13 +13,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
-    escena->addItem(fondo);
+   // escena->addItem(fondo);
     capuchoN= new capuchonegro;
     capuchoB= new capuchoblanco;
     capuchoN->setPos(300,450);
     //escena->addItem(capuchoN);
     capuchoB->setPos(300,450);
-    //escena->addItem(capuchoB);
+   // escena->addItem(capuchoB);
     agenteesmad= new esmad;
     agenteesmad->setPos(1130,450);
     //escena->addItem(agenteesmad);
@@ -42,10 +42,10 @@ MainWindow::MainWindow(QWidget *parent)
     //escena->addItem(balaa);
     gamin= new Gamines;
     //gamin->setPos(800,50);
-    escena->addItem(gamin);
+    //escena->addItem(gamin);
 
-    ui->ingresar->setHidden(true);
-    ui->registrarse->setHidden(true);
+  //  ui->ingresar->setHidden(true);
+    //ui->registrarse->setHidden(true);
 
 
 }
@@ -82,10 +82,6 @@ void MainWindow::on_registrarse_clicked()
     registrar->show();
 }
 
-/*void MainWindow::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-     capuchoB->setPos(mapToScene(event->pos()));
-}*/
 
 
 

@@ -31,7 +31,7 @@ public:
 signals:
 public slots:
     void caida();
-    void generar();
+    //void generar();
 };
 
 #endif // GAMINES_H
