@@ -8,6 +8,12 @@
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QCursor>
+#include <QTimer>
+#include <QList>
+#include "piedras.h"
+#include "policia.h"
+#include "esmad.h"
+#include "misil.h"
 
 class capuchoblanco : public QObject,public QGraphicsItem
 {
@@ -15,6 +21,7 @@ class capuchoblanco : public QObject,public QGraphicsItem
 public:
     explicit capuchoblanco(QObject *parent = nullptr);
     QPixmap *cblanco;
+    QTimer *timer,*timer2,*timer3,*timer4;
 
 
     float ancho,alto;
@@ -23,7 +30,13 @@ public:
     void mouseMoveEvent (QGraphicsSceneMouseEvent *event);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
 signals:
+    public slots:
+      void lanzarpiedras();
+      void colisionesmad();
+      void colisionpolicia();
+      void colisionmisiles();
 };
 
 #endif // CAPUCHOBLANCO_H

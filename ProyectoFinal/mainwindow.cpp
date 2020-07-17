@@ -8,46 +8,42 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     escena= new QGraphicsScene;
+    timer=new QTimer;
+    timer2=new QTimer;
+    timer3=new QTimer;
+    timer4=new QTimer;
+    timer5=new QTimer;
+    timer6=new QTimer;
     ui->graphicsView->setScene(escena);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
     escena->addItem(fondo);
+   // puntos=new puntaje;
+    //escena
     capuchoN= new capuchonegro;
     capuchoB= new capuchoblanco;
-    capuchoN->setPos(300,450);
-    //escena->addItem(capuchoN);
-    capuchoB->setPos(300,450);
-    //escena->addItem(capuchoB);
-    agenteesmad= new esmad;
-    agenteesmad->setPos(1130,450);
-    //escena->addItem(agenteesmad);
-    roca=new piedras;
-    roca->setPos(capuchoB->x(),capuchoB->y());
-    //escena->addItem(roca);
-    papabomba=new papas;
-    papabomba->setPos(capuchoN->x(),capuchoN->y());
-    //escena->addItem(papabomba);
-    pol=new policia;
-    pol->setPos(1130,300);
-   //escena->addItem(pol);
-    baret= new baretos;
-    //baret->setPos(500,50);
-    //escena->addItem(baret);
+    escena->addItem(capuchoN);
+    escena->addItem(capuchoB);
     tanque= new tanqueta;
-    tanque->setPos(1233,450);
     //escena->addItem(tanque);
-    balaa=new misil;
-    //escena->addItem(balaa);
-    gamin= new Gamines;
-    //gamin->setPos(800,50);
-    escena->addItem(gamin);
 
     ui->ingresar->setHidden(true);
     ui->registrarse->setHidden(true);
 
-
+    connect(timer,&QTimer::timeout,this,&MainWindow::generargamines);
+    //timer->start(4000);
+    connect(timer2,&QTimer::timeout,this,&MainWindow::generarbaret);
+    //timer2->start(3500);
+    connect(timer4,&QTimer::timeout,this,&MainWindow::generaresmad);
+    //timer4->start(4000);
+    connect(timer5,&QTimer::timeout,this,&MainWindow::generarpolicia);
+    //timer5->start(5000);
+    connect(timer6,&QTimer::timeout,this,&MainWindow::generarcapuchosnegros);
+    //timer6->start(8000);
+    connect(timer3,&QTimer::timeout,this,&MainWindow::generarcapuchosblancos);
+    //timer3->start(8000);
 }
 
 MainWindow::~MainWindow()
@@ -57,14 +53,7 @@ MainWindow::~MainWindow()
     delete fondo;
     delete capuchoN;
     delete capuchoB;
-    delete agenteesmad;
-    delete papabomba;
-    delete pol;
-    delete roca;
-    delete baret;
     delete tanque;
-    delete balaa;
-    delete gamin;
 }
 
 void MainWindow::on_ingresar_clicked()
@@ -82,15 +71,64 @@ void MainWindow::on_registrarse_clicked()
     registrar->show();
 }
 
-/*void MainWindow::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+void MainWindow::generarbaret()
 {
-     capuchoB->setPos(mapToScene(event->pos()));
-}*/
+    int randomValue = qrand() % 1200;
+    QList<QGraphicsItem*>bareti;
+    bareti.push_back(new baretos);
+    bareti.last()->setPos(randomValue,50);
+    escena->addItem(bareti.last());
+}
 
+void MainWindow::generaresmad()
+{
+    int carriles[4]={150,300,450,600};
+    int randomValue = qrand() % 4;
+    QList<QGraphicsItem*>agentes;
+    agentes.push_back(new esmad);
+    agentes.last()->setPos(1233,carriles[randomValue]);
+    escena->addItem(agentes.last());
+}
 
+void MainWindow::generarpolicia()
+{
+    int carriles[4]={150,300,450,600};
+    int randomValue = qrand() % 4;
+    QList<QGraphicsItem*>policias;
+    policias.push_back(new policia);
+    policias.last()->setPos(1233,carriles[randomValue]);
+    escena->addItem(policias.last());
+}
 
+void MainWindow::generarcapuchosnegros()
+{
+    QList<QGraphicsItem*>capnegros;
+    capnegros.push_back(new capuchonegro);
+    escena->addItem(capnegros.last());
+}
 
+void MainWindow::generarcapuchosblancos()
+{
+    QList<QGraphicsItem*>capblancos;
+    capblancos.push_back(new capuchoblanco);
+    escena->addItem(capblancos.last());
+}
 
+void MainWindow::generargamines()
+{
+    int randomValue = qrand() % 1200;
+    QList<QGraphicsItem*>gamines;
+    gamines.push_back(new Gamines);
+    gamines.last()->setPos(randomValue,50);
+    escena->addItem(gamines.last());
+}
 
-
-
+void MainWindow::on_pausar_clicked()
+{
+ timer->stop();
+ timer2->stop();
+ timer3->stop();
+ timer4->stop();
+ timer5->stop();
+ timer6->stop();
+}

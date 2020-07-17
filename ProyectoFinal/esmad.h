@@ -6,13 +6,19 @@
 #include <QTimer>
 #include <QPainter>
 #include <QRectF>
+#include <QList>
+#include <QGraphicsScene>
+#include "papas.h"
+#include "explosion.h"
+#include "piedras.h"
+#include <QDebug>
 
 class esmad : public QObject,public QGraphicsItem
 {
     Q_OBJECT
 public:
     explicit esmad(QObject *parent = nullptr);
-    QTimer *timer,*timer2;
+    QTimer *timer,*timer2,*timer3,*timer4;
     QPixmap *agente;
 
     float filas,columnas,ancho,alto;
@@ -24,7 +30,8 @@ signals:
 public slots:
     void actualizar();
     void mover();
-
+    void colisionpapas();
+    void colisionpiedras();
 
 };
 

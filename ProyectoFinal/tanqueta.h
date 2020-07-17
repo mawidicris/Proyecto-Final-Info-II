@@ -6,6 +6,9 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
+#include <QList>
+#include <QGraphicsScene>
+#include "misil.h"
 
 class tanqueta : public QObject, public QGraphicsItem
 {
@@ -13,6 +16,7 @@ class tanqueta : public QObject, public QGraphicsItem
 public:
     explicit tanqueta(QObject *parent = nullptr);
     QPixmap *carro;
+    QTimer *timer;
 
     float ancho,alto;
     QRectF boundingRect() const;
@@ -20,6 +24,7 @@ public:
 
 signals:
 public slots:
+     void lanzar();
 
 };
 

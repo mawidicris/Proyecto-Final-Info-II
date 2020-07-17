@@ -119,6 +119,9 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="text">
     <string>NUEVA PARTIDA</string>
    </property>
@@ -137,6 +140,9 @@
      <family>Playbill</family>
      <pointsize>18</pointsize>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="text">
     <string>CARGAR PARTIDA ANTERIOR</string>
@@ -157,6 +163,9 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="text">
     <string>1 JUGADOR</string>
    </property>
@@ -175,6 +184,9 @@
      <family>Playbill</family>
      <pointsize>18</pointsize>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="text">
     <string>2 JUGADORES</string>

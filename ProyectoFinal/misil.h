@@ -25,7 +25,9 @@ public:
     explicit misil(QObject *parent = nullptr);
     QPixmap *bala;
     QTimer *timer;
-    double v=80,vx,vy,x=1000,y=-250,a=9.8,yd,angulo=40;
+    double angulos[3]={40,90,210};
+    int pos = qrand() % 3;
+    double v=64,vx,vy,x=1000,y=-250,a=9.8,yd,angulo=angulos[pos];
 
 
     float ancho,alto;

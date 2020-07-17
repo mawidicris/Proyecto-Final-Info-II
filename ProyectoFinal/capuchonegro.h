@@ -7,6 +7,13 @@
 #include <QRectF>
 #include <QGraphicsSceneMouseEvent>
 #include <QCursor>
+#include <QList>
+#include <QTimer>
+#include <QGraphicsScene>
+#include "papas.h"
+#include "policia.h"
+#include "esmad.h"
+#include "misil.h"
 
 class capuchonegro : public QObject, public QGraphicsItem
 {
@@ -14,6 +21,7 @@ class capuchonegro : public QObject, public QGraphicsItem
 public:
     explicit capuchonegro(QObject *parent = nullptr);
     QPixmap *cnegro;
+    QTimer *timer,*timer2,*timer3,*timer4;
 
     float ancho,alto;
     QRectF boundingRect() const;
@@ -24,6 +32,11 @@ public:
 
 signals:
 
+    public slots:
+       void lanzarpapas();
+       void colisionesmad();
+       void colisionpolicia();
+       void colisionmisiles();
 };
 
 #endif // CAPUCHONEGRO_H

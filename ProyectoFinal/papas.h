@@ -8,11 +8,6 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
-#include "esmad.h"
-#include "policia.h"
-#include "capuchonegro.h"
-#include "explosion.h"
-
 
 class papas : public QObject, public QGraphicsItem
 {
@@ -25,7 +20,6 @@ public:
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-
 
 signals:
 public slots:

@@ -9,6 +9,8 @@ using namespace std;
 #include <QGraphicsPixmapItem>
 #include <QGraphicsSceneMouseEvent>
 #include <QMouseEvent>
+#include <QList>
+#include <QGraphicsItem>
 #include "capuchonegro.h"
 #include "capuchoblanco.h"
 #include "esmad.h"
@@ -22,6 +24,8 @@ using namespace std;
 #include "registro.h"
 #include "ingresar.h"
 #include "explosion.h"
+#include "puntaje.h"
+#include <QDebug>
 
 
 
@@ -36,31 +40,30 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    //QTimer *tiempo;
+    QTimer *timer,*timer2,*timer3,*timer4,*timer5,*timer6;
+
 
 
 private slots:
     void on_ingresar_clicked();
-
     void on_registrarse_clicked();
+    void generargamines();
+    void generarbaret();
+    void generaresmad();
+    void generarpolicia();
+    void generarcapuchosnegros();
+    void generarcapuchosblancos();
+    void on_pausar_clicked();
 
 private:
-    //void mouseMoveEvent (QGraphicsSceneMouseEvent *event);
+
     Ui::MainWindow *ui;
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
     capuchonegro *capuchoN;
     capuchoblanco *capuchoB;
-    esmad *agenteesmad;
-    piedras *roca;
-    papas *papabomba;
-    policia *pol;
-    baretos *baret;
     tanqueta *tanque;
-    misil *balaa;
-    Gamines *gamin;
-    Explosion *bomba;
-
+    puntaje *puntos;
 
 
 };

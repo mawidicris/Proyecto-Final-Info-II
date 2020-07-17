@@ -17,7 +17,7 @@ class baretos : public QObject, public QGraphicsItem
 public:
     explicit baretos(QObject *parent = nullptr);
     QPixmap *bareto;
-    QTimer *timer,*timer2;
+    QTimer *timer;
 
     int bare=0;
     float ancho,alto;
@@ -29,7 +29,6 @@ public:
 signals:
 public slots:
     void caida();
-    void generar();
 };
 
 #endif // BARETOS_H

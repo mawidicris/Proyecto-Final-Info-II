@@ -6,11 +6,8 @@ baretos::baretos(QObject *parent) : QObject(parent)
     alto=70;
     bareto= new QPixmap(":/baretin.png");
     timer= new QTimer;
-    timer2=new QTimer;
     connect(timer,&QTimer::timeout,this,&baretos::caida);
-   //connect(timer2,&QTimer::timeout,this,&baretos::generar);
     timer->start(200);
-    //timer2->start(2500);
 }
 
 QRectF baretos::boundingRect() const
@@ -25,10 +22,10 @@ void baretos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
 void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    this->setCursor(QCursor(Qt::ClosedHandCursor));
-       Q_UNUSED(event);
+    this->setCursor(QCursor(Qt::PointingHandCursor));
+    Q_UNUSED(event);
     bare+=1;
-    //scene()->removeItem(this);
+    scene()->removeItem(this);
 }
 
 void baretos::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -42,11 +39,4 @@ void baretos::caida()
     setPos(x(),y()+20);
 }
 
-void baretos::generar()
-{
-    int randomValue = qrand() % 1200;
-    QList<QGraphicsItem*>bareti;
-    bareti.append(this);
-    bareti.last()->setPos(randomValue,50);
 
-}
