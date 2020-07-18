@@ -21,7 +21,7 @@ void piedras::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 }
 
 void piedras::mover()
-{
+{   //FALTA CAMBIAR MOVIMIENTO CUANDO COLISIONE CON UN AGENTE DEL ESMAD
     setPos(x()+15,y());
 
 }

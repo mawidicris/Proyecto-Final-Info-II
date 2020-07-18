@@ -164,50 +164,6 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QPushButton" name="ingresar">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>250</y>
-      <width>211</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Playbill</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
-    </property>
-    <property name="text">
-     <string>INGRESAR</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="registrarse">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>390</y>
-      <width>211</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Playbill</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
-    </property>
-    <property name="text">
-     <string>REGISTRARSE</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pausar">
     <property name="geometry">
      <rect>

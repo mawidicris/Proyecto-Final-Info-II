@@ -14,6 +14,7 @@
 #include "policia.h"
 #include "esmad.h"
 #include "misil.h"
+#include "explosion.h"
 
 class capuchoblanco : public QObject,public QGraphicsItem
 {

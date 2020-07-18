@@ -5,13 +5,16 @@
 #include <QGraphicsTextItem>
 #include <QFont>
 #include <QGraphicsScene>
+#include <QDebug>
+#include <QTimer>
 class puntaje : public QObject
 {
     Q_OBJECT
 public:
     explicit puntaje(QObject *parent = nullptr);
-    int Puntaje;
-    //QGraphicsTextItem *punt;
+
+    int Puntaje=0;
+    void aumentarpuntaje(int a);
 signals:
 
 };

@@ -20,30 +20,28 @@ MainWindow::MainWindow(QWidget *parent)
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
     escena->addItem(fondo);
-   // puntos=new puntaje;
-    //escena
     capuchoN= new capuchonegro;
     capuchoB= new capuchoblanco;
-    escena->addItem(capuchoN);
-    escena->addItem(capuchoB);
-    tanque= new tanqueta;
+    /*ingresar *ingreso= new ingresar;
+    ingreso->show();*/
+    //escena->addItem(capuchoN);
+    //escena->addItem(capuchoB);
+    //tanque= new tanqueta;
     //escena->addItem(tanque);
 
-    ui->ingresar->setHidden(true);
-    ui->registrarse->setHidden(true);
 
     connect(timer,&QTimer::timeout,this,&MainWindow::generargamines);
     //timer->start(4000);
     connect(timer2,&QTimer::timeout,this,&MainWindow::generarbaret);
     //timer2->start(3500);
     connect(timer4,&QTimer::timeout,this,&MainWindow::generaresmad);
-    //timer4->start(4000);
+    //timer4->start(5000);
     connect(timer5,&QTimer::timeout,this,&MainWindow::generarpolicia);
     //timer5->start(5000);
     connect(timer6,&QTimer::timeout,this,&MainWindow::generarcapuchosnegros);
-    //timer6->start(8000);
+    //timer6->start(5000);
     connect(timer3,&QTimer::timeout,this,&MainWindow::generarcapuchosblancos);
-    //timer3->start(8000);
+    //timer3->start(5000);
 }
 
 MainWindow::~MainWindow()
@@ -53,23 +51,9 @@ MainWindow::~MainWindow()
     delete fondo;
     delete capuchoN;
     delete capuchoB;
-    delete tanque;
+    //delete tanque;
 }
 
-void MainWindow::on_ingresar_clicked()
-{
-    ingresar *ingreso = new ingresar;
-    ingreso->show();
-    this->hide();
-    ui->ingresar->setHidden(false);
-    ui->registrarse->setHidden(false);
-}
-
-void MainWindow::on_registrarse_clicked()
-{
-    registro *registrar=new registro;
-    registrar->show();
-}
 
 void MainWindow::generarbaret()
 {

@@ -8,6 +8,7 @@ baretos::baretos(QObject *parent) : QObject(parent)
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&baretos::caida);
     timer->start(200);
+
 }
 
 QRectF baretos::boundingRect() const
@@ -22,11 +23,12 @@ void baretos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
 void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    //AUMENTAR bare CADA VEZ QUE SE DA CLICK EN UN ITEM
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
     bare+=1;
     scene()->removeItem(this);
-}
+ }
 
 void baretos::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {

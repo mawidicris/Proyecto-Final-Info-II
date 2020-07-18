@@ -32,32 +32,6 @@ void misil::mover()
     x+=vx*dt;
     y+=vy*dt-(a/2)*dt*dt;
 
-    /*QList<QGraphicsItem*>balitas= collidingItems();
-    for (int i=0,n=balitas.size();i<n;i++){
-         Explosion *pum= new Explosion;
-        if(typeid (*(balitas[i]))==typeid(capuchonegro)){
-            pum->setPos(balitas.at(i)->x(),balitas.at(i)->y());
-            scene()->addItem(pum);
-            balitas.append(this);
-            x=1000;
-            y=-250;
-            v=80;
-            angulo=randomValue;
-            balitas.last()->setPos(x,-y);
-            scene()->addItem(balitas.last());
-            if(n==2)scene()->removeItem(balitas.at(i));
-        }
-        else if (typeid (*(balitas[i]))==typeid(capuchoblanco)){
-            balitas.append(this);
-            x=1000;
-            y=-250;
-            v=80;
-            angulo=randomValue;
-            balitas.last()->setPos(x,-y);
-            scene()->addItem(balitas.last());
-            scene()->removeItem(balitas.at(i));
-    }
-  }*/
 }
 
 

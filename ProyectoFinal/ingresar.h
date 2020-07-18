@@ -11,6 +11,7 @@ using namespace std;
 #include <QGraphicsScene>
 #include "registro.h"
 #include "partidas.h"
+#include "mainwindow.h"
 
 
 namespace Ui {
@@ -25,8 +26,10 @@ public:
     explicit ingresar(QWidget *parent = nullptr);
     ~ingresar();
 
-private slots:
+public slots:
     void on_ingresar_2_clicked();
+
+    void on_registrarse_clicked();
 
 private:
     Ui::ingresar *ui;

@@ -10,6 +10,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QCursor>
+#include "capuchoblanco.h"
 
 class baretos : public QObject, public QGraphicsItem
 {
@@ -23,8 +24,9 @@ public:
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) ;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
 
 signals:
 public slots:

@@ -8,7 +8,7 @@ tanqueta::tanqueta(QObject *parent) : QObject(parent)
     carro= new QPixmap(":/tanqueta.png");
     setPos(1233,450);
     connect(timer,&QTimer::timeout,this,&tanqueta::lanzar);
-    //timer->start(2000);
+    timer->start(2000);
 }
 
 QRectF tanqueta::boundingRect() const

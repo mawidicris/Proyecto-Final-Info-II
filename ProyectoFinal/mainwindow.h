@@ -25,6 +25,8 @@ using namespace std;
 #include "ingresar.h"
 #include "explosion.h"
 #include "puntaje.h"
+#include "aceite.h"
+#include "ingresar.h"
 #include <QDebug>
 
 
@@ -42,11 +44,16 @@ public:
     ~MainWindow();
     QTimer *timer,*timer2,*timer3,*timer4,*timer5,*timer6;
 
+    QGraphicsScene *escena;
+    QGraphicsPixmapItem *fondo;
+    capuchonegro *capuchoN;
+    capuchoblanco *capuchoB;
+    tanqueta *tanque;
+    puntaje *puntos;
 
 
-private slots:
-    void on_ingresar_clicked();
-    void on_registrarse_clicked();
+
+public slots:
     void generargamines();
     void generarbaret();
     void generaresmad();
@@ -58,13 +65,6 @@ private slots:
 private:
 
     Ui::MainWindow *ui;
-    QGraphicsScene *escena;
-    QGraphicsPixmapItem *fondo;
-    capuchonegro *capuchoN;
-    capuchoblanco *capuchoB;
-    tanqueta *tanque;
-    puntaje *puntos;
-
 
 };
 #endif // MAINWINDOW_H

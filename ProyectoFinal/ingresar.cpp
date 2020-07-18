@@ -42,5 +42,10 @@ void ingresar::on_ingresar_2_clicked()
 }
 
 
-
-
+void ingresar::on_registrarse_clicked()
+{
+    //MainWindow *part=new MainWindow;
+    registro *registrar=new registro;
+    //part->close();
+    registrar->show();
+}

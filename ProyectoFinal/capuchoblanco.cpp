@@ -2,8 +2,8 @@
 
 capuchoblanco::capuchoblanco(QObject *parent) : QObject(parent)
 {
-   ancho=175;
-   alto=154;
+   ancho=52;
+   alto=145;
    cblanco= new QPixmap(":/capucho blanco.png");
    timer= new QTimer;
    timer2=new QTimer;
@@ -61,6 +61,7 @@ void capuchoblanco::colisionesmad()
     for (int i=0,n=col.size();i<n;i++){
            if(typeid (*col[i])==typeid(esmad)){
             scene()->removeItem(this);
+            timer->stop();
           }
     }
 }
@@ -71,16 +72,22 @@ void capuchoblanco::colisionpolicia()
     for (int i=0,n=coli.size();i<n;i++){
            if(typeid (*coli[i])==typeid(policia)){
             scene()->removeItem(this);
+            timer->stop();
           }
     }
 }
 
 void capuchoblanco::colisionmisiles()
 {
+    Explosion *pum= new Explosion;
     QList<QGraphicsItem *>colis=collidingItems();
     for (int i=0,n=colis.size();i<n;i++){
            if(typeid (*colis[i])==typeid(misil)){
+            pum->setPos(colis.at(i)->x(),colis.at(i)->y());
+            scene()->addItem(pum);
+            scene()->removeItem(colis.at(i));
             scene()->removeItem(this);
+            timer->stop();
           }
     }
 }

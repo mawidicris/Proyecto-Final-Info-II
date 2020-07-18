@@ -30,10 +30,9 @@ void partidas::on_cargarpartida_clicked()
 }
 
 void partidas::on_unjugador_clicked()
-{
+{ 
  this->close();
  MainWindow *juego= new MainWindow;
- juego->show();
 }
 
 void partidas::on_dosjugadores_clicked()

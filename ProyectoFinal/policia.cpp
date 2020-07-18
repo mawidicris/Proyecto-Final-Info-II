@@ -42,17 +42,28 @@ this->update(-ancho/2,-alto/2,ancho,alto);
 
 void policia::mover()
 {
-    setPos(x()-10,y());
+    xo-=(1/mu)*v*dt;
+    setPos(xo,y());
+    QList<QGraphicsItem *>colision1=collidingItems();
+    for (int i=0,j=colision1.size();i<j;i++){
+           if(typeid (*colision1[i])==typeid(aceite)){
+             mu=0.9;
+         }
+      }
 }
 
 void policia::colisionpapas()
 {
+    //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
     Explosion *pum= new Explosion;
+    aceite *liquid= new aceite;
     QList<QGraphicsItem *>colisiones=collidingItems();
     for (int i=0,j=colisiones.size();i<j;i++){
            if(typeid (*colisiones[i])==typeid(papas)){
              pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
+             liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
              scene()->addItem(pum);
+             scene()->addItem(liquid);
              scene()->removeItem(colisiones.at(i));
              scene()->removeItem(this);
       }
@@ -61,11 +72,13 @@ void policia::colisionpapas()
 
 void policia::colisionpiedras()
 {
+    //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
     QList<QGraphicsItem *>colisio=collidingItems();
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
              scene()->removeItem(colisio.at(i));
-             if(n%3==0) scene()->removeItem(this); //REVISAR
+             qDebug()<<n;
+             if(n%3==0) scene()->removeItem(this); //REVISAR (NO ESTÁ FUNCIONANDO EL NÚMERO DE COLISIONES)
           }
     }
 }

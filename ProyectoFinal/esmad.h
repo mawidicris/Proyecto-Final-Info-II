@@ -11,7 +11,12 @@
 #include "papas.h"
 #include "explosion.h"
 #include "piedras.h"
+#include "aceite.h"
+#include "math.h"
+#include "puntaje.h"
 #include <QDebug>
+
+#define dt 0.1
 
 class esmad : public QObject,public QGraphicsItem
 {
@@ -22,6 +27,7 @@ public:
     QPixmap *agente;
 
     float filas,columnas,ancho,alto;
+    float xo=1233, v=60, mu=0.3; //mu: coeficiente de fricción
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
