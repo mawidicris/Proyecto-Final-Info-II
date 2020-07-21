@@ -25,8 +25,11 @@ void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event)
     //AUMENTAR gamin CADA VEZ QUE SE DA CLICK EN UN ITEM
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
-    gamin+=1;
-    scene()->removeItem(this);
+    if(getGamin()<=5){
+        increaseGamin();
+    }
+    qDebug()<<getGamin();
+    //scene()->removeItem(this);
 }
 
 void Gamines::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -34,6 +37,17 @@ void Gamines::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     this->setCursor(QCursor(Qt::ArrowCursor));
     Q_UNUSED(event);
 }
+
+void Gamines::increaseGamin()
+{
+    gamin++;
+}
+
+int Gamines::getGamin()
+{
+    return gamin;
+}
+
 
 void Gamines::caida()
 {

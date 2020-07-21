@@ -46,9 +46,9 @@ public:
 
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
-    capuchonegro *capuchoN;
-    capuchoblanco *capuchoB;
-    tanqueta *tanque;
+  //  capuchonegro *capuchoN;
+  //  capuchoblanco *capuchoB;
+  //  tanqueta *tanque;
     puntaje *score;
 
 
