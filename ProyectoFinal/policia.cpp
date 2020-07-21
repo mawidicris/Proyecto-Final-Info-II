@@ -60,6 +60,7 @@ void policia::colisionpapas()
     QList<QGraphicsItem *>colisiones=collidingItems();
     for (int i=0,j=colisiones.size();i<j;i++){
            if(typeid (*colisiones[i])==typeid(papas)){
+
              pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
              liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
              scene()->addItem(pum);

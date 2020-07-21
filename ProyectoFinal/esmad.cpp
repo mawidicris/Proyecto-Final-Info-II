@@ -44,6 +44,8 @@ void esmad::mover()
  for (int i=0,j=colision1.size();i<j;i++){
         if(typeid (*colision1[i])==typeid(aceite)){
           mu=0.9;
+          xo+=3;
+          setPos(xo,y());
       }
    }
 }
@@ -53,29 +55,37 @@ void esmad::colisionpapas()
   //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
   Explosion *pum= new Explosion;
   aceite *liquid= new aceite;
-  puntaje *punt= new puntaje;
+  puntaje *punt= new puntaje();
   int puntos=0;
   QList<QGraphicsItem *>colisiones=collidingItems();
   for (int i=0,j=colisiones.size();i<j;i++){
-      qDebug()<< j;
+     // qDebug()<< j;
          if(typeid (*colisiones[i])==typeid(papas)){
+           mainwindow.punt->increasepapa();
            pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
            liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
            scene()->addItem(pum);
            scene()->addItem(liquid);
            scene()->removeItem(colisiones.at(i));
            if(j%2==0) scene()->removeItem(this);
+
          }
     }
 }
 
 void esmad::colisionpiedras()
 {
+
     //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
+    puntaje *punt= new puntaje();
     QList<QGraphicsItem *>colisio=collidingItems();
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
+             punt->increaserock();
+             xo+=300;
+             setPos(xo,y());
              scene()->removeItem(colisio.at(i));
+
           }
     }
 }

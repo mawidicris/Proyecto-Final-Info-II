@@ -7,14 +7,19 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include <QTimer>
-class puntaje : public QObject
-{
-    Q_OBJECT
-public:
-    explicit puntaje(QObject *parent = nullptr);
 
-    int Puntaje=0;
-    void aumentarpuntaje(int a);
+class puntaje :public QGraphicsTextItem
+{
+    //Q_OBJECT
+public:
+    QTimer *timer;
+    //explicit puntaje(QObject *parent = nullptr);
+    puntaje(QGraphicsItem * parent=0);
+        void increasepapa();
+        void increaserock();
+       // int getScore();
+        int score=0;
+   // void aumentarpuntaje(int a);
 signals:
 
 };

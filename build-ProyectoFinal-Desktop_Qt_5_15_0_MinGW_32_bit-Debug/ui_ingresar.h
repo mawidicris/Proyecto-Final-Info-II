@@ -27,6 +27,7 @@ public:
     QLineEdit *usuario;
     QLineEdit *contra;
     QLabel *error;
+    QPushButton *registrarse;
 
     void setupUi(QWidget *ingresar)
     {
@@ -75,6 +76,7 @@ public:
         font1.setFamily(QString::fromUtf8("Playbill"));
         font1.setPointSize(14);
         ingresar_2->setFont(font1);
+        ingresar_2->setCursor(QCursor(Qt::OpenHandCursor));
         usuario = new QLineEdit(ingresar);
         usuario->setObjectName(QString::fromUtf8("usuario"));
         usuario->setGeometry(QRect(310, 210, 181, 31));
@@ -124,7 +126,7 @@ public:
         contra->setEchoMode(QLineEdit::Password);
         error = new QLabel(ingresar);
         error->setObjectName(QString::fromUtf8("error"));
-        error->setGeometry(QRect(300, 410, 181, 41));
+        error->setGeometry(QRect(310, 290, 181, 41));
         QPalette palette5;
         QBrush brush5(QColor(116, 0, 0, 255));
         brush5.setStyle(Qt::SolidPattern);
@@ -147,6 +149,11 @@ public:
 #endif
         error->setPalette(palette5);
         error->setFont(font);
+        registrarse = new QPushButton(ingresar);
+        registrarse->setObjectName(QString::fromUtf8("registrarse"));
+        registrarse->setGeometry(QRect(320, 420, 151, 61));
+        registrarse->setFont(font1);
+        registrarse->setCursor(QCursor(Qt::OpenHandCursor));
 
         retranslateUi(ingresar);
 
@@ -160,6 +167,7 @@ public:
         label_2->setText(QCoreApplication::translate("ingresar", "CLAVE:", nullptr));
         ingresar_2->setText(QCoreApplication::translate("ingresar", "INGRESAR", nullptr));
         error->setText(QCoreApplication::translate("ingresar", "Clave o usuario incorrectos.", nullptr));
+        registrarse->setText(QCoreApplication::translate("ingresar", "REGISTRARSE", nullptr));
     } // retranslateUi
 
 };

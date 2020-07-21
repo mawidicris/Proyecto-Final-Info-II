@@ -1,13 +1,36 @@
 #include "puntaje.h"
+#include <QFont>
 
-
-puntaje::puntaje(QObject *parent)
+puntaje::puntaje(QGraphicsItem *parent)
 {
+    //inicializar score en 0
+    score = 0;
+
+    //draw the text
+    timer = new QTimer;
+    connect(timer,&QTimer::timeout,this,&puntaje::increasepapa);
+    timer->start(200);
+    setPlainText(QString("Score: ")+QString::number(score));
+    setDefaultTextColor(Qt::red);
+    setFont(QFont("times",16));
+
+
 }
 
-void puntaje::aumentarpuntaje(int a)
+void puntaje::increasepapa()
 {
-    Puntaje+=a;
-    qDebug()<<"Puntaje"<<Puntaje;
-
+    score+=10;
+    setPlainText(QString("Score: ")+QString::number(score));
+    qDebug()<<score;
 }
+
+void puntaje::increaserock()
+{
+    score+=5;
+    setPlainText(QString("Score: ")+QString::number(score));
+    qDebug()<<score;
+}
+
+
+
+

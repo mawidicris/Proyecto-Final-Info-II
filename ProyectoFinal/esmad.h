@@ -15,6 +15,7 @@
 #include "math.h"
 #include "puntaje.h"
 #include <QDebug>
+#include "mainwindow.h"
 
 #define dt 0.1
 

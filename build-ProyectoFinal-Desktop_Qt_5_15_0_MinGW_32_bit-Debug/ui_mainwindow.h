@@ -25,8 +25,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGraphicsView *graphicsView;
-    QPushButton *ingresar;
-    QPushButton *registrarse;
+    QPushButton *pausar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -34,7 +33,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1300, 747);
+        MainWindow->resize(1300, 731);
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -54,7 +53,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(-20, -10, 1311, 731));
+        graphicsView->setGeometry(QRect(0, 0, 1301, 731));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::Base, brush);
         palette1.setBrush(QPalette::Inactive, QPalette::Base, brush);
@@ -63,17 +62,79 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::Base, brush2);
         graphicsView->setPalette(palette1);
         graphicsView->setAutoFillBackground(false);
-        ingresar = new QPushButton(centralwidget);
-        ingresar->setObjectName(QString::fromUtf8("ingresar"));
-        ingresar->setGeometry(QRect(520, 250, 211, 101));
+        graphicsView->setFrameShape(QFrame::Panel);
+        graphicsView->setFrameShadow(QFrame::Sunken);
+        graphicsView->setLineWidth(0);
+        pausar = new QPushButton(centralwidget);
+        pausar->setObjectName(QString::fromUtf8("pausar"));
+        pausar->setGeometry(QRect(320, 50, 81, 41));
+        QPalette palette2;
+        QBrush brush3(QColor(170, 170, 127, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::WindowText, brush3);
+        QBrush brush4(QColor(152, 152, 114, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Button, brush4);
+        QBrush brush5(QColor(96, 193, 143, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Midlight, brush5);
+        QBrush brush6(QColor(0, 95, 0, 255));
+        brush6.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Mid, brush6);
+        palette2.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette2.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        QBrush brush7(QColor(148, 148, 111, 255));
+        brush7.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Base, brush7);
+        QBrush brush8(QColor(0, 90, 0, 255));
+        brush8.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Window, brush8);
+        QBrush brush9(QColor(0, 85, 0, 255));
+        brush9.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Shadow, brush9);
+        QBrush brush10(QColor(0, 0, 0, 128));
+        brush10.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette2.setBrush(QPalette::Active, QPalette::PlaceholderText, brush10);
+#endif
+        palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush3);
+        palette2.setBrush(QPalette::Inactive, QPalette::Button, brush4);
+        palette2.setBrush(QPalette::Inactive, QPalette::Midlight, brush5);
+        palette2.setBrush(QPalette::Inactive, QPalette::Mid, brush6);
+        palette2.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::Base, brush7);
+        palette2.setBrush(QPalette::Inactive, QPalette::Window, brush8);
+        palette2.setBrush(QPalette::Inactive, QPalette::Shadow, brush9);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette2.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush10);
+#endif
+        QBrush brush11(QColor(170, 170, 127, 127));
+        brush11.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush11);
+        palette2.setBrush(QPalette::Disabled, QPalette::Button, brush4);
+        palette2.setBrush(QPalette::Disabled, QPalette::Midlight, brush5);
+        palette2.setBrush(QPalette::Disabled, QPalette::Mid, brush6);
+        palette2.setBrush(QPalette::Disabled, QPalette::Text, brush11);
+        QBrush brush12(QColor(0, 0, 0, 127));
+        brush12.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Disabled, QPalette::ButtonText, brush12);
+        palette2.setBrush(QPalette::Disabled, QPalette::Base, brush3);
+        palette2.setBrush(QPalette::Disabled, QPalette::Window, brush8);
+        palette2.setBrush(QPalette::Disabled, QPalette::Shadow, brush9);
+        QBrush brush13(QColor(231, 231, 231, 128));
+        brush13.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette2.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
+#endif
+        pausar->setPalette(palette2);
         QFont font;
         font.setFamily(QString::fromUtf8("Playbill"));
         font.setPointSize(18);
-        ingresar->setFont(font);
-        registrarse = new QPushButton(centralwidget);
-        registrarse->setObjectName(QString::fromUtf8("registrarse"));
-        registrarse->setGeometry(QRect(520, 390, 211, 101));
-        registrarse->setFont(font);
+        font.setStyleStrategy(QFont::PreferAntialias);
+        pausar->setFont(font);
+        pausar->setCursor(QCursor(Qt::PointingHandCursor));
+        pausar->setContextMenuPolicy(Qt::PreventContextMenu);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -91,8 +152,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        ingresar->setText(QCoreApplication::translate("MainWindow", "INGRESAR", nullptr));
-        registrarse->setText(QCoreApplication::translate("MainWindow", "REGISTRARSE", nullptr));
+        pausar->setText(QCoreApplication::translate("MainWindow", "PAUSAR", nullptr));
     } // retranslateUi
 
 };

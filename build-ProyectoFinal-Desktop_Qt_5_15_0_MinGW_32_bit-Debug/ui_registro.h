@@ -104,16 +104,32 @@ public:
         font1.setFamily(QString::fromUtf8("Playbill"));
         font1.setPointSize(14);
         registrar->setFont(font1);
+        registrar->setCursor(QCursor(Qt::OpenHandCursor));
         usuario = new QLineEdit(registro);
         usuario->setObjectName(QString::fromUtf8("usuario"));
         usuario->setGeometry(QRect(290, 120, 181, 31));
         QPalette palette4;
         palette4.setBrush(QPalette::Active, QPalette::Text, brush);
         palette4.setBrush(QPalette::Active, QPalette::Base, brush3);
+        QBrush brush5(QColor(0, 0, 0, 128));
+        brush5.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette4.setBrush(QPalette::Active, QPalette::PlaceholderText, brush5);
+#endif
         palette4.setBrush(QPalette::Inactive, QPalette::Text, brush);
         palette4.setBrush(QPalette::Inactive, QPalette::Base, brush3);
+        QBrush brush6(QColor(0, 0, 0, 128));
+        brush6.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette4.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush6);
+#endif
         palette4.setBrush(QPalette::Disabled, QPalette::Text, brush);
         palette4.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        QBrush brush7(QColor(0, 0, 0, 128));
+        brush7.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette4.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush7);
+#endif
         usuario->setPalette(palette4);
         usuario->setFont(font);
         contra = new QLineEdit(registro);
@@ -122,10 +138,25 @@ public:
         QPalette palette5;
         palette5.setBrush(QPalette::Active, QPalette::Text, brush);
         palette5.setBrush(QPalette::Active, QPalette::Base, brush3);
+        QBrush brush8(QColor(0, 0, 0, 128));
+        brush8.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette5.setBrush(QPalette::Active, QPalette::PlaceholderText, brush8);
+#endif
         palette5.setBrush(QPalette::Inactive, QPalette::Text, brush);
         palette5.setBrush(QPalette::Inactive, QPalette::Base, brush3);
+        QBrush brush9(QColor(0, 0, 0, 128));
+        brush9.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette5.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush9);
+#endif
         palette5.setBrush(QPalette::Disabled, QPalette::Text, brush);
         palette5.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        QBrush brush10(QColor(0, 0, 0, 128));
+        brush10.setStyle(Qt::NoBrush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette5.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush10);
+#endif
         contra->setPalette(palette5);
         contra->setFont(font);
         contra->setEchoMode(QLineEdit::Password);

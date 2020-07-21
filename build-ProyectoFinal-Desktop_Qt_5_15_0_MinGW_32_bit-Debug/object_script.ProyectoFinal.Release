@@ -1,3 +1,4 @@
+release/aceite.o
 release/baretos.o
 release/capuchoblanco.o
 release/capuchonegro.o
@@ -16,6 +17,7 @@ release/puntaje.o
 release/registro.o
 release/tanqueta.o
 release/qrc_imagenes.o
+release/moc_aceite.o
 release/moc_baretos.o
 release/moc_capuchoblanco.o
 release/moc_capuchonegro.o

@@ -49,7 +49,8 @@ public:
     capuchonegro *capuchoN;
     capuchoblanco *capuchoB;
     tanqueta *tanque;
-    puntaje *puntos;
+    puntaje *score;
+
 
 
 

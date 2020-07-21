@@ -51,18 +51,22 @@ public:
         font.setFamily(QString::fromUtf8("Playbill"));
         font.setPointSize(18);
         nuevapartida->setFont(font);
+        nuevapartida->setCursor(QCursor(Qt::OpenHandCursor));
         cargarpartida = new QPushButton(partidas);
         cargarpartida->setObjectName(QString::fromUtf8("cargarpartida"));
         cargarpartida->setGeometry(QRect(280, 290, 231, 101));
         cargarpartida->setFont(font);
+        cargarpartida->setCursor(QCursor(Qt::OpenHandCursor));
         unjugador = new QPushButton(partidas);
         unjugador->setObjectName(QString::fromUtf8("unjugador"));
         unjugador->setGeometry(QRect(290, 210, 211, 101));
         unjugador->setFont(font);
+        unjugador->setCursor(QCursor(Qt::OpenHandCursor));
         dosjugadores = new QPushButton(partidas);
         dosjugadores->setObjectName(QString::fromUtf8("dosjugadores"));
         dosjugadores->setGeometry(QRect(290, 370, 211, 101));
         dosjugadores->setFont(font);
+        dosjugadores->setCursor(QCursor(Qt::OpenHandCursor));
 
         retranslateUi(partidas);
 

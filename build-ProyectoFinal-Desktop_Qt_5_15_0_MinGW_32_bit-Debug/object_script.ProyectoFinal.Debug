@@ -1,3 +1,4 @@
+debug/aceite.o
 debug/baretos.o
 debug/capuchoblanco.o
 debug/capuchonegro.o
@@ -16,6 +17,7 @@ debug/puntaje.o
 debug/registro.o
 debug/tanqueta.o
 debug/qrc_imagenes.o
+debug/moc_aceite.o
 debug/moc_baretos.o
 debug/moc_capuchoblanco.o
 debug/moc_capuchonegro.o
