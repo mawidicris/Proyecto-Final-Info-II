@@ -15,7 +15,7 @@
 #include "esmad.h"
 #include "misil.h"
 #include "explosion.h"
-#include "mainwindow.h"
+
 
 class capuchoblanco : public QObject,public QGraphicsItem
 {

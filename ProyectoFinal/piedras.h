@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <QList>
 #include <QGraphicsScene>
+#include <math.h>
 
 class piedras : public QObject,public QGraphicsItem
 {
@@ -15,7 +16,9 @@ class piedras : public QObject,public QGraphicsItem
 public:
     explicit piedras(QObject *parent = nullptr);
     QPixmap *piedra;
-    QTimer *timer;
+    QTimer *timer,*timer2;
+    double xo,yo,g=9.8,vix=60,t=0.1;
+
 
     float ancho,alto;
     QRectF boundingRect() const;

@@ -7,6 +7,7 @@ esmad::esmad(QObject *parent) : QObject(parent)
   timer2 =new QTimer;
   timer3= new QTimer;
   timer4=new QTimer;
+  timer5=new QTimer;
   filas=0;
   columnas=0;
   ancho=115;
@@ -16,6 +17,7 @@ esmad::esmad(QObject *parent) : QObject(parent)
   connect(timer2,&QTimer::timeout,this,&esmad::mover);
   connect(timer3,&QTimer::timeout,this,&esmad::colisionpapas);
   connect(timer4,&QTimer::timeout,this,&esmad::colisionpiedras);
+  connect(timer5,&QTimer::timeout,this,&esmad::retroceder);
   timer->start(500);
   timer2->start(250);
   timer3->start(100);
@@ -54,15 +56,10 @@ void esmad::mover()
 
 void esmad::colisionpapas()
 {
-  //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
   Explosion *pum= new Explosion;
   aceite *liquid= new aceite;
-
-
-  //MainWindow *juego=new MainWindow;
   QList<QGraphicsItem *>colisiones=collidingItems();
   for (int i=0,j=colisiones.size();i<j;i++){
-     // qDebug()<< j;
          if(typeid (*colisiones[i])==typeid(papas)){
 
            _puntaje->increasepapa(10);
@@ -79,19 +76,32 @@ void esmad::colisionpapas()
 
 void esmad::colisionpiedras()
 {
-
-    //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
-
+    piedras *pied= new piedras;
     QList<QGraphicsItem *>colisio=collidingItems();
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
+              timer5->start(200);
+              timer2->stop();
+              //pied->timer->stop();
+              pied->timer2->start(250);
             _puntaje->increaserock(5);
-             xo+=300;
-             setPos(xo,y());
-             scene()->removeItem(colisio.at(i));
+             //scene()->removeItem(colisio.at(i));
 
           }
     }
+}
+
+void esmad::retroceder()
+{
+   ejecuciones++;
+   qDebug()<<ejecuciones;
+   xo+=10;
+   setPos(xo,y());
+   if(ejecuciones==4){
+       ejecuciones=0;
+       timer5->stop();
+       timer2->start(250);
+   }
 }
 
 QRectF esmad::boundingRect() const

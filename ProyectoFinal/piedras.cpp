@@ -6,8 +6,9 @@ piedras::piedras(QObject *parent) : QObject(parent)
     alto=25;
     piedra= new QPixmap(":/piedra.png");
     timer= new QTimer;
-    connect(timer,&QTimer::timeout,this,&piedras::mover);
-    timer->start(200);
+    timer2=new QTimer;
+    connect(timer,&QTimer::timeout,this,&piedras::mover);    
+    timer->start(500);
 }
 
 QRectF piedras::boundingRect() const
@@ -21,7 +22,7 @@ void piedras::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 }
 
 void piedras::mover()
-{   //FALTA CAMBIAR MOVIMIENTO CUANDO COLISIONE CON UN AGENTE DEL ESMAD
-    setPos(x()+15,y());
-
+{
+   setPos(x()+15,y());
 }
+

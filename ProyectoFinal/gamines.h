@@ -23,7 +23,6 @@ public:
     QTimer *timer;
     float ancho,alto;
     int gamin=0;
-    capuchonegro *capun =  new capuchonegro;
 
 
     QRectF boundingRect() const;

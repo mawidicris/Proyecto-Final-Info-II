@@ -26,7 +26,10 @@ void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
     //AUMENTAR bare CADA VEZ QUE SE DA CLICK EN UN ITEM
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
-    bare+=1;
+   increasebareto();
+   if(baret%5==0){
+       scene()->addItem(new capuchoblanco);
+   }
     scene()->removeItem(this);
  }
 
@@ -34,6 +37,16 @@ void baretos::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     this->setCursor(QCursor(Qt::ArrowCursor));
     Q_UNUSED(event);
+}
+
+void baretos::increasebareto()
+{
+    baret++;
+}
+
+int baretos::getbareto()
+{
+    return baret;
 }
 
 void baretos::caida()

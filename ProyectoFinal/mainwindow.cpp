@@ -19,30 +19,30 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
-    escena->addItem(fondo);
-    escena->addItem(score);
+    //escena->addItem(fondo);
+    //escena->addItem(score);
     //capuchoN= new capuchonegro;
     //capuchoB= new capuchoblanco;
-    /*ingresar *ingreso= new ingresar;
-    ingreso->show();*/
-    escena->addItem(capuchoN);
+    ingresar *ingreso= new ingresar;
+    ingreso->show();
+    //escena->addItem(capuchoN);
     //escena->addItem(capuchoB);
     //tanque= new tanqueta;
     //escena->addItem(tanque);
 
 
     connect(timer,&QTimer::timeout,this,&MainWindow::generargamines);
-    timer->start(4000);
+    //timer->start(4000);
     connect(timer2,&QTimer::timeout,this,&MainWindow::generarbaret);
     //timer2->start(3500);
     connect(timer4,&QTimer::timeout,this,&MainWindow::generaresmad);
-    timer4->start(5000);
+   //timer4->start(5000);
     connect(timer5,&QTimer::timeout,this,&MainWindow::generarpolicia);
-   //timer5->start(5000);
+    //timer5->start(5000);
     connect(timer6,&QTimer::timeout,this,&MainWindow::generarcapuchosnegros);
     //timer6->start(5000);
     connect(timer3,&QTimer::timeout,this,&MainWindow::generarcapuchosblancos);
-    //timer3->start(5000);
+   //timer3->start(3000);
 }
 
 MainWindow::~MainWindow()
@@ -50,8 +50,8 @@ MainWindow::~MainWindow()
     delete ui;
     delete escena;
     delete fondo;
-  //delete capuchoN;
-   // delete capuchoB;
+    //delete capuchoN;
+    // delete capuchoB;
     //delete tanque;
 }
 
@@ -60,7 +60,7 @@ void MainWindow::generarbaret()
 {
     int randomValue = qrand() % 1200;
     QList<QGraphicsItem*>bareti;
-    bareti.push_back(new baretos);
+    bareti.push_back(bareto);
     bareti.last()->setPos(randomValue,50);
     escena->addItem(bareti.last());
 }

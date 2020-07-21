@@ -15,7 +15,6 @@
 #include "math.h"
 #include "puntaje.h"
 #include <QDebug>
-#include "mainwindow.h"
 
 #define dt 0.1
 
@@ -24,9 +23,10 @@ class esmad : public QObject,public QGraphicsItem
     Q_OBJECT
 public:
     explicit esmad(QObject *parent = nullptr);
-    QTimer *timer,*timer2,*timer3,*timer4;
+    QTimer *timer,*timer2,*timer3,*timer4,*timer5;
     QPixmap *agente;
     puntaje *_puntaje;
+    int ejecuciones=0;
 
     float filas,columnas,ancho,alto;
     float xo=1233, v=60, mu=0.3; //mu: coeficiente de fricción
@@ -40,6 +40,7 @@ public slots:
     void mover();
     void colisionpapas();
     void colisionpiedras();
+    void retroceder();
 
 };
 

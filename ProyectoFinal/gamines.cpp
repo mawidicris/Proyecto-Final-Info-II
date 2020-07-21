@@ -26,9 +26,8 @@ void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event)
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
     increaseGamin();
-    if(getGamin()==5){
-        scene()->addItem(capun);
-
+    if(getGamin()%5==0){
+    scene()->addItem(new capuchonegro);
     }
     qDebug()<<getGamin();
     scene()->removeItem(this);
