@@ -31,6 +31,5 @@ debug/moc_papas.o
 debug/moc_partidas.o
 debug/moc_piedras.o
 debug/moc_policia.o
-debug/moc_puntaje.o
 debug/moc_registro.o
 debug/moc_tanqueta.o

@@ -1,4 +1,5 @@
 #include "esmad.h"
+#include "puntaje.h"
 
 esmad::esmad(QObject *parent) : QObject(parent)
 {
@@ -19,6 +20,7 @@ esmad::esmad(QObject *parent) : QObject(parent)
   timer2->start(250);
   timer3->start(100);
   timer4->start(500);
+
 }
 
 void esmad::actualizar()
@@ -55,15 +57,15 @@ void esmad::colisionpapas()
   //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
   Explosion *pum= new Explosion;
   aceite *liquid= new aceite;
-  puntaje *punt= new puntaje;
-  int puntos=0;
+
+
   //MainWindow *juego=new MainWindow;
   QList<QGraphicsItem *>colisiones=collidingItems();
   for (int i=0,j=colisiones.size();i<j;i++){
      // qDebug()<< j;
          if(typeid (*colisiones[i])==typeid(papas)){
-             puntos+=10;
-           punt->increasepapa(puntos);
+
+           _puntaje->increasepapa(10);
            pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
            liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
            scene()->addItem(pum);
@@ -79,11 +81,11 @@ void esmad::colisionpiedras()
 {
 
     //FALTA AUMENTAR EL PUNTAJE CADA VEZ QUE COLISIONEN
-    puntaje *punt= new puntaje;
+
     QList<QGraphicsItem *>colisio=collidingItems();
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
-             punt->increaserock();
+            _puntaje->increaserock(5);
              xo+=300;
              setPos(xo,y());
              scene()->removeItem(colisio.at(i));

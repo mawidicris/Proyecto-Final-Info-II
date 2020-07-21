@@ -17,16 +17,16 @@ puntaje::puntaje(QGraphicsItem *parent)
 
 }
 
-void puntaje::increasepapa(int a)
+void puntaje::increasepapa(int puntos)
 {
-    score+=a;
+    score+=puntos;
     setPlainText(QString("Score: ")+QString::number(score));
     qDebug()<<score;
 }
 
-void puntaje::increaserock()
+void puntaje::increaserock(int puntos)
 {
-    score+=5;
+    score+=puntos;
     setPlainText(QString("Score: ")+QString::number(score));
     qDebug()<<score;
 }

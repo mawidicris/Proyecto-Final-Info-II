@@ -11,6 +11,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QCursor>
 #include <QDebug>
+#include "capuchonegro.h"
 
 
 class Gamines : public QObject,public QGraphicsItem
@@ -22,6 +23,7 @@ public:
     QTimer *timer;
     float ancho,alto;
     int gamin=0;
+    capuchonegro *capun =  new capuchonegro;
 
 
     QRectF boundingRect() const;

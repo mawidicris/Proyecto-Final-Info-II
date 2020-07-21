@@ -12,7 +12,7 @@ Gamines::Gamines(QObject *parent)
 
 QRectF Gamines::boundingRect() const
 {
-     return QRectF(-ancho/2,-alto/2,ancho,alto);
+    return QRectF(-ancho/2,-alto/2,ancho,alto);
 }
 
 void Gamines::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -25,11 +25,13 @@ void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event)
     //AUMENTAR gamin CADA VEZ QUE SE DA CLICK EN UN ITEM
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
-    if(getGamin()<=5){
-        increaseGamin();
+    increaseGamin();
+    if(getGamin()==5){
+        scene()->addItem(capun);
+
     }
     qDebug()<<getGamin();
-    //scene()->removeItem(this);
+    scene()->removeItem(this);
 }
 
 void Gamines::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)

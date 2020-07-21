@@ -46,10 +46,11 @@ public:
 
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
-  //  capuchonegro *capuchoN;
-  //  capuchoblanco *capuchoB;
-  //  tanqueta *tanque;
-    puntaje *score;
+    capuchonegro *capuchoN = new capuchonegro;
+    capuchoblanco *capuchoB = new capuchoblanco;
+    //  tanqueta *tanque;
+    puntaje *score = new puntaje();
+    Gamines *gamin = new Gamines();
 
 
 
@@ -62,6 +63,7 @@ public slots:
     void generarcapuchosnegros();
     void generarcapuchosblancos();
     void on_pausar_clicked();
+
 
 private:
 

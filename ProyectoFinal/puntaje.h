@@ -13,13 +13,13 @@ class puntaje :public QGraphicsTextItem
     //Q_OBJECT
 public:
     QTimer *timer;
-    //explicit puntaje(QObject *parent = nullptr);
+
     puntaje(QGraphicsItem * parent=0);
-        void increasepapa(int a);
-        void increaserock();
+        void increasepapa(int puntos);
+        void increaserock(int puntos);
         int score=0;
         int getScore();
-        //void aumentarpuntaje(int a);
+
 signals:
 
 };

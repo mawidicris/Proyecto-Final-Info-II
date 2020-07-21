@@ -31,6 +31,5 @@ release/moc_papas.o
 release/moc_partidas.o
 release/moc_piedras.o
 release/moc_policia.o
-release/moc_puntaje.o
 release/moc_registro.o
 release/moc_tanqueta.o

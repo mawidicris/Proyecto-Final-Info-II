@@ -20,13 +20,12 @@ MainWindow::MainWindow(QWidget *parent)
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
     escena->addItem(fondo);
-    score = new puntaje;
     escena->addItem(score);
     //capuchoN= new capuchonegro;
     //capuchoB= new capuchoblanco;
     /*ingresar *ingreso= new ingresar;
     ingreso->show();*/
-    //escena->addItem(capuchoN);
+    escena->addItem(capuchoN);
     //escena->addItem(capuchoB);
     //tanque= new tanqueta;
     //escena->addItem(tanque);
@@ -37,9 +36,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer2,&QTimer::timeout,this,&MainWindow::generarbaret);
     //timer2->start(3500);
     connect(timer4,&QTimer::timeout,this,&MainWindow::generaresmad);
-    //timer4->start(5000);
+    timer4->start(5000);
     connect(timer5,&QTimer::timeout,this,&MainWindow::generarpolicia);
-   // timer5->start(5000);
+   //timer5->start(5000);
     connect(timer6,&QTimer::timeout,this,&MainWindow::generarcapuchosnegros);
     //timer6->start(5000);
     connect(timer3,&QTimer::timeout,this,&MainWindow::generarcapuchosblancos);
@@ -68,20 +67,24 @@ void MainWindow::generarbaret()
 
 void MainWindow::generaresmad()
 {
+    esmad *em = new esmad;
+    em->_puntaje = score;
     int carriles[4]={150,300,450,600};
     int randomValue = qrand() % 4;
     QList<QGraphicsItem*>agentes;
-    agentes.push_back(new esmad);
+    agentes.push_back(em);
     agentes.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(agentes.last());
 }
 
 void MainWindow::generarpolicia()
 {
+    policia *em = new policia;
+    em->_puntaje = score;
     int carriles[4]={150,300,450,600};
     int randomValue = qrand() % 4;
     QList<QGraphicsItem*>policias;
-    policias.push_back(new policia);
+    policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
 }
@@ -104,7 +107,7 @@ void MainWindow::generargamines()
 {
     int randomValue = qrand() % 1200;
     QList<QGraphicsItem*>gamines;
-    gamines.push_back(new Gamines);
+    gamines.push_back(gamin);
     gamines.last()->setPos(randomValue,50);
     escena->addItem(gamines.last());
 }
