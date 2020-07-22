@@ -41,18 +41,17 @@ void esmad::actualizar()
 
 void esmad::mover()
 {
- //RETROCEDER EN LA POSICIÓN CUANDO COLISIONE CON UNA PIEDRA
  xo-=(1/mu)*v*dt;
  setPos(xo,y());
  QList<QGraphicsItem *>colision1=collidingItems();
  for (int i=0,j=colision1.size();i<j;i++){
-        if(typeid (*colision1[i])==typeid(aceite)){
+         if(typeid (*colision1[i])==typeid(aceite)){
           mu=0.9;
-          xo+=3;
           setPos(xo,y());
       }
    }
-}
+ if((this->x())<=0) delete this;
+ }
 
 void esmad::colisionpapas()
 {
@@ -67,8 +66,8 @@ void esmad::colisionpapas()
            liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
            scene()->addItem(pum);
            scene()->addItem(liquid);
-           scene()->removeItem(colisiones.at(i));
-           if(j%2==0) scene()->removeItem(this);
+           delete (colisiones.at(i));
+           if(j%2==0) delete this;
 
          }
     }
@@ -82,10 +81,9 @@ void esmad::colisionpiedras()
            if(typeid (*colisio[i])==typeid(piedras)){
               timer5->start(200);
               timer2->stop();
-              //pied->timer->stop();
-              pied->timer2->start(250);
+             pied->timer2->start(250);
             _puntaje->increaserock(5);
-             //scene()->removeItem(colisio.at(i));
+             delete (colisio.at(i));
 
           }
     }
@@ -94,12 +92,11 @@ void esmad::colisionpiedras()
 void esmad::retroceder()
 {
    ejecuciones++;
-   qDebug()<<ejecuciones;
    xo+=10;
    setPos(xo,y());
    if(ejecuciones==4){
-       ejecuciones=0;
        timer5->stop();
+       ejecuciones=0;
        timer2->start(250);
    }
 }

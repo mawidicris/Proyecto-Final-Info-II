@@ -22,7 +22,8 @@ void papas::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 void papas::mover()
 {
-  setPos(x()+15,y());  
+  setPos(x()+15,y());
+  if((this->x())>=1233) delete this;
 }
 
 

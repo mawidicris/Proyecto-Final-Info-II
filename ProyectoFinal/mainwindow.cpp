@@ -19,30 +19,24 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     fondo =new QGraphicsPixmapItem;
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
-    //escena->addItem(fondo);
-    //escena->addItem(score);
-    //capuchoN= new capuchonegro;
-    //capuchoB= new capuchoblanco;
-    ingresar *ingreso= new ingresar;
-    ingreso->show();
-    //escena->addItem(capuchoN);
+    escena->addItem(fondo);
+    escena->addItem(score);
+    escena->addItem(capuchoN);
+    escena->addItem(capuchoN2);
     //escena->addItem(capuchoB);
-    //tanque= new tanqueta;
+    //escena->addItem(capuchoB2);
     //escena->addItem(tanque);
 
 
     connect(timer,&QTimer::timeout,this,&MainWindow::generargamines);
-    //timer->start(4000);
+    timer->start(3000);
     connect(timer2,&QTimer::timeout,this,&MainWindow::generarbaret);
-    //timer2->start(3500);
+    //timer2->start(3000);
     connect(timer4,&QTimer::timeout,this,&MainWindow::generaresmad);
-   //timer4->start(5000);
+    timer4->start(5000);
     connect(timer5,&QTimer::timeout,this,&MainWindow::generarpolicia);
     //timer5->start(5000);
-    connect(timer6,&QTimer::timeout,this,&MainWindow::generarcapuchosnegros);
-    //timer6->start(5000);
-    connect(timer3,&QTimer::timeout,this,&MainWindow::generarcapuchosblancos);
-   //timer3->start(3000);
+    ui->pausar->setHidden(true);
 }
 
 MainWindow::~MainWindow()
@@ -50,11 +44,9 @@ MainWindow::~MainWindow()
     delete ui;
     delete escena;
     delete fondo;
-    //delete capuchoN;
-    // delete capuchoB;
-    //delete tanque;
+    delete capuchoN;
+    delete capuchoB;
 }
-
 
 void MainWindow::generarbaret()
 {
@@ -89,20 +81,6 @@ void MainWindow::generarpolicia()
     escena->addItem(policias.last());
 }
 
-void MainWindow::generarcapuchosnegros()
-{
-    QList<QGraphicsItem*>capnegros;
-    capnegros.push_back(new capuchonegro);
-    escena->addItem(capnegros.last());
-}
-
-void MainWindow::generarcapuchosblancos()
-{
-    QList<QGraphicsItem*>capblancos;
-    capblancos.push_back(new capuchoblanco);
-    escena->addItem(capblancos.last());
-}
-
 void MainWindow::generargamines()
 {
     int randomValue = qrand() % 1200;
@@ -120,4 +98,8 @@ void MainWindow::on_pausar_clicked()
  timer4->stop();
  timer5->stop();
  timer6->stop();
+ gamin->timer->stop();
+ bareto->timer->stop();
+ //tanque->timer->stop();
 }
+

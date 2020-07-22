@@ -22,14 +22,13 @@ void Gamines::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
 void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    //AUMENTAR gamin CADA VEZ QUE SE DA CLICK EN UN ITEM
+
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
     increaseGamin();
     if(getGamin()%5==0){
     scene()->addItem(new capuchonegro);
     }
-    qDebug()<<getGamin();
     scene()->removeItem(this);
 }
 

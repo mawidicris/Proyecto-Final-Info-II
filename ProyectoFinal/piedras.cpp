@@ -8,7 +8,7 @@ piedras::piedras(QObject *parent) : QObject(parent)
     timer= new QTimer;
     timer2=new QTimer;
     connect(timer,&QTimer::timeout,this,&piedras::mover);    
-    timer->start(500);
+    timer->start(200);
 }
 
 QRectF piedras::boundingRect() const
@@ -24,5 +24,6 @@ void piedras::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 void piedras::mover()
 {
    setPos(x()+15,y());
+   if((this->x())>=1233) delete this;
 }
 

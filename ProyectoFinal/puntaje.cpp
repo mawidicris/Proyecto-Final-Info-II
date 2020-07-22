@@ -3,16 +3,12 @@
 
 puntaje::puntaje(QGraphicsItem *parent)
 {
-    //inicializar score en 0
-    //score = 0;
 
-    //draw the text
     timer = new QTimer;
-    //connect(timer,&QTimer::timeout,this,&puntaje::increasepapa);
-    //timer->start(200);
-    setPlainText(QString("Score: ")+QString::number(score));
+    setPlainText(QString("PUNTAJE: ")+QString::number(score));
     setDefaultTextColor(Qt::black);
     setFont(QFont("playbill",18));
+    setPos(500,30);
 
 
 }
@@ -20,15 +16,13 @@ puntaje::puntaje(QGraphicsItem *parent)
 void puntaje::increasepapa(int puntos)
 {
     score+=puntos;
-    setPlainText(QString("Score: ")+QString::number(score));
-    qDebug()<<score;
+    setPlainText(QString("PUNTAJE: ")+QString::number(score));
 }
 
 void puntaje::increaserock(int puntos)
 {
     score+=puntos;
-    setPlainText(QString("Score: ")+QString::number(score));
-    qDebug()<<score;
+    setPlainText(QString("PUNTAJE: ")+QString::number(score));
 }
 
 int puntaje::getScore()

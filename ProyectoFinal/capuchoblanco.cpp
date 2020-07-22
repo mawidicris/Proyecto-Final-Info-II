@@ -60,7 +60,7 @@ void capuchoblanco::colisionesmad()
     QList<QGraphicsItem *>col=collidingItems();
     for (int i=0,n=col.size();i<n;i++){
            if(typeid (*col[i])==typeid(esmad)){
-            scene()->removeItem(this);
+            delete this;
             timer->stop();
           }
     }
@@ -71,7 +71,7 @@ void capuchoblanco::colisionpolicia()
     QList<QGraphicsItem *>coli=collidingItems();
     for (int i=0,n=coli.size();i<n;i++){
            if(typeid (*coli[i])==typeid(policia)){
-            scene()->removeItem(this);
+            delete this;
             timer->stop();
           }
     }
@@ -85,8 +85,8 @@ void capuchoblanco::colisionmisiles()
            if(typeid (*colis[i])==typeid(misil)){
             pum->setPos(colis.at(i)->x(),colis.at(i)->y());
             scene()->addItem(pum);
-            scene()->removeItem(colis.at(i));
-            scene()->removeItem(this);
+            delete colis.at(i);
+            delete this;
             timer->stop();
           }
     }
