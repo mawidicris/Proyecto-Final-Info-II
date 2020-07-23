@@ -46,7 +46,7 @@ void esmad::mover()
  QList<QGraphicsItem *>colision1=collidingItems();
  for (int i=0,j=colision1.size();i<j;i++){
          if(typeid (*colision1[i])==typeid(aceite)){
-          mu=0.9;
+          mu=0.85;
           setPos(xo,y());
       }
    }
@@ -81,7 +81,6 @@ void esmad::colisionpiedras()
            if(typeid (*colisio[i])==typeid(piedras)){
               timer5->start(200);
               timer2->stop();
-             pied->timer2->start(250);
             _puntaje->increaserock(5);
              delete (colisio.at(i));
 

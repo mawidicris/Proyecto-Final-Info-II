@@ -10,13 +10,16 @@ capuchonegro::capuchonegro(QObject *parent) : QObject(parent)
   timer2=new QTimer;
   timer3= new QTimer;
   timer4= new QTimer;
+  timer5=new QTimer;
   connect(timer,&QTimer::timeout,this,&capuchonegro::lanzarpapas);
   connect(timer2,&QTimer::timeout,this,&capuchonegro::colisionesmad);
   connect(timer3,&QTimer::timeout,this,&capuchonegro::colisionpolicia);
-  connect(timer3,&QTimer::timeout,this,&capuchonegro::colisionmisiles);
+  connect(timer4,&QTimer::timeout,this,&capuchonegro::colisionmisiles);
+  connect(timer5,&QTimer::timeout,this,&capuchonegro::eliminar);
   timer2->start(300);
   timer3->start(300);
-  timer4->start(300);
+  //timer4->start(300);
+  //timer5->start(10000);
 }
 
 QRectF capuchonegro::boundingRect() const
@@ -92,5 +95,10 @@ void capuchonegro::colisionmisiles()
                timer->stop();
           }
     }
+}
+
+void capuchonegro::eliminar()
+{
+   delete this;
 }
 

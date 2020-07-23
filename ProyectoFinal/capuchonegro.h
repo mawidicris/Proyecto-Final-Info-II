@@ -23,7 +23,7 @@ class capuchonegro : public QObject, public QGraphicsItem
 public:
     explicit capuchonegro(QObject *parent = nullptr);
     QPixmap *cnegro;
-    QTimer *timer,*timer2,*timer3,*timer4;
+    QTimer *timer,*timer2,*timer3,*timer4,*timer5;
 
     float ancho,alto;
     QRectF boundingRect() const;
@@ -39,6 +39,7 @@ signals:
        void colisionesmad();
        void colisionpolicia();
        void colisionmisiles();
+       void eliminar();
 };
 
 #endif // CAPUCHONEGRO_H

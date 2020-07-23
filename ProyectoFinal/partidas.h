@@ -17,6 +17,8 @@ public:
     explicit partidas(QWidget *parent = nullptr);
     ~partidas();
 
+
+
 private slots:
     void on_nuevapartida_clicked();
 

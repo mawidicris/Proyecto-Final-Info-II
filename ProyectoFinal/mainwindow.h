@@ -41,19 +41,33 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-    QTimer *timer,*timer2,*timer3,*timer4,*timer5,*timer6;
 
+    ~MainWindow();
+
+    QTimer *timer=new QTimer;
+    QTimer *timer2= new QTimer;
+    QTimer *timer3= new QTimer;
+    QTimer *timer4=new QTimer;
+    QTimer *timer5=new QTimer;
+    QTimer *timer6= new QTimer;
+    QTimer *timer7=new QTimer;
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
     capuchonegro *capuchoN = new capuchonegro();
     capuchonegro *capuchoN2 = new capuchonegro();
     capuchoblanco *capuchoB = new capuchoblanco();
-    capuchoblanco *capuchoB2= new capuchoblanco;
+    capuchoblanco *capuchoB2= new capuchoblanco();
     //tanqueta *tanque=new tanqueta;
     puntaje *score = new puntaje();
     Gamines *gamin = new Gamines();
     baretos *bareto= new baretos();
+    int ejecucionespolicias=0;
+    int ejecucionesesmad=0;
+
+   void primernivel();
+   void segundonivel();
+   void tercerrnivel();
+
 
 
 public slots:
@@ -61,8 +75,8 @@ public slots:
     void generarbaret();
     void generaresmad();
     void generarpolicia();
-    //void generarcapuchosnegros();
-    //void generarcapuchosblancos();
+    void generarpolicianivel3();
+    void generaresmadnivel3();
     void on_pausar_clicked();
 
 private:

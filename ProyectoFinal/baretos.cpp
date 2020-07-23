@@ -23,12 +23,11 @@ void baretos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
 void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    //AUMENTAR bare CADA VEZ QUE SE DA CLICK EN UN ITEM
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
-   increasebareto();
+    increasebareto();
    if(baret%5==0){
-       scene()->addItem(new capuchoblanco);
+     scene()->addItem(new capuchoblanco);
    }
     scene()->removeItem(this);
  }
@@ -53,5 +52,9 @@ void baretos::caida()
 {
     setPos(x(),y()+20);
 }
+
+
+
+
 
 

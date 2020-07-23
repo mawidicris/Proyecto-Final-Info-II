@@ -7,7 +7,6 @@
 #include <QRectF>
 #include <QTimer>
 #include <QGraphicsScene>
-#include <QList>
 
 class papas : public QObject, public QGraphicsItem
 {

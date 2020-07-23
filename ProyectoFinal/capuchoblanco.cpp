@@ -5,18 +5,21 @@ capuchoblanco::capuchoblanco(QObject *parent) : QObject(parent)
    ancho=52;
    alto=145;
    cblanco= new QPixmap(":/capucho blanco.png");
+   setPos(150,350);
    timer= new QTimer;
    timer2=new QTimer;
    timer3= new QTimer;
    timer4= new QTimer;
+   timer5=new QTimer;
    connect(timer,&QTimer::timeout,this,&capuchoblanco::lanzarpiedras);
    connect(timer2,&QTimer::timeout,this,&capuchoblanco::colisionesmad);
    connect(timer3,&QTimer::timeout,this,&capuchoblanco::colisionpolicia);
-   connect(timer3,&QTimer::timeout,this,&capuchoblanco::colisionmisiles);
-   setPos(150,350);
+   connect(timer4,&QTimer::timeout,this,&capuchoblanco::colisionmisiles);
+   connect(timer5,&QTimer::timeout,this,&capuchoblanco::eliminar);
    timer2->start(300);
    timer3->start(300);
-   timer4->start(300);
+   //timer4->start(300);
+   timer5->start(20000);
 }
 
 QRectF capuchoblanco::boundingRect() const
@@ -90,5 +93,10 @@ void capuchoblanco::colisionmisiles()
             timer->stop();
           }
     }
+}
+
+void capuchoblanco::eliminar()
+{
+   delete this;
 }
 

@@ -6,11 +6,9 @@
 #include <QPainter>
 #include <QRectF>
 #include <QTimer>
-#include <QList>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QCursor>
-#include <QDebug>
 #include "capuchonegro.h"
 
 
@@ -24,7 +22,6 @@ public:
     float ancho,alto;
     int gamin=0;
 
-
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -36,6 +33,7 @@ public:
 signals:
 public slots:
     void caida();
+
 };
 
 #endif // GAMINES_H

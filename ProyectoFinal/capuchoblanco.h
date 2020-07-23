@@ -23,7 +23,7 @@ class capuchoblanco : public QObject,public QGraphicsItem
 public:
     explicit capuchoblanco(QObject *parent = nullptr);
     QPixmap *cblanco;
-    QTimer *timer,*timer2,*timer3,*timer4;
+    QTimer *timer,*timer2,*timer3,*timer4,*timer5;
 
 
     float ancho,alto;
@@ -39,6 +39,7 @@ signals:
       void colisionesmad();
       void colisionpolicia();
       void colisionmisiles();
+      void eliminar();
 };
 
 #endif // CAPUCHOBLANCO_H
