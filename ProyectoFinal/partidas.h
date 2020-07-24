@@ -28,6 +28,8 @@ private slots:
 
     void on_dosjugadores_clicked();
 
+    void on_salir_clicked();
+
 private:
     Ui::partidas *ui;
 

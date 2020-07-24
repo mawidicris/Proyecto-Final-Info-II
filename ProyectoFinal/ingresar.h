@@ -9,7 +9,6 @@ using namespace std;
 #include <iostream>
 #include <QDebug>
 #include <QGraphicsScene>
-//#include <QGraphicsItem>
 #include "registro.h"
 #include "partidas.h"
 
@@ -24,7 +23,6 @@ class ingresar : public QMainWindow
 public:
     explicit ingresar(QWidget *parent = nullptr);
     ~ingresar();
-
 
 public slots:
     void on_ingresar_2_clicked();

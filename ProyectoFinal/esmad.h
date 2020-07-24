@@ -25,6 +25,7 @@ public:
     explicit esmad(QObject *parent = nullptr);
     QTimer *timer,*timer2,*timer3,*timer4,*timer5;
     QPixmap *agente;
+    QGraphicsPixmapItem *perdiste;
     puntaje *_puntaje;
     int ejecuciones=0;
 

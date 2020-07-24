@@ -8,11 +8,13 @@ esmad::esmad(QObject *parent) : QObject(parent)
   timer3= new QTimer;
   timer4=new QTimer;
   timer5=new QTimer;
+  perdiste= new QGraphicsPixmapItem;
   filas=0;
   columnas=0;
   ancho=115;
   alto=180;
   agente = new QPixmap(":/esmad.png");
+  perdiste->setPixmap( QPixmap(":/perdiste.png"));
   connect(timer,&QTimer::timeout,this,&esmad::actualizar);
   connect(timer2,&QTimer::timeout,this,&esmad::mover);
   connect(timer3,&QTimer::timeout,this,&esmad::colisionpapas);
@@ -50,8 +52,12 @@ void esmad::mover()
           setPos(xo,y());
       }
    }
- if((this->x())<=0) delete this;
- }
+ if((this->x())<=300){
+     perdiste->setPos(500,250);
+     scene()->addItem(perdiste);
+     _puntaje->mover(650,380);
+   }
+}
 
 void esmad::colisionpapas()
 {
@@ -61,7 +67,7 @@ void esmad::colisionpapas()
   for (int i=0,j=colisiones.size();i<j;i++){
          if(typeid (*colisiones[i])==typeid(papas)){
 
-           _puntaje->increasepapa(10);
+           _puntaje->increasepuntaje(10);
            pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
            liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
            scene()->addItem(pum);
@@ -81,7 +87,7 @@ void esmad::colisionpiedras()
            if(typeid (*colisio[i])==typeid(piedras)){
               timer5->start(200);
               timer2->stop();
-            _puntaje->increaserock(5);
+            _puntaje->increasepuntaje(5);
              delete (colisio.at(i));
 
           }

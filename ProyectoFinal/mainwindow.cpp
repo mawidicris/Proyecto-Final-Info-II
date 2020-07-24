@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     fondo->setPixmap(QPixmap(":/fondo.tiff"));
-    //escena->addItem(tanque);
+    ganaste->setPixmap(QPixmap(":/ganaste.png"));
 
 
     connect(timer,&QTimer::timeout,this,&MainWindow::generargamines);
@@ -23,8 +23,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer5,&QTimer::timeout,this,&MainWindow::generarpolicia);
     connect(timer3,&QTimer::timeout,this,&MainWindow::generarpolicianivel3);
     connect(timer7,&QTimer::timeout,this,&MainWindow::generaresmadnivel3);
-
-    ui->pausar->setHidden(true);
 }
 
 MainWindow::~MainWindow()
@@ -38,8 +36,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::primernivel()
 {
-    timer2->start(3000);
-    timer5->start(5000);
+    timer2->start(2000);
+    timer5->start(5500);
     escena->addItem(fondo);
     escena->addItem(score);
     escena->addItem(capuchoB);
@@ -50,7 +48,7 @@ void MainWindow::segundonivel()
 {
     timer2->stop();
     timer->start(3000);
-    timer4->start(3000);
+    timer4->start(5000);
     escena->addItem(fondo);
     escena->addItem(score);
     escena->addItem(capuchoN);
@@ -66,10 +64,13 @@ void MainWindow::tercerrnivel()
     timer7->start(5000);
     escena->addItem(fondo);
     escena->addItem(score);
-    //escena->addItem(capuchoB);
-    //escena->addItem(capuchoB2);
-    //escena->addItem(capuchoN);
-    //escena->addItem(capuchoN2);
+}
+
+void MainWindow::niveltanqueta()
+{
+    tanqueta *tanque= new tanqueta;
+    timer7->stop();
+    escena->addItem(tanque);
 }
 
 void MainWindow::generarbaret()
@@ -92,7 +93,7 @@ void MainWindow::generaresmad()
     agentes.push_back(esm);
     agentes.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(agentes.last());
-    if(ejecucionesesmad==3){
+    if(ejecucionesesmad==6){
        timer4->stop();
        tercerrnivel();
         }
@@ -100,33 +101,38 @@ void MainWindow::generaresmad()
 
 void MainWindow::generarpolicia()
 {
-    ejecucionespolicias++;
     policia *em = new policia;
+    ejecucionespolicias++;
     em->_puntaje = score;
     int carriles[4]={150,300,450,600};
     int randomValue = qrand() % 4;
     QList<QGraphicsItem*>policias;
+
     policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
-    if(ejecucionespolicias==3){
+    if(ejecucionespolicias==6){
        timer5->stop();
        segundonivel();
-        }
+     }
 }
 
 void MainWindow::generarpolicianivel3()
 {
+    ejecucionespolicias3++;
     policia *em = new policia;
     em->_puntaje = score;
     int carriles[4]={150,300,450,600};
     int randomValue = qrand() % 4;
-
     QList<QGraphicsItem*>policias;
+
     policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
-
+    if(ejecucionespolicias3==5){
+       timer3->stop();
+       //niveltanqueta();
+        }
 }
 
 void MainWindow::generaresmadnivel3()
@@ -152,14 +158,8 @@ void MainWindow::generargamines()
 
 void MainWindow::on_pausar_clicked()
 {
- timer->stop();
- timer2->stop();
- timer3->stop();
- timer4->stop();
- timer5->stop();
- timer6->stop();
- gamin->timer->stop();
- bareto->timer->stop();
- //tanque->timer->stop();
+ partidas *part=new partidas;
+ this->close();
+ part->show();
 }
 

@@ -7,7 +7,7 @@ Gamines::Gamines(QObject *parent)
     Gamine= new QPixmap(":/gamin.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&Gamines::caida);
-    timer->start(200);
+    timer->start(100);
 }
 
 QRectF Gamines::boundingRect() const
@@ -27,7 +27,9 @@ void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event)
     Q_UNUSED(event);
     increaseGamin();
     if(getGamin()%5==0){
-    scene()->addItem(new capuchonegro);
+        capuchonegro *cap= new capuchonegro;
+    scene()->addItem(cap);
+    cap->timer5->start(10000);
     }
     scene()->removeItem(this);
 }

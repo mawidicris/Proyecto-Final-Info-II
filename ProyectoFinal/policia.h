@@ -13,6 +13,7 @@
 #include "aceite.h"
 #include <QDebug>
 #include "puntaje.h"
+#include "textos.h"
 
 #define dt 0.1
 
@@ -24,7 +25,9 @@ public:
     explicit policia(QObject *parent = nullptr);
     QTimer *timer,*timer2,*timer3,*timer4;
     QPixmap *poli;
+    QGraphicsPixmapItem *perdiste;
     puntaje *_puntaje;
+
     float filas,columnas,ancho,alto;
     float xo=1233, v=60, mu=0.3; //mu: coeficiente de fricción
 

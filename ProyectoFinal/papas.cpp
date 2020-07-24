@@ -7,7 +7,7 @@ papas::papas(QObject *parent) : QObject(parent)
     papa= new QPixmap(":/papa.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&papas::mover);
-    timer->start(200);
+    timer->start(150);
 }
 
 QRectF papas::boundingRect() const
@@ -22,7 +22,7 @@ void papas::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 void papas::mover()
 {
-  setPos(x()+15,y());
+  setPos(x()+20,y());
   if((this->x())>=1233) delete this;
 }
 

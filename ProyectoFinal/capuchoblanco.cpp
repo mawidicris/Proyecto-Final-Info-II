@@ -18,8 +18,7 @@ capuchoblanco::capuchoblanco(QObject *parent) : QObject(parent)
    connect(timer5,&QTimer::timeout,this,&capuchoblanco::eliminar);
    timer2->start(300);
    timer3->start(300);
-   //timer4->start(300);
-   timer5->start(20000);
+   timer4->start(300);
 }
 
 QRectF capuchoblanco::boundingRect() const

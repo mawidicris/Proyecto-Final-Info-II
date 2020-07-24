@@ -18,8 +18,7 @@ capuchonegro::capuchonegro(QObject *parent) : QObject(parent)
   connect(timer5,&QTimer::timeout,this,&capuchonegro::eliminar);
   timer2->start(300);
   timer3->start(300);
-  //timer4->start(300);
-  //timer5->start(10000);
+  timer4->start(300);
 }
 
 QRectF capuchonegro::boundingRect() const
@@ -65,7 +64,7 @@ void capuchonegro::colisionesmad()
     QList<QGraphicsItem *>col=collidingItems();
     for (int i=0,n=col.size();i<n;i++){
            if(typeid (*col[i])==typeid(esmad)){
-            scene()->removeItem(this);
+            delete this;
             timer->stop();
           }
     }
@@ -76,7 +75,7 @@ void capuchonegro::colisionpolicia()
     QList<QGraphicsItem *>coli=collidingItems();
     for (int i=0,n=coli.size();i<n;i++){
            if(typeid (*coli[i])==typeid(policia)){
-            scene()->removeItem(this);
+            delete this;
             timer->stop();
           }
     }
@@ -90,8 +89,8 @@ void capuchonegro::colisionmisiles()
            if(typeid (*colis[i])==typeid(misil)){
                pum->setPos(colis.at(i)->x(),colis.at(i)->y());
                scene()->addItem(pum);
-               scene()->removeItem(colis.at(i));
-               scene()->removeItem(this);
+               delete colis.at(i);
+               delete this;
                timer->stop();
           }
     }

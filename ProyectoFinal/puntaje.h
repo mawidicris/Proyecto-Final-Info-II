@@ -15,10 +15,10 @@ public:
     QTimer *timer;
 
     puntaje(QGraphicsItem * parent=0);
-        void increasepapa(int puntos);
-        void increaserock(int puntos);
+        void increasepuntaje(int puntos);
         int score=0;
         int getScore();
+        void mover(int x, int y);
 
 signals:
 

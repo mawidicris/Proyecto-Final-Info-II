@@ -2,12 +2,12 @@
 
 baretos::baretos(QObject *parent) : QObject(parent)
 {
-    ancho=70;
-    alto=70;
+    ancho=80;
+    alto=80;
     bareto= new QPixmap(":/baretin.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&baretos::caida);
-    timer->start(100);
+    timer->start(150);
 
 }
 
@@ -27,7 +27,9 @@ void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
     Q_UNUSED(event);
     increasebareto();
    if(baret%5==0){
-     scene()->addItem(new capuchoblanco);
+       capuchoblanco *cap= new capuchoblanco;
+     scene()->addItem(cap);
+     cap->timer5->start(15000);
    }
     scene()->removeItem(this);
  }

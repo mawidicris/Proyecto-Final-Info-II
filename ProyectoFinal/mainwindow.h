@@ -18,7 +18,6 @@ using namespace std;
 #include "papas.h"
 #include "policia.h"
 #include "baretos.h"
-#include "tanqueta.h"
 #include "misil.h"
 #include "gamines.h"
 #include "registro.h"
@@ -27,8 +26,9 @@ using namespace std;
 #include "puntaje.h"
 #include "aceite.h"
 #include "ingresar.h"
+#include "tanqueta.h"
+#include "partidas.h"
 #include <QDebug>
-
 
 
 QT_BEGIN_NAMESPACE
@@ -51,22 +51,25 @@ public:
     QTimer *timer5=new QTimer;
     QTimer *timer6= new QTimer;
     QTimer *timer7=new QTimer;
+
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
     capuchonegro *capuchoN = new capuchonegro();
     capuchonegro *capuchoN2 = new capuchonegro();
     capuchoblanco *capuchoB = new capuchoblanco();
     capuchoblanco *capuchoB2= new capuchoblanco();
-    //tanqueta *tanque=new tanqueta;
     puntaje *score = new puntaje();
     Gamines *gamin = new Gamines();
     baretos *bareto= new baretos();
+    QGraphicsPixmapItem  *ganaste =new QGraphicsPixmapItem;
     int ejecucionespolicias=0;
     int ejecucionesesmad=0;
+    int ejecucionespolicias3=0;
 
    void primernivel();
    void segundonivel();
    void tercerrnivel();
+   void niveltanqueta();
 
 
 

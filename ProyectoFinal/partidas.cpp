@@ -40,6 +40,9 @@ void partidas::on_unjugador_clicked()
 void partidas::on_dosjugadores_clicked()
 {
  this->close();
-// MainWindow *juego= new MainWindow;
- //juego->show();
+}
+
+void partidas::on_salir_clicked()
+{
+  this->close();
 }
