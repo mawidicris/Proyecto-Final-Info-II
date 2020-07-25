@@ -17,7 +17,6 @@ void puntaje::increasepuntaje(int puntos)
     setPlainText(QString("PUNTAJE: ")+QString::number(score));
 }
 
-
 int puntaje::getScore()
 {
     return score;

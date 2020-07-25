@@ -10,6 +10,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QCursor>
 #include "capuchoblanco.h"
+#include "puntaje.h"
 
 
 class baretos : public QObject, public QGraphicsItem
@@ -21,13 +22,13 @@ public:
     QTimer *timer;
     int baret=0;
     float ancho,alto;
+    puntaje *punto=new puntaje();
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void mousePressEvent(QGraphicsSceneMouseEvent *event) ;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     void increasebareto();
-    int getbareto();
 
 signals:
 public slots:

@@ -26,10 +26,11 @@ void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
     increasebareto();
+    punto->increasepuntaje(5);
    if(baret%5==0){
        capuchoblanco *cap= new capuchoblanco;
      scene()->addItem(cap);
-     cap->timer5->start(15000);
+     cap->timer5->start(13000);
    }
     scene()->removeItem(this);
  }
@@ -43,11 +44,6 @@ void baretos::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 void baretos::increasebareto()
 {
     baret++;
-}
-
-int baretos::getbareto()
-{
-    return baret;
 }
 
 void baretos::caida()

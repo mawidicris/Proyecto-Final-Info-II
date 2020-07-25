@@ -22,14 +22,14 @@ void Gamines::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
 
 void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
     increaseGamin();
-    if(getGamin()%5==0){
+    puntos->increasepuntaje(10);
+    if(gamin%5==0){
         capuchonegro *cap= new capuchonegro;
     scene()->addItem(cap);
-    cap->timer5->start(10000);
+    cap->timer5->start(13000);
     }
     scene()->removeItem(this);
 }
@@ -44,12 +44,6 @@ void Gamines::increaseGamin()
 {
     gamin++;
 }
-
-int Gamines::getGamin()
-{
-    return gamin;
-}
-
 
 void Gamines::caida()
 {

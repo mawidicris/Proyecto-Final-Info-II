@@ -10,6 +10,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QCursor>
 #include "capuchonegro.h"
+#include "puntaje.h"
 
 
 class Gamines : public QObject,public QGraphicsItem
@@ -21,14 +22,13 @@ public:
     QTimer *timer;
     float ancho,alto;
     int gamin=0;
+    puntaje *puntos= new puntaje;
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     void increaseGamin();
-    int getGamin();
-
 
 signals:
 public slots:

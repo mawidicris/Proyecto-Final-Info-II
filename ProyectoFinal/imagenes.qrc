@@ -16,5 +16,10 @@
         <file>perdiste.png</file>
         <file>ganaste.png</file>
         <file>logo.png</file>
+        <file>piedra (2).jpg</file>
+        <file>nivel1.png</file>
+        <file>nivel2.png</file>
+        <file>nivel3.png</file>
+        <file>explosion.wav</file>
     </qresource>
 </RCC>

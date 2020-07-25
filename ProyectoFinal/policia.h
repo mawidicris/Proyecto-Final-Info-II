@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QPainter>
 #include <QRectF>
+#include <QMediaPlayer>
 #include "explosion.h"
 #include "papas.h"
 #include "piedras.h"

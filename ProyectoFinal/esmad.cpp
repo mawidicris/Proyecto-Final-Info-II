@@ -15,13 +15,14 @@ esmad::esmad(QObject *parent) : QObject(parent)
   alto=180;
   agente = new QPixmap(":/esmad.png");
   perdiste->setPixmap( QPixmap(":/perdiste.png"));
+
   connect(timer,&QTimer::timeout,this,&esmad::actualizar);
   connect(timer2,&QTimer::timeout,this,&esmad::mover);
   connect(timer3,&QTimer::timeout,this,&esmad::colisionpapas);
   connect(timer4,&QTimer::timeout,this,&esmad::colisionpiedras);
   connect(timer5,&QTimer::timeout,this,&esmad::retroceder);
   timer->start(500);
-  timer2->start(250);
+  timer2->start(200);
   timer3->start(100);
   timer4->start(500);
 
@@ -61,6 +62,9 @@ void esmad::mover()
 
 void esmad::colisionpapas()
 {
+  QMediaPlayer *sonido= new QMediaPlayer();
+  sonido->setMedia(QUrl("qrc:/explosion.wav"));
+
   Explosion *pum= new Explosion;
   aceite *liquid= new aceite;
   QList<QGraphicsItem *>colisiones=collidingItems();
@@ -71,17 +75,16 @@ void esmad::colisionpapas()
            pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
            liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
            scene()->addItem(pum);
+           sonido->play();
            scene()->addItem(liquid);
            delete (colisiones.at(i));
            if(j%2==0) delete this;
-
          }
     }
 }
 
 void esmad::colisionpiedras()
 {
-    piedras *pied= new piedras;
     QList<QGraphicsItem *>colisio=collidingItems();
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
@@ -89,7 +92,6 @@ void esmad::colisionpiedras()
               timer2->stop();
             _puntaje->increasepuntaje(5);
              delete (colisio.at(i));
-
           }
     }
 }
@@ -115,5 +117,6 @@ void esmad::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 {
     painter->drawPixmap(-ancho/2,-alto/2,*agente,columnas,filas,ancho,alto);
 }
+
 
 

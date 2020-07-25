@@ -17,7 +17,7 @@ policia::policia(QObject *parent) : QObject(parent)
     connect(timer3,&QTimer::timeout,this,&policia::colisionpapas);
     connect(timer4,&QTimer::timeout,this,&policia::colisionpiedras);
     timer->start(500);
-    timer2->start(200);
+    timer2->start(250);
     timer3->start(300);
     timer4->start(300);
 }
@@ -61,6 +61,8 @@ void policia::mover()
 
 void policia::colisionpapas()
 {
+    QMediaPlayer *sonido= new QMediaPlayer();
+    sonido->setMedia(QUrl("qrc:/explosion.wav"));
     Explosion *pum= new Explosion;
     aceite *liquid= new aceite;
     QList<QGraphicsItem *>colisiones=collidingItems();
@@ -70,6 +72,7 @@ void policia::colisionpapas()
              pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
              liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
              scene()->addItem(pum);
+             sonido->play();
              scene()->addItem(liquid);
              delete (colisiones.at(i));
              delete this;

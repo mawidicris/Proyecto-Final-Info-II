@@ -11,7 +11,6 @@
 #include "misil.h"
 #include "papas.h"
 #include "piedras.h"
-#include "textos.h"
 #include "puntaje.h"
 
 class tanqueta : public QObject, public QGraphicsItem
@@ -21,15 +20,13 @@ public:
     explicit tanqueta(QObject *parent = nullptr);
     QPixmap *carro;
     QTimer *timer,*timer2,*timer3;
-    int vida=20;
-    puntaje *puntos;
+    int vida=50;
+    puntaje *_puntos=new puntaje;
 
 
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-
-
 
 signals:
 public slots:

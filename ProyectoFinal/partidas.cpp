@@ -18,7 +18,7 @@ partidas::~partidas()
 void partidas::on_nuevapartida_clicked()
 {
   ui->unjugador->setHidden(false);
-  ui->dosjugadores->setHidden(false);
+  ui->dosjugadores->setHidden(true);
   ui->nuevapartida->setHidden(true);
   ui->cargarpartida->setHidden(true);
 }

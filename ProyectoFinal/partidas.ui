@@ -104,13 +104,19 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QPushButton" name="nuevapartida">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>120</y>
-     <width>231</width>
-     <height>101</height>
+     <x>270</x>
+     <y>140</y>
+     <width>181</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="palette">
@@ -349,7 +355,8 @@
     <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(84, 84, 84);</string>
+    <string notr="true">background-color: rgb(84, 84, 84);
+</string>
    </property>
    <property name="text">
     <string>NUEVA PARTIDA</string>
@@ -358,10 +365,10 @@
   <widget class="QPushButton" name="cargarpartida">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>280</y>
-     <width>231</width>
-     <height>101</height>
+     <x>270</x>
+     <y>260</y>
+     <width>181</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="palette">
@@ -600,19 +607,20 @@
     <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(84, 84, 84);</string>
+    <string notr="true">background-color: rgb(84, 84, 84);
+</string>
    </property>
    <property name="text">
-    <string>CARGAR ÚLTIMA PARTIDA</string>
+    <string>CONTINUAR PARTIDA</string>
    </property>
   </widget>
   <widget class="QPushButton" name="unjugador">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>270</x>
      <y>210</y>
-     <width>211</width>
-     <height>101</height>
+     <width>181</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="palette">
@@ -851,7 +859,8 @@
     <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(84, 84, 84);</string>
+    <string notr="true">background-color: rgb(84, 84, 84);
+</string>
    </property>
    <property name="text">
     <string>1 JUGADOR</string>
@@ -860,10 +869,10 @@
   <widget class="QPushButton" name="dosjugadores">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>360</y>
-     <width>211</width>
-     <height>101</height>
+     <x>270</x>
+     <y>330</y>
+     <width>181</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="palette">
@@ -1102,7 +1111,8 @@
     <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(84, 84, 84);</string>
+    <string notr="true">background-color: rgb(84, 84, 84);
+</string>
    </property>
    <property name="text">
     <string>2 JUGADORES</string>
@@ -1353,12 +1363,35 @@
     <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(84, 84, 84);</string>
+    <string notr="true">background-color: rgb(84, 84, 84);
+</string>
    </property>
    <property name="text">
     <string>SALIR</string>
    </property>
   </widget>
+  <widget class="QLabel" name="fondo">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>721</width>
+     <height>581</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/piedra (2).jpg);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>fondo</zorder>
+  <zorder>nuevapartida</zorder>
+  <zorder>cargarpartida</zorder>
+  <zorder>unjugador</zorder>
+  <zorder>dosjugadores</zorder>
+  <zorder>salir</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -51,9 +51,15 @@ public:
     QTimer *timer5=new QTimer;
     QTimer *timer6= new QTimer;
     QTimer *timer7=new QTimer;
+    QTimer *timer8=new QTimer;
+    QTimer *timer9= new QTimer;
+    QTimer *timer10=new QTimer;
 
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
+    QGraphicsPixmapItem *nivel1;
+    QGraphicsPixmapItem *nivel2;
+    QGraphicsPixmapItem *nivel3;
     capuchonegro *capuchoN = new capuchonegro();
     capuchonegro *capuchoN2 = new capuchonegro();
     capuchoblanco *capuchoB = new capuchoblanco();
@@ -72,7 +78,6 @@ public:
    void niveltanqueta();
 
 
-
 public slots:
     void generargamines();
     void generarbaret();
@@ -80,7 +85,12 @@ public slots:
     void generarpolicia();
     void generarpolicianivel3();
     void generaresmadnivel3();
+
     void on_pausar_clicked();
+
+    void borrarnivel1();
+    void borrarnivel2();
+    void borrarnivel3();
 
 private:
 

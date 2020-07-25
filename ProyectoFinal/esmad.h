@@ -8,6 +8,7 @@
 #include <QRectF>
 #include <QList>
 #include <QGraphicsScene>
+#include <QMediaPlayer>
 #include "papas.h"
 #include "explosion.h"
 #include "piedras.h"

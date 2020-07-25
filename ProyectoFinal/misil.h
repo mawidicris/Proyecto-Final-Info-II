@@ -26,7 +26,7 @@ public:
     QPixmap *bala;
     QTimer *timer;
     double angulos[3]={40,90,210};
-    int pos = qrand() % 3;
+    int pos = rand() % 3;
     double v=64,vx,vy,x=990,y=-250,a=9.8,yd,angulo=angulos[pos];
 
 

@@ -7,11 +7,12 @@ tanqueta::tanqueta(QObject *parent) : QObject(parent)
     timer= new QTimer;
     timer2=new QTimer;
     timer3=new QTimer;
+
     carro= new QPixmap(":/tanqueta.png");
     setPos(1135,355);
     connect(timer,&QTimer::timeout,this,&tanqueta::lanzar);
     connect(timer2,&QTimer::timeout,this,&tanqueta::colisionconpapas);
-    connect(timer2,&QTimer::timeout,this,&tanqueta::colisionconpiedras);
+    connect(timer3,&QTimer::timeout,this,&tanqueta::colisionconpiedras);
     timer->start(4000);
     timer2->start(300);
     timer3->start(300);
@@ -30,20 +31,24 @@ void tanqueta::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 
 void tanqueta::colisionconpapas()
 {
-    QGraphicsPixmapItem *ganaste= new QGraphicsPixmapItem;
-    ganaste->setPixmap(QPixmap(":/ganaste.png"));
+   QMediaPlayer *sonido= new QMediaPlayer();
+   sonido->setMedia(QUrl("qrc:/explosion.wav"));
+   QGraphicsPixmapItem *ganaste= new QGraphicsPixmapItem;
+   ganaste->setPixmap(QPixmap(":/ganaste.png"));
+   ganaste->setPos(400,250);
    QList<QGraphicsItem *>colisiones=collidingItems();
+
    for (int i=0,j=colisiones.size();i<j;i++){
            if(typeid (*colisiones[i])==typeid(papas)){
-               puntos->increasepuntaje(15);
+               //_puntos->increasepuntaje(15);
+               sonido->play();
                delete (colisiones.at(i));
                vida-=3;
                if(vida<=0){
                   scene()->addItem(ganaste);
-                  puntos->mover(650,380);
+                  //_puntos->mover(650,380);
                   delete this;
-           }
-        }
+            }        }
     }
 }
 
@@ -51,18 +56,20 @@ void tanqueta::colisionconpiedras()
 {
     QGraphicsPixmapItem *ganaste= new QGraphicsPixmapItem;
     ganaste->setPixmap(QPixmap(":/ganaste.png"));
+    ganaste->setPos(400,250);
     QList<QGraphicsItem *>colisiones=collidingItems();
+
     for (int i=0,j=colisiones.size();i<j;i++){
            if(typeid (*colisiones[i])==typeid(piedras)){
-               puntos->increasepuntaje(10);
+               //_puntos->increasepuntaje(10);
                delete (colisiones.at(i));
                vida-=1;
-                if(vida<=0){
-                    scene()->addItem(ganaste);
-                    puntos->mover(650,380);
-                    delete this;
+               if(vida<=0){
+                   scene()->addItem(ganaste);
+                   //_puntos->mover(650,380);
+                   delete this;
                }
-           }
+         }
     }
 }
 

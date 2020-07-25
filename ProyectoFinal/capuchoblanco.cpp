@@ -34,7 +34,7 @@ void capuchoblanco::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 void capuchoblanco::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     this->setPos(mapToScene(event->pos()));
-    if((this->x())>300) timer->start(3000);
+    if((this->x())>300) timer->start(3500);
 }
 
 void capuchoblanco::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -81,11 +81,14 @@ void capuchoblanco::colisionpolicia()
 
 void capuchoblanco::colisionmisiles()
 {
+    QMediaPlayer *sonido= new QMediaPlayer();
+    sonido->setMedia(QUrl("qrc:/explosion.wav"));
     Explosion *pum= new Explosion;
     QList<QGraphicsItem *>colis=collidingItems();
     for (int i=0,n=colis.size();i<n;i++){
            if(typeid (*colis[i])==typeid(misil)){
             pum->setPos(colis.at(i)->x(),colis.at(i)->y());
+            sonido->play();
             scene()->addItem(pum);
             delete colis.at(i);
             delete this;
