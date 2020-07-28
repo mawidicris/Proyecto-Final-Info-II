@@ -51,8 +51,9 @@ void capuchoblanco::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void capuchoblanco::lanzarpiedras()
 {
+    piedras *piedra= new piedras;
     QList<QGraphicsItem*> pied;
-    pied.push_back(new piedras);
+    pied.push_back(piedra);
     pied.last()->setPos(this->x(),this->y());
     scene()->addItem(pied.last());
 }
@@ -76,7 +77,7 @@ void capuchoblanco::colisionpolicia()
             delete this;
             timer->stop();
           }
-    }
+     }
 }
 
 void capuchoblanco::colisionmisiles()

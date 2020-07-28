@@ -29,7 +29,7 @@ void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event)
     if(gamin%5==0){
         capuchonegro *cap= new capuchonegro;
     scene()->addItem(cap);
-    cap->timer5->start(13000);
+    cap->timer5->start(10000);
     }
     scene()->removeItem(this);
 }

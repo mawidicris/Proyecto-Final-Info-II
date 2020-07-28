@@ -22,7 +22,7 @@ void aceite::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
 void aceite::desaparecer()
 {
-    this->hide();
+    delete this;
 }
 
 

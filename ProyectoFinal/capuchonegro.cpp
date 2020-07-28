@@ -51,9 +51,9 @@ void capuchonegro::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void capuchonegro::lanzarpapas()
 {
-
+   papas *papa=new papas;
    QList<QGraphicsItem*> paps;
-   paps.push_back(new papas);
+   paps.push_back(papa);
    paps.last()->setPos(this->x(),this->y());
    scene()->addItem(paps.last());
 

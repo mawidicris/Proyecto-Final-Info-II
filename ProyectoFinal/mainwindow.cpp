@@ -64,8 +64,12 @@ void MainWindow::segundonivel()
     timer2->stop();
     timer->start(2500);
     timer4->start(6000);
-    escena->addItem(fondo);
-    escena->addItem(score);
+    //escena->addItem(fondo);
+    //escena->addItem(score);
+    capuchoB->timer->stop();
+    capuchoB2->timer->stop();
+    escena->removeItem(capuchoB);
+    escena->removeItem(capuchoB2);
     escena->addItem(capuchoN);
     escena->addItem(capuchoN2);
     escena->addItem(nivel2);
@@ -77,10 +81,12 @@ void MainWindow::tercerrnivel()
     timer4->stop();
     timer5->stop();
     timer2->start(3000);
-    timer3->start(6500);
-    timer7->start(7000);
-    escena->addItem(fondo);
-    escena->addItem(score);
+    timer3->start(8000);
+    timer7->start(8000);
+    escena->addItem(capuchoB);
+    escena->addItem(capuchoB2);
+    //escena->addItem(fondo);
+    //escena->addItem(score);
     escena->addItem(nivel3);
     timer10->start(2000);
 }
