@@ -7,7 +7,7 @@ piedras::piedras(QObject *parent) : QObject(parent)
     piedra= new QPixmap(":/piedra.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&piedras::mover);    
-    timer->start(150);
+    timer->start(200);
 }
 
 QRectF piedras::boundingRect() const

@@ -5,6 +5,7 @@ debug/capuchonegro.o
 debug/esmad.o
 debug/explosion.o
 debug/gamines.o
+debug/guardar.o
 debug/ingresar.o
 debug/main.o
 debug/mainwindow.o
@@ -24,6 +25,7 @@ debug/moc_capuchonegro.o
 debug/moc_esmad.o
 debug/moc_explosion.o
 debug/moc_gamines.o
+debug/moc_guardar.o
 debug/moc_ingresar.o
 debug/moc_mainwindow.o
 debug/moc_misil.o

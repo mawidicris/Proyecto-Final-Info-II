@@ -7,7 +7,7 @@ papas::papas(QObject *parent) : QObject(parent)
     papa= new QPixmap(":/papa.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&papas::mover);
-    timer->start(150);
+    timer->start(100);
 }
 
 QRectF papas::boundingRect() const

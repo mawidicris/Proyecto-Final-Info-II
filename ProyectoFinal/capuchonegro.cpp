@@ -34,7 +34,7 @@ void capuchonegro::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 void capuchonegro::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     this->setPos(mapToScene(event->pos()));
-    if((this->x())>300) timer->start(3500);
+    if((this->x())>300) timer->start(5000);
 }
 
 void capuchonegro::mousePressEvent(QGraphicsSceneMouseEvent *event)

@@ -5,6 +5,7 @@ release/capuchonegro.o
 release/esmad.o
 release/explosion.o
 release/gamines.o
+release/guardar.o
 release/ingresar.o
 release/main.o
 release/mainwindow.o
@@ -24,6 +25,7 @@ release/moc_capuchonegro.o
 release/moc_esmad.o
 release/moc_explosion.o
 release/moc_gamines.o
+release/moc_guardar.o
 release/moc_ingresar.o
 release/moc_mainwindow.o
 release/moc_misil.o
