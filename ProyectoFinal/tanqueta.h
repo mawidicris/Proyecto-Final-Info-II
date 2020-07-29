@@ -27,6 +27,7 @@ public:
     float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    int getVida();
 
 signals:
 public slots:

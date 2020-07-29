@@ -34,7 +34,9 @@ void capuchoblanco::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 void capuchoblanco::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     this->setPos(mapToScene(event->pos()));
-    if((this->x())>300) timer->start(5000);
+    if((this->x())>300) {
+        timer->start(4000);
+    }
 }
 
 void capuchoblanco::mousePressEvent(QGraphicsSceneMouseEvent *event)

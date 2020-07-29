@@ -7,7 +7,7 @@ misil::misil(QObject *parent) : QObject(parent)
     bala= new QPixmap(":/misil.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&misil::mover);
-    timer->start(20);
+    timer->start(10);
 }
 
 QRectF misil::boundingRect() const

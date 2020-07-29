@@ -54,6 +54,7 @@ public:
     QTimer *timer8=new QTimer;
     QTimer *timer9= new QTimer;
     QTimer *timer10=new QTimer;
+    QTimer *timer11=new QTimer;
 
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
@@ -71,11 +72,12 @@ public:
     int ejecucionespolicias=0;
     int ejecucionesesmad=0;
     int ejecucionespolicias3=0;
+    int ejecucionesesmad3=0;
 
    void primernivel();
    void segundonivel();
    void tercerrnivel();
-   void niveltanqueta();
+    void niveltanqueta();
 
 
 public slots:

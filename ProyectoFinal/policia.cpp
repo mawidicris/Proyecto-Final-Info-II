@@ -56,6 +56,7 @@ void policia::mover()
         perdiste->setPos(500,250);
         scene()->addItem(perdiste);
         _puntaje->mover(650,380);
+
     }
 }
 

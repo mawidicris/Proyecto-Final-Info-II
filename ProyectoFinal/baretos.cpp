@@ -30,11 +30,11 @@ void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
     punto->increasepuntaje(5);
    if(baret%5==0){
      capuchoblanco *cap= new capuchoblanco;
-    /* QList<QGraphicsItem *>capuchines;
+     /*QList<QGraphicsItem *>capuchines;
      capuchines.push_back(cap);
      scene()->addItem(capuchines.last());*/
      scene()->addItem(cap);
-     cap->timer5->start(10000);
+     cap->timer5->start(11000);
    }
     scene()->removeItem(this);
  }

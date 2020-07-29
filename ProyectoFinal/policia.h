@@ -28,6 +28,7 @@ public:
     QPixmap *poli;
     QGraphicsPixmapItem *perdiste;
     puntaje *_puntaje;
+    bool perdi=false;
 
     float filas,columnas,ancho,alto;
     float xo=1233, v=60, mu=0.3; //mu: coeficiente de fricción

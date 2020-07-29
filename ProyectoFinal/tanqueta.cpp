@@ -28,6 +28,11 @@ void tanqueta::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
     painter->drawPixmap(-ancho/2,-alto/2,*carro,0,0,ancho,alto);
 }
 
+int tanqueta::getVida()
+{
+    return vida;
+}
+
 
 void tanqueta::colisionconpapas()
 {
@@ -43,7 +48,7 @@ void tanqueta::colisionconpapas()
                //_puntos->increasepuntaje(15);
                sonido->play();
                delete (colisiones.at(i));
-               vida-=3;
+               vida-=5;
                if(vida<=0){
                   scene()->addItem(ganaste);
                   //_puntos->mover(650,380);
@@ -63,7 +68,7 @@ void tanqueta::colisionconpiedras()
            if(typeid (*colisiones[i])==typeid(piedras)){
                //_puntos->increasepuntaje(10);
                delete (colisiones.at(i));
-               vida-=1;
+               vida-=2;
                if(vida<=0){
                    scene()->addItem(ganaste);
                    //_puntos->mover(650,380);

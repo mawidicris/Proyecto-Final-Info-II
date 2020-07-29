@@ -78,7 +78,7 @@ void esmad::colisionpapas()
            sonido->play();
            scene()->addItem(liquid);
            delete (colisiones.at(i));
-           if(j%2==0) delete this;
+           delete this;
          }
     }
 }
