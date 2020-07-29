@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
     nivel3->setPixmap(QPixmap(":/nivel3.png"));
     nivel3->setPos(500,250);
 
+    escena->addItem(fondo);
+    escena->addItem(score);
 
     connect(timer,&QTimer::timeout,this,&MainWindow::generargamines);
     connect(timer2,&QTimer::timeout,this,&MainWindow::generarbaret);
@@ -47,20 +49,21 @@ MainWindow::~MainWindow()
     delete capuchoB;
 }
 
-void MainWindow::primernivel()
+int MainWindow::primernivel()
 {
+    niv=1;
     timer2->start(2000);
     timer5->start(5500);
-    escena->addItem(fondo);
-    escena->addItem(score);
     escena->addItem(capuchoB);
     escena->addItem(capuchoB2);
     escena->addItem(nivel1);
     timer8->start(2000);
+    return  niv;
 }
 
-void MainWindow::segundonivel()
+int MainWindow::segundonivel()
 {
+    niv=2;
     timer2->stop();
     timer->start(2500);
     timer4->start(6000);
@@ -72,10 +75,12 @@ void MainWindow::segundonivel()
     escena->addItem(capuchoN2);
     escena->addItem(nivel2);
     timer9->start(2000);
+    return niv;
 }
 
-void MainWindow::tercerrnivel()
+int MainWindow::tercerrnivel()
 {
+    niv=3;
     timer4->stop();
     timer5->stop();
     timer2->start(3000);
@@ -83,17 +88,31 @@ void MainWindow::tercerrnivel()
     timer7->start(9000);
     escena->addItem(nivel3);
     timer10->start(2000);
+    return niv;
 }
 
-void MainWindow::niveltanqueta()
+int MainWindow::niveltanqueta()
 {
+    niv=4;
+    escena->addItem(fondo);
+    escena->addItem(score);
     tanqueta *tanque= new tanqueta;
     tanque->_puntos=score;
     timer->stop();
     timer2->stop();
     escena->addItem(tanque);
-    qDebug()<<tanque->getVida();
-    //if((tanque->getVida())<=0){this->close();}
+    return niv;
+}
+
+void MainWindow::guardarnivel()
+{
+    string puntos= std::to_string(score->getScore());
+    guardar.open("registro.txt");
+    if(niv==1) guardar<<"1"<<","<<puntos;
+    if(niv==2) guardar<<"2"<<","<<puntos;
+    if(niv==3) guardar<<"3"<<","<<puntos;
+    if(niv==4) guardar<<"4"<<","<<puntos;
+    guardar.close();
 }
 
 
@@ -211,9 +230,10 @@ void MainWindow::on_pausar_clicked()
     timer10->stop();
     gamin->timer->stop();
     bareto->timer->stop();
-    this->close();
-    partidas *part=new partidas;
+    guardarnivel();
+    partidas *part=new partidas(niv,score->getScore());
     part->show();
+    this->close();
 }
 
 void MainWindow::borrarnivel1()

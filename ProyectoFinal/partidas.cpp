@@ -1,13 +1,16 @@
 #include "partidas.h"
 #include "ui_partidas.h"
 
-partidas::partidas(QWidget *parent) :
+partidas::partidas(int nivel,int puntaje,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::partidas)
 {
     ui->setupUi(this);
     ui->unjugador->setHidden(true);
     ui->dosjugadores->setHidden(true);
+
+    niv=nivel;
+    puntos=puntaje;
 }
 
 partidas::~partidas()
@@ -25,16 +28,36 @@ void partidas::on_nuevapartida_clicked()
 
 void partidas::on_cargarpartida_clicked()
 {
-    ui->nuevapartida->setHidden(true);
-    ui->cargarpartida->setHidden(true);
+    MainWindow *juego= new MainWindow();
+
+    if(niv==1){
+        juego->primernivel();
+    }
+    if(niv==2){
+        juego->segundonivel();
+        puntuacion->score=puntos;
+        juego->score->score=puntuacion->score;
+    }
+    if(niv==3){
+        juego->tercerrnivel();
+        puntuacion->score=puntos;
+        juego->score->score=puntuacion->score;
+    }
+    if(niv==4){
+        juego->niveltanqueta();
+        puntuacion->score=puntos;
+        juego->score->score=puntuacion->score;
+    }
+    this->close();
+    juego->show();
 }
 
 void partidas::on_unjugador_clicked()
 {
- MainWindow *juego= new MainWindow;
- this->close();
- juego->primernivel();
- juego->show();
+     MainWindow *juego= new MainWindow();
+     this->close();
+     juego->primernivel();
+     juego->show();
 }
 
 void partidas::on_dosjugadores_clicked()

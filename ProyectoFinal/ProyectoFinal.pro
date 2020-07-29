@@ -23,7 +23,6 @@ SOURCES += \
     esmad.cpp \
     explosion.cpp \
     gamines.cpp \
-    guardar.cpp \
     ingresar.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -44,7 +43,6 @@ HEADERS += \
     esmad.h \
     explosion.h \
     gamines.h \
-    guardar.h \
     ingresar.h \
     mainwindow.h \
     misil.h \

@@ -17,7 +17,8 @@ public:
     explicit registro(QWidget *parent = nullptr);
     ~registro();
 
-private slots:
+
+public slots:
 
 
     void on_registrar_clicked();

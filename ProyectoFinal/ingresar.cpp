@@ -17,7 +17,10 @@ ingresar::~ingresar()
 
 void ingresar::on_ingresar_2_clicked()
 {
-    partidas *partida=new partidas;
+    int niv;
+    int punt;
+    string nivel;
+    string puntaje;
     QString usu=ui->usuario->text();
     QString cla=ui->contra->text();
     std::string usuari=usu.toUtf8().constData();
@@ -30,7 +33,6 @@ void ingresar::on_ingresar_2_clicked()
 
     if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
     this->close();
-    partida->show();
     }
 
       else {
@@ -38,7 +40,15 @@ void ingresar::on_ingresar_2_clicked()
           }
        }
        leer.close();
-
+       leer.open("registro.txt");
+       while (!leer.eof()){
+           getline(leer,nivel,',');
+           getline(leer,puntaje);
+           niv= stoi(nivel);
+           punt=stoi(puntaje);
+       }
+       partidas *partida=new partidas(niv,punt);
+       partida->show();
 }
 
 

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QGraphicsScene>
 #include "mainwindow.h"
+#include "puntaje.h"
 
 namespace Ui {
 class partidas;
@@ -14,9 +15,11 @@ class partidas : public QWidget
     Q_OBJECT
 
 public:
-    explicit partidas(QWidget *parent = nullptr);
+    explicit partidas(int nivel,int puntaje,QWidget *parent = nullptr);
     ~partidas();
-
+    int niv;
+    int puntos;
+    puntaje *puntuacion=new puntaje();
 
 
 private slots:

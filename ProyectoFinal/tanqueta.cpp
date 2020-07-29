@@ -45,13 +45,13 @@ void tanqueta::colisionconpapas()
 
    for (int i=0,j=colisiones.size();i<j;i++){
            if(typeid (*colisiones[i])==typeid(papas)){
-               //_puntos->increasepuntaje(15);
+               _puntos->increasepuntaje(15);
                sonido->play();
                delete (colisiones.at(i));
                vida-=5;
                if(vida<=0){
                   scene()->addItem(ganaste);
-                  //_puntos->mover(650,380);
+                  _puntos->mover(500,380);
                   delete this;
             }        }
     }
@@ -66,12 +66,12 @@ void tanqueta::colisionconpiedras()
 
     for (int i=0,j=colisiones.size();i<j;i++){
            if(typeid (*colisiones[i])==typeid(piedras)){
-               //_puntos->increasepuntaje(10);
+               _puntos->increasepuntaje(10);
                delete (colisiones.at(i));
                vida-=2;
                if(vida<=0){
                    scene()->addItem(ganaste);
-                   //_puntos->mover(650,380);
+                   _puntos->mover(650,380);
                    delete this;
                }
          }

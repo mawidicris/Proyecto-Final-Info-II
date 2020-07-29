@@ -11,6 +11,8 @@ using namespace std;
 #include <QMouseEvent>
 #include <QList>
 #include <QGraphicsItem>
+#include <fstream>
+#include <iostream>
 #include "capuchonegro.h"
 #include "capuchoblanco.h"
 #include "esmad.h"
@@ -27,7 +29,7 @@ using namespace std;
 #include "aceite.h"
 #include "ingresar.h"
 #include "tanqueta.h"
-#include "partidas.h"
+//#include "partidas.h"
 #include <QDebug>
 
 
@@ -68,16 +70,23 @@ public:
     puntaje *score = new puntaje();
     Gamines *gamin = new Gamines();
     baretos *bareto= new baretos();
+
     QGraphicsPixmapItem  *ganaste =new QGraphicsPixmapItem;
     int ejecucionespolicias=0;
     int ejecucionesesmad=0;
     int ejecucionespolicias3=0;
     int ejecucionesesmad3=0;
 
-   void primernivel();
-   void segundonivel();
-   void tercerrnivel();
-    void niveltanqueta();
+    ofstream guardar;
+
+    int niv;
+
+    int primernivel();
+    int segundonivel();
+    int tercerrnivel();
+    int niveltanqueta();
+
+    void guardarnivel();
 
 
 public slots:
