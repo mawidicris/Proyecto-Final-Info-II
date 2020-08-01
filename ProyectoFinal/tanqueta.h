@@ -20,7 +20,7 @@ public:
     explicit tanqueta(QObject *parent = nullptr);
     QPixmap *carro;
     QTimer *timer,*timer2,*timer3;
-    int vida=50; //Vida incial
+    int vida=100; //Vida incial
     puntaje *_puntos=new puntaje;
     float ancho,alto;//Ancho y alto de la imagen
 

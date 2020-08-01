@@ -7,7 +7,7 @@ misil::misil(QObject *parent) : QObject(parent)
     bala= new QPixmap(":/misil.png");
     timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&misil::mover);
-    timer->start(15);
+    timer->start(30);
 }
 
 QRectF misil::boundingRect() const //Construye el rectángulo sobre el que se dibuja la imagen
@@ -31,6 +31,9 @@ void misil::mover() //Genera el movimiento parabólico del misil
     v= sqrt(vx*vx+ vy*vy);
     x+=vx*dt;
     y+=vy*dt-(a/2)*dt*dt;
+    if (this->y<-650){
+        delete this;
+    }
 
 }
 
