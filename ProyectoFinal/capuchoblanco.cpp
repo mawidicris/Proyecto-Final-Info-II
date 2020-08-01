@@ -21,46 +21,46 @@ capuchoblanco::capuchoblanco(QObject *parent) : QObject(parent)
    timer4->start(300);
 }
 
-QRectF capuchoblanco::boundingRect() const
+QRectF capuchoblanco::boundingRect() const //Construye el rectángulo sobre el que se dibuja la imagen
 {
     return QRectF(-ancho/2,-alto/2,ancho,alto);
 }
 
-void capuchoblanco::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void capuchoblanco::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) //Dibujar la imagen
 {
     painter->drawPixmap(-ancho/2,-alto/2,*cblanco,0,0,ancho,alto);
 }
 
-void capuchoblanco::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+void capuchoblanco::mouseMoveEvent(QGraphicsSceneMouseEvent *event) //Eventos al mover mientras se presiona el mouse
 {
-    this->setPos(mapToScene(event->pos()));
+    this->setPos(mapToScene(event->pos())); //Mueve el capucho a la posición que se indique con el mouse
     if((this->x())>300) {
         timer->start(4000);
     }
 }
 
-void capuchoblanco::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void capuchoblanco::mousePressEvent(QGraphicsSceneMouseEvent *event) //Eventos al presionar el mouse
 {
     this->setCursor(QCursor(Qt::ClosedHandCursor));
        Q_UNUSED(event);
 }
 
-void capuchoblanco::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+void capuchoblanco::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) //Eventos al liberar el mouse
 {
     this->setCursor(QCursor(Qt::ArrowCursor));
     Q_UNUSED(event);
 }
 
-void capuchoblanco::lanzarpiedras()
+void capuchoblanco::lanzarpiedras() //Se crea un objeto de la clase piedras cada 4 segundos
 {
     piedras *piedra= new piedras;
     QList<QGraphicsItem*> pied;
     pied.push_back(piedra);
-    pied.last()->setPos(this->x(),this->y());
+    pied.last()->setPos(this->x(),this->y()); //La piedra sale de la posición del capucho
     scene()->addItem(pied.last());
 }
 
-void capuchoblanco::colisionesmad()
+void capuchoblanco::colisionesmad() //Se elimina el capucho si hay una colisión con un objeto del tipo esmad
 {
     QList<QGraphicsItem *>col=collidingItems();
     for (int i=0,n=col.size();i<n;i++){
@@ -71,7 +71,7 @@ void capuchoblanco::colisionesmad()
     }
 }
 
-void capuchoblanco::colisionpolicia()
+void capuchoblanco::colisionpolicia() //Se elimina el capucho si hay una colisión con un objeto del tipo policia
 {
     QList<QGraphicsItem *>coli=collidingItems();
     for (int i=0,n=coli.size();i<n;i++){
@@ -82,10 +82,10 @@ void capuchoblanco::colisionpolicia()
      }
 }
 
-void capuchoblanco::colisionmisiles()
+void capuchoblanco::colisionmisiles() //Se elimina el capucho si hay una colisión con un objeto del tipo misil
 {
     QMediaPlayer *sonido= new QMediaPlayer();
-    sonido->setMedia(QUrl("qrc:/explosion.wav"));
+    sonido->setMedia(QUrl("qrc:/explosion.wav")); //Se agrega sonido de explosión
     Explosion *pum= new Explosion;
     QList<QGraphicsItem *>colis=collidingItems();
     for (int i=0,n=colis.size();i<n;i++){
@@ -100,7 +100,7 @@ void capuchoblanco::colisionmisiles()
     }
 }
 
-void capuchoblanco::eliminar()
+void capuchoblanco::eliminar() //Se elimina el capucho cada 11 segundos
 {
    delete this;
 }

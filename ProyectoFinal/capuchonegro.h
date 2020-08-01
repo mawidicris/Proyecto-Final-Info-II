@@ -24,8 +24,8 @@ public:
     explicit capuchonegro(QObject *parent = nullptr);
     QPixmap *cnegro;
     QTimer *timer,*timer2,*timer3,*timer4,*timer5;
+    float ancho,alto; //Ancho y alto de la imagen
 
-    float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void mouseMoveEvent (QGraphicsSceneMouseEvent *event);

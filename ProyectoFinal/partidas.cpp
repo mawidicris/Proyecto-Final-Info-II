@@ -18,7 +18,7 @@ partidas::~partidas()
     delete ui;
 }
 
-void partidas::on_nuevapartida_clicked()
+void partidas::on_nuevapartida_clicked() //Eventos al presionar el botón de nueva partida
 {
   ui->unjugador->setHidden(false);
   ui->dosjugadores->setHidden(true);
@@ -27,6 +27,8 @@ void partidas::on_nuevapartida_clicked()
 }
 
 void partidas::on_cargarpartida_clicked()
+
+//Al presionar continuar partida se toman los datos almacenados sobre el nivel y el puntaje y se crea un nuevo juego partiendo de estos datos
 {
     MainWindow *juego= new MainWindow();
 
@@ -52,7 +54,7 @@ void partidas::on_cargarpartida_clicked()
     juego->show();
 }
 
-void partidas::on_unjugador_clicked()
+void partidas::on_unjugador_clicked() //Eventos al presionar un jugador
 {
      MainWindow *juego= new MainWindow();
      this->close();
@@ -60,7 +62,7 @@ void partidas::on_unjugador_clicked()
      juego->show();
 }
 
-void partidas::on_dosjugadores_clicked()
+void partidas::on_dosjugadores_clicked() //Eventos al presionar dos jugadores
 {
  this->close();
 }

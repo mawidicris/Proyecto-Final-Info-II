@@ -13,7 +13,7 @@ registro::~registro()
     delete ui;
 }
 
-void registro::on_registrar_clicked()
+void registro::on_registrar_clicked() //Al presionar el botón registrar se escribe en un archivo de texto la información de usuario y clave
 {
     QString usu=ui->usuario->text();
     QString cla=ui->contra->text();

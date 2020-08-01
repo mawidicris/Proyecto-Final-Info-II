@@ -20,8 +20,8 @@ public:
     explicit Gamines(QObject *parent = nullptr);
     QPixmap *Gamine;
     QTimer *timer;
-    float ancho,alto;
-    int gamin=0;
+    float ancho,alto; //Ancho y alto de la imagen
+    int gamin=0;//Número de gamines presionados
     puntaje *puntos= new puntaje;
 
     QRectF boundingRect() const;

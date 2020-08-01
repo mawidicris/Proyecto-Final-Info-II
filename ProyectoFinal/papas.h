@@ -15,8 +15,8 @@ public:
     explicit papas(QObject *parent = nullptr);
     QPixmap *papa;
     QTimer *timer;
+    float ancho,alto;//Ancho y alto de la imagen
 
-    float ancho,alto;
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 

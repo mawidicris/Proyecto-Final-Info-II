@@ -14,7 +14,7 @@ public:
     explicit Explosion(QObject *parent = nullptr);
     QTimer *timer;
     QPixmap *bomba;
-    float filas,columnas,ancho,alto;
+    float filas,columnas,ancho,alto;//Ancho, alto, filas y columnas de la imagen
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

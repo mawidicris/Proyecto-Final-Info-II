@@ -11,46 +11,42 @@ baretos::baretos(QObject *parent) : QObject(parent)
 
 }
 
-QRectF baretos::boundingRect() const
+QRectF baretos::boundingRect() const //Construye el rectángulo sobre el que se dibuja la imagen
 {
     return QRectF(-ancho/2,-alto/2,ancho,alto);
 }
 
-void baretos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void baretos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) //Dibujar la imagen
 {
     painter->drawPixmap(-ancho/2,-alto/2,*bareto,0,0,ancho,alto);
 }
 
-void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void baretos::mousePressEvent(QGraphicsSceneMouseEvent *event) //Eventos al presionar el mouse
 {
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
     increasebareto();
-    //capuchoblanco *cap= new capuchoblanco;
-    punto->increasepuntaje(5);
-   if(baret%5==0){
-     capuchoblanco *cap= new capuchoblanco;
-     /*QList<QGraphicsItem *>capuchines;
-     capuchines.push_back(cap);
-     scene()->addItem(capuchines.last());*/
-     scene()->addItem(cap);
-     cap->timer5->start(11000);
+    punto->increasepuntaje(5); //Se aumenta el puntaje en 5 cada vez que presiono sobre un bareto
+    if(baret%5==0){
+      capuchoblanco *cap= new capuchoblanco; //Agregar un capucho cada vez que se presione 5 veces sobre un bareto
+      scene()->addItem(cap);
+      cap->timer5->start(11000); //Se activa el timer que elimina los capuchos blancos
    }
     scene()->removeItem(this);
  }
 
-void baretos::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+void baretos::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)  //Evento al liberar el mouse
 {
     this->setCursor(QCursor(Qt::ArrowCursor));
     Q_UNUSED(event);
 }
 
-void baretos::increasebareto()
+void baretos::increasebareto() //Aumentar el número de baretos
 {
     baret++;
 }
 
-void baretos::caida()
+void baretos::caida() //Caida del bareto
 {
     setPos(x(),y()+20);
 }

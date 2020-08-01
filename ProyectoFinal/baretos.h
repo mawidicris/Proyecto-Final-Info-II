@@ -20,8 +20,8 @@ public:
     explicit baretos(QObject *parent = nullptr);
     QPixmap *bareto;
     QTimer *timer;
-    int baret=0;
-    float ancho,alto;
+    int baret=0; //Numero de baretos presionados
+    float ancho,alto; //Ancho y alto de la imagen
     puntaje *punto=new puntaje();
 
     QRectF boundingRect() const;

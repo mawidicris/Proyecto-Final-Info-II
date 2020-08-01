@@ -49,7 +49,7 @@ MainWindow::~MainWindow()
     delete capuchoB;
 }
 
-int MainWindow::primernivel()
+int MainWindow::primernivel() //Se inicilizan los timers que generan lo elementos correspondientes añ nivel 1
 {
     niv=1;
     timer2->start(2000);
@@ -58,10 +58,10 @@ int MainWindow::primernivel()
     escena->addItem(capuchoB2);
     escena->addItem(nivel1);
     timer8->start(2000);
-    return  niv;
+    return  niv; //Se retorna el nivel actual
 }
 
-int MainWindow::segundonivel()
+int MainWindow::segundonivel() //Se inicilizan (o pausan) los timers que generan lo elementos correspondientes al nivel 2
 {
     niv=2;
     timer2->stop();
@@ -75,10 +75,10 @@ int MainWindow::segundonivel()
     escena->addItem(capuchoN2);
     escena->addItem(nivel2);
     timer9->start(2000);
-    return niv;
+    return niv; //Se retorna el nivel actual
 }
 
-int MainWindow::tercerrnivel()
+int MainWindow::tercerrnivel() //Se inicilizan (o pausan) los timers que generan lo elementos correspondientes al nivel 3
 {
     niv=3;
     timer4->stop();
@@ -88,10 +88,10 @@ int MainWindow::tercerrnivel()
     timer7->start(9000);
     escena->addItem(nivel3);
     timer10->start(2000);
-    return niv;
+    return niv; //Se retorna el nivel actual
 }
 
-int MainWindow::niveltanqueta()
+int MainWindow::niveltanqueta() //Se pausan los timers y se agrega la tanqueta
 {
     niv=4;
     escena->addItem(fondo);
@@ -101,10 +101,10 @@ int MainWindow::niveltanqueta()
     timer->stop();
     timer2->stop();
     escena->addItem(tanque);
-    return niv;
+    return niv; //Se retorna el nivel actual
 }
 
-void MainWindow::guardarnivel()
+void MainWindow::guardarnivel() //Guarda los datos corrspondientes al nivel y puntaje en un archivo de texto
 {
     string puntos= std::to_string(score->getScore());
     guardar.open("registro.txt");
@@ -116,7 +116,7 @@ void MainWindow::guardarnivel()
 }
 
 
-void MainWindow::generarbaret()
+void MainWindow::generarbaret() //Genera baretos en posiciones aleatorias
 {
     bareto->punto=score;
     int randomValue = rand() % 1200;
@@ -126,18 +126,18 @@ void MainWindow::generarbaret()
     escena->addItem(bareti.last());
 }
 
-void MainWindow::generaresmad()
+void MainWindow::generaresmad() //Genera agentes del esmad para el segundo nivel
 {
     ejecucionesesmad++;
     esmad *esm = new esmad;
     esm->_puntaje = score;
-    int carriles[4]={150,300,450,600};
+    int carriles[4]={150,300,450,600}; //Posiciones de los cuatro carriles
     int randomValue = rand() % 4;
     QList<QGraphicsItem*>agentes;
     agentes.push_back(esm);
     agentes.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(agentes.last());
-    if(ejecucionesesmad==6){
+    if(ejecucionesesmad==6){ //Si han salido 6 agentes se incia el tercer nivel
        timer4->stop();
        for (int i=0;i<agentes.length();i++){
          delete agentes.at(i);
@@ -146,18 +146,18 @@ void MainWindow::generaresmad()
         }
 }
 
-void MainWindow::generarpolicia()
+void MainWindow::generarpolicia() //Genera policias para el primer nivel
 {
     policia *em = new policia;
     ejecucionespolicias++;
     em->_puntaje = score;
-    int carriles[4]={150,300,450,600};
+    int carriles[4]={150,300,450,600}; //Posiciones de los 4 carriles
     int randomValue = rand() % 4;
     QList<QGraphicsItem*>policias;
     policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
-    if(ejecucionespolicias==6){
+    if(ejecucionespolicias==6){ //Si han salido 6 policias se inicia el segundo nivel
        timer5->stop();
        for (int i=0;i<policias.length();i++){
          delete policias.at(i);
@@ -166,19 +166,19 @@ void MainWindow::generarpolicia()
      }
 }
 
-void MainWindow::generarpolicianivel3()
+void MainWindow::generarpolicianivel3() //Genera policias en el nivel 3
 {
     ejecucionespolicias3++;
     policia *pol = new policia;
     pol->_puntaje = score;
-    int carriles[4]={150,300,450,600};
+    int carriles[4]={150,300,450,600}; //Posiciones de los 4 carriles
     int randomValue = rand() % 4;
     QList<QGraphicsItem*>policias;
 
     policias.push_back(pol);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
-    if(ejecucionespolicias3==4){
+    if(ejecucionespolicias3==4){ //Si han salido 4 policias se agrega la tanqueta
        timer3->stop();
        for (int i=0;i<policias.length();i++){
          delete policias.at(i);
@@ -187,12 +187,12 @@ void MainWindow::generarpolicianivel3()
     }
 }
 
-void MainWindow::generaresmadnivel3()
+void MainWindow::generaresmadnivel3() //Genera esmad en el nivel 3
 {
     ejecucionesesmad3++;
     esmad *esma = new esmad;
     esma->_puntaje = score;
-    int carriles2[4]={300,450,150,600};
+    int carriles2[4]={300,450,150,600}; //Posiciones de los 4 carriles
     int randomValue2= rand() % 4;
     QList<QGraphicsItem*>agentes;
     agentes.push_back(esma);
@@ -206,7 +206,7 @@ void MainWindow::generaresmadnivel3()
     }
 }
 
-void MainWindow::generargamines()
+void MainWindow::generargamines() //Genera gamines en posiciones aleatorias
 {
     gamin->puntos=score;
     int randomValue = rand() % 1200;
@@ -216,7 +216,7 @@ void MainWindow::generargamines()
     escena->addItem(gamines.last());
 }
 
-void MainWindow::on_pausar_clicked()
+void MainWindow::on_pausar_clicked() //Eventos al presionar el botón menú
 {
     timer->stop();
     timer2->stop();
@@ -230,25 +230,25 @@ void MainWindow::on_pausar_clicked()
     timer10->stop();
     gamin->timer->stop();
     bareto->timer->stop();
-    guardarnivel();
-    partidas *part=new partidas(niv,score->getScore());
+    guardarnivel(); //Se activa la función que guarda los datos de la partida
+    partidas *part=new partidas(niv,score->getScore()); //Se abre la ventana de partidas
     part->show();
     this->close();
 }
 
-void MainWindow::borrarnivel1()
+void MainWindow::borrarnivel1() //Borra el letrero de nivel 1
 {
   delete nivel1;
   timer8->stop();
 }
 
-void MainWindow::borrarnivel2()
+void MainWindow::borrarnivel2() //Borra el letrero de nivel 2
 {
   delete nivel2;
   timer9->stop();
 }
 
-void MainWindow::borrarnivel3()
+void MainWindow::borrarnivel3() //Borra el letrero de nivel 3
 {
   delete nivel3;
     timer10->stop();

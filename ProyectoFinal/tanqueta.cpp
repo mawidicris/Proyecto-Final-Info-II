@@ -18,28 +18,28 @@ tanqueta::tanqueta(QObject *parent) : QObject(parent)
     timer3->start(300);
 }
 
-QRectF tanqueta::boundingRect() const
+QRectF tanqueta::boundingRect() const  //Construye el rectángulo sobre el que se dibuja la imagen
 {
    return QRectF(-ancho/2,-alto/2,ancho,alto);
 }
 
-void tanqueta::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void tanqueta::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) //Dibjula la imagen
 {
     painter->drawPixmap(-ancho/2,-alto/2,*carro,0,0,ancho,alto);
 }
 
-int tanqueta::getVida()
+int tanqueta::getVida() //Retorna la vida de la tanqueta
 {
     return vida;
 }
 
 
-void tanqueta::colisionconpapas()
+void tanqueta::colisionconpapas() //Disminuye la vida cuando colisiona con un objeto de la clase papas
 {
    QMediaPlayer *sonido= new QMediaPlayer();
-   sonido->setMedia(QUrl("qrc:/explosion.wav"));
+   sonido->setMedia(QUrl("qrc:/explosion.wav")); // Se agrega sonido de explosión
    QGraphicsPixmapItem *ganaste= new QGraphicsPixmapItem;
-   ganaste->setPixmap(QPixmap(":/ganaste.png"));
+   ganaste->setPixmap(QPixmap(":/ganaste.png")); //Se agrega imagen de 'ganaste'
    ganaste->setPos(400,250);
    QList<QGraphicsItem *>colisiones=collidingItems();
 
@@ -49,18 +49,18 @@ void tanqueta::colisionconpapas()
                sonido->play();
                delete (colisiones.at(i));
                vida-=5;
-               if(vida<=0){
-                  scene()->addItem(ganaste);
+               if(vida<=0){ //Elimina la tanqueta cuando la vida es cero
+                  scene()->addItem(ganaste); //Se agrega a la escena imagen de 'ganaste'
                   _puntos->mover(500,380);
                   delete this;
             }        }
     }
 }
 
-void tanqueta::colisionconpiedras()
+void tanqueta::colisionconpiedras() //Disminuye la vida cuando colisiona con un objeto de la clase piedras
 {
     QGraphicsPixmapItem *ganaste= new QGraphicsPixmapItem;
-    ganaste->setPixmap(QPixmap(":/ganaste.png"));
+    ganaste->setPixmap(QPixmap(":/ganaste.png")); //Se agrega imagen de 'ganaste'
     ganaste->setPos(400,250);
     QList<QGraphicsItem *>colisiones=collidingItems();
 
@@ -69,8 +69,8 @@ void tanqueta::colisionconpiedras()
                _puntos->increasepuntaje(10);
                delete (colisiones.at(i));
                vida-=2;
-               if(vida<=0){
-                   scene()->addItem(ganaste);
+               if(vida<=0){ //Elimina la tanqueta cuando la vida es cero
+                   scene()->addItem(ganaste); //Se agrega a la escena imagen de 'ganaste'
                    _puntos->mover(650,380);
                    delete this;
                }
@@ -78,7 +78,7 @@ void tanqueta::colisionconpiedras()
     }
 }
 
-void tanqueta::lanzar()
+void tanqueta::lanzar() //Se crea un objeto de la clase misil cada 4 segundos
 {
     misil *bala= new misil;
     QList<QGraphicsItem*>balas;

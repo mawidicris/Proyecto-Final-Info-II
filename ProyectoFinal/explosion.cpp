@@ -13,7 +13,7 @@ Explosion::Explosion(QObject *parent) : QObject(parent)
 
 }
 
-void Explosion::actualizarbomba()
+void Explosion::actualizarbomba() //Mover entre filas y columnas de la imagen para actualizar el sprite
 {
     columnas+=128;
     if(columnas>=512){
@@ -25,12 +25,12 @@ void Explosion::actualizarbomba()
     this->update(-ancho/2,-alto/2,ancho,alto);
 
 }
-QRectF Explosion::boundingRect() const
+QRectF Explosion::boundingRect() const //Construye el rectángulo sobre el que se dibuja la imagen
 {
  return QRectF(-ancho/2,-alto/2,ancho,alto);
 }
 
-void Explosion::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void Explosion::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) //Dibujar la imagen
 {
     painter->drawPixmap(-ancho/2,-alto/2,*bomba,columnas,filas,ancho,alto);
 }

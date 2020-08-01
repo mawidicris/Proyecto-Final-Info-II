@@ -29,9 +29,8 @@ public:
     QGraphicsPixmapItem *perdiste;
     puntaje *_puntaje;
     int ejecuciones=0;
-
-    float filas,columnas,ancho,alto;
-    float xo=1233, v=60, mu=0.3; //mu: coeficiente de fricción
+    float filas,columnas,ancho,alto; //Ancho, alto, filas y columnas de la imagen
+    float xo=1233, v=60, mu=0.3; //mu: coeficiente de fricción, velocidad y posición inicial
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

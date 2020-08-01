@@ -28,7 +28,17 @@ esmad::esmad(QObject *parent) : QObject(parent)
 
 }
 
-void esmad::actualizar()
+QRectF esmad::boundingRect() const //Construye el rectángulo sobre el que se dibuja la imagen
+{
+ return QRectF(-ancho/2,-alto/2,ancho,alto);
+}
+
+void esmad::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) //Dibujar la imagen
+{
+    painter->drawPixmap(-ancho/2,-alto/2,*agente,columnas,filas,ancho,alto);
+}
+
+void esmad::actualizar() //Mover entre filas y columnas de la imagen para actualizar el sprite
 {
     columnas+=120;
     if(columnas>=345){
@@ -42,14 +52,14 @@ void esmad::actualizar()
     this->update(-ancho/2,-alto/2,ancho,alto);
 }
 
-void esmad::mover()
+void esmad::mover() //Movimiento rectilíneo del agente
 {
  xo-=(1/mu)*v*dt;
  setPos(xo,y());
  QList<QGraphicsItem *>colision1=collidingItems();
  for (int i=0,j=colision1.size();i<j;i++){
          if(typeid (*colision1[i])==typeid(aceite)){
-          mu=0.85;
+          mu=0.85; //Se cambia el coeficiente de fricción cuando colisiona con un objeto de la clase aceite
           setPos(xo,y());
       }
    }
@@ -61,9 +71,11 @@ void esmad::mover()
 }
 
 void esmad::colisionpapas()
+/*Se eliminia de la escena si colisiona con un objeto de la clase papas,
+aumenta el puntaje y se agrega un objeto de las clases aceite y explosión*/
 {
   QMediaPlayer *sonido= new QMediaPlayer();
-  sonido->setMedia(QUrl("qrc:/explosion.wav"));
+  sonido->setMedia(QUrl("qrc:/explosion.wav")); //Se agrega sonido de explosión
 
   Explosion *pum= new Explosion;
   aceite *liquid= new aceite;
@@ -71,7 +83,7 @@ void esmad::colisionpapas()
   for (int i=0,j=colisiones.size();i<j;i++){
          if(typeid (*colisiones[i])==typeid(papas)){
 
-           _puntaje->increasepuntaje(10);
+           _puntaje->increasepuntaje(10);//Se aumenta el puntaje en 10
            pum->setPos(colisiones.at(i)->x(),colisiones.at(i)->y());
            liquid->setPos(colisiones.at(i)->x(),(colisiones.at(i)->y())+50);
            scene()->addItem(pum);
@@ -83,20 +95,20 @@ void esmad::colisionpapas()
     }
 }
 
-void esmad::colisionpiedras()
+void esmad::colisionpiedras() //Se activa la función retroceder si colisiona con un objeto de la clase piedras y aumenta el puntaje
 {
     QList<QGraphicsItem *>colisio=collidingItems();
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
               timer5->start(200);
               timer2->stop();
-            _puntaje->increasepuntaje(5);
+            _puntaje->increasepuntaje(5); // Se aumenta el puntaje en 5
              delete (colisio.at(i));
           }
     }
 }
 
-void esmad::retroceder()
+void esmad::retroceder() //Retocede al colisionar con una roca
 {
    ejecuciones++;
    xo+=10;
@@ -108,15 +120,7 @@ void esmad::retroceder()
    }
 }
 
-QRectF esmad::boundingRect() const
-{
- return QRectF(-ancho/2,-alto/2,ancho,alto);
-}
 
-void esmad::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-{
-    painter->drawPixmap(-ancho/2,-alto/2,*agente,columnas,filas,ancho,alto);
-}
 
 
 

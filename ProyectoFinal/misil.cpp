@@ -10,18 +10,18 @@ misil::misil(QObject *parent) : QObject(parent)
     timer->start(15);
 }
 
-QRectF misil::boundingRect() const
+QRectF misil::boundingRect() const //Construye el rectángulo sobre el que se dibuja la imagen
 {
     return QRectF(-ancho/2,-alto/2,ancho,alto);
 }
 
-void misil::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void misil::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) //Dibujar la imagen
 {
     painter->drawPixmap(-ancho/2,-alto/2,*bala,0,0,ancho,alto);
 }
 
 
-void misil::mover()
+void misil::mover() //Genera el movimiento parabólico del misil
 {
 
     setPos(x,-y);

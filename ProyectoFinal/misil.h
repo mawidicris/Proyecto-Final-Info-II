@@ -25,9 +25,9 @@ public:
     explicit misil(QObject *parent = nullptr);
     QPixmap *bala;
     QTimer *timer;
-    double angulos[3]={40,90,210};
+    double angulos[3]={40,90,210}; //Ángulos de disparo del misil
     int pos = rand() % 3;
-    double v=64,vx,vy,x=990,y=-250,a=9.8,yd,angulo=angulos[pos];
+    double v=64,vx,vy,x=990,y=-250,a=9.8,yd,angulo=angulos[pos]; //velocidad, aceleración y posiciones del misil
 
 
     float ancho,alto;

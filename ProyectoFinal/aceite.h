@@ -18,7 +18,7 @@ public:
     QTimer *timer;
 
 
-    float ancho,alto;
+    float ancho,alto; //Ancho y alto de la imagen
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 

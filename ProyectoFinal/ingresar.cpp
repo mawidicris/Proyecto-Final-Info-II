@@ -15,7 +15,7 @@ ingresar::~ingresar()
 }
 
 
-void ingresar::on_ingresar_2_clicked()
+void ingresar::on_ingresar_2_clicked() //Evento al presionar el botón ingresar
 {
     int niv;
     int punt;
@@ -23,15 +23,15 @@ void ingresar::on_ingresar_2_clicked()
     string puntaje;
     QString usu=ui->usuario->text();
     QString cla=ui->contra->text();
-    std::string usuari=usu.toUtf8().constData();
-    std::string clav=cla.toUtf8().constData();
+    std::string usuari=usu.toUtf8().constData(); //Se recibe el usuario
+    std::string clav=cla.toUtf8().constData(); //Se recibe la clave
     string usuario,clave;
-      leer.open("usuarios.txt", ios::app);
+      leer.open("usuarios.txt", ios::app); // Leo el archivo donde están almacendas las claves y usuarios
       while (!leer.eof()){
       getline(leer,usuario,',');
       getline(leer,clave);
 
-    if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){
+    if((clav.compare(clave)==0)&&(usuari.compare(usuario)==0)){ //Se realiza la comparación entre claves y usuarios
     this->close();
     }
 
@@ -40,7 +40,7 @@ void ingresar::on_ingresar_2_clicked()
           }
        }
        leer.close();
-       leer.open("registro.txt");
+       leer.open("registro.txt"); //Se lee el archivo donde se almacena el nivel y puntaje de la partida anterior
        while (!leer.eof()){
            getline(leer,nivel,',');
            getline(leer,puntaje);
@@ -52,7 +52,7 @@ void ingresar::on_ingresar_2_clicked()
 }
 
 
-void ingresar::on_registrarse_clicked()
+void ingresar::on_registrarse_clicked() //Abre la ventana de registro al presionar el botón registrarse
 {
     registro *registrar=new registro;
     registrar->show();
