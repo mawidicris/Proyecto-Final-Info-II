@@ -32,6 +32,7 @@ void policia::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
     painter->drawPixmap(-ancho/2,-alto/2,*poli,columnas,0,ancho,alto);
 }
 
+
 void policia::actualizar() //Se mueve entre columnas para actualizar el sprite
 {
     columnas+=70;

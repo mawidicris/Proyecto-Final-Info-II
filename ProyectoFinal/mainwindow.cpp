@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(int jugadores,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 
@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     nivel2 =new QGraphicsPixmapItem;
     nivel3 =new QGraphicsPixmapItem;
 
+    jugador=jugadores;
     ui->graphicsView->setScene(escena);
     escena->setSceneRect(0,0,1285,695);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -38,6 +39,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer8,&QTimer::timeout,this,&MainWindow::borrarnivel1);
     connect(timer9,&QTimer::timeout,this,&MainWindow::borrarnivel2);
     connect(timer10,&QTimer::timeout,this,&MainWindow::borrarnivel3);
+
+    connect(timerperder,&QTimer::timeout,this,&MainWindow::perdernivel1);
+    connect(timercerrar,&QTimer::timeout,this,&MainWindow::cerrar);
 }
 
 MainWindow::~MainWindow()
@@ -52,6 +56,7 @@ MainWindow::~MainWindow()
 int MainWindow::primernivel() //Se inicilizan los timers que generan lo elementos correspondientes añ nivel 1
 {
     niv=1;
+    timerperder->start(5500);
     timer2->start(2000);
     timer5->start(5500);
     escena->addItem(capuchoB);
@@ -63,6 +68,7 @@ int MainWindow::primernivel() //Se inicilizan los timers que generan lo elemento
 
 int MainWindow::segundonivel() //Se inicilizan (o pausan) los timers que generan lo elementos correspondientes al nivel 2
 {
+
     niv=2;
     timer2->stop();
     timer->start(2500);
@@ -153,15 +159,16 @@ void MainWindow::generarpolicia() //Genera policias para el primer nivel
     em->_puntaje = score;
     int carriles[4]={150,300,450,600}; //Posiciones de los 4 carriles
     int randomValue = rand() % 4;
-    QList<QGraphicsItem*>policias;
+
     policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
     if(ejecucionespolicias==6){ //Si han salido 6 policias se inicia el segundo nivel
        timer5->stop();
-       for (int i=0;i<policias.length();i++){
+       timerperder->stop();
+       /*for (int i=0;i<policias.length();i++){
          delete policias.at(i);
-       }
+       }*/
        segundonivel();
      }
 }
@@ -173,15 +180,15 @@ void MainWindow::generarpolicianivel3() //Genera policias en el nivel 3
     pol->_puntaje = score;
     int carriles[4]={150,300,450,600}; //Posiciones de los 4 carriles
     int randomValue = rand() % 4;
-    QList<QGraphicsItem*>policias;
+    QList<QGraphicsItem*>policias3;
 
-    policias.push_back(pol);
-    policias.last()->setPos(1233,carriles[randomValue]);
-    escena->addItem(policias.last());
+    policias3.push_back(pol);
+    policias3.last()->setPos(1233,carriles[randomValue]);
+    escena->addItem(policias3.last());
     if(ejecucionespolicias3==4){ //Si han salido 4 policias se agrega la tanqueta
        timer3->stop();
-       for (int i=0;i<policias.length();i++){
-         delete policias.at(i);
+       for (int i=0;i<policias3.length();i++){
+         delete policias3.at(i);
        }
        niveltanqueta();
     }
@@ -194,14 +201,14 @@ void MainWindow::generaresmadnivel3() //Genera esmad en el nivel 3
     esma->_puntaje = score;
     int carriles2[4]={300,450,150,600}; //Posiciones de los 4 carriles
     int randomValue2= rand() % 4;
-    QList<QGraphicsItem*>agentes;
-    agentes.push_back(esma);
-    agentes.last()->setPos(1233,carriles2[randomValue2]);
-    escena->addItem(agentes.last());
+    QList<QGraphicsItem*>agentes3;
+    agentes3.push_back(esma);
+    agentes3.last()->setPos(1233,carriles2[randomValue2]);
+    escena->addItem(agentes3.last());
     if(ejecucionesesmad3==4){
        timer7->stop();
-       for (int i=0;i<agentes.length();i++){
-       delete agentes.at(i);
+       for (int i=0;i<agentes3.length();i++){
+       delete agentes3.at(i);
        }
     }
 }
@@ -252,6 +259,39 @@ void MainWindow::borrarnivel3() //Borra el letrero de nivel 3
 {
   delete nivel3;
     timer10->stop();
+}
+
+void MainWindow::perdernivel1()
+{
+
+   for(int i=0;i<policias.length();i++){
+       qDebug()<<policias.at(i)->x();
+     if( (policias.at(i)->x())<0){
+         timerperder->stop();
+         timercerrar->start(2000);
+         qDebug()<<"perdí perra";
+    }
+}
+   /* for(int i=0;i<agentes.length();i++){
+     if( (agentes.at(i)->x())<300 ){
+         timerperder->stop();
+         timercerrar->start(4000);
+         qDebug()<<"perdí perra";
+     }
+  }*/
+
+}
+
+void MainWindow::cerrar()
+{
+    timercerrar->stop();
+    this->close();
+
+    if(jugador==2){
+      MainWindow *juego2= new MainWindow(1);
+      juego2->primernivel();
+      juego2->show();
+    }
 }
 
 
