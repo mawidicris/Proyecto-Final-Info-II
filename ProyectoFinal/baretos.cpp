@@ -5,7 +5,6 @@ baretos::baretos(QObject *parent) : QObject(parent)
     ancho=80;
     alto=80;
     bareto= new QPixmap(":/baretin.png");
-    timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&baretos::caida);
     timer->start(150);
 

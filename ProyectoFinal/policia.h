@@ -14,7 +14,6 @@
 #include "aceite.h"
 #include <QDebug>
 #include "puntaje.h"
-#include "textos.h"
 
 #define dt 0.1
 

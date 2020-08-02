@@ -13,13 +13,16 @@
 #include "puntaje.h"
 
 
-class Gamines : public QObject,public QGraphicsItem
+#include "baretos.h"
+
+
+class Gamines : public baretos //se hereda la clase baretos
 {
      Q_OBJECT
+
 public:
-    explicit Gamines(QObject *parent = nullptr);
+    explicit Gamines(baretos *parent = nullptr);
     QPixmap *Gamine;
-    QTimer *timer;
     float ancho,alto; //Ancho y alto de la imagen
     int gamin=0;//Número de gamines presionados
     puntaje *puntos= new puntaje;
@@ -29,10 +32,6 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
     void increaseGamin();
-
-signals:
-public slots:
-    void caida();
 
 };
 

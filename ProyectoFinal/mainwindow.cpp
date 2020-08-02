@@ -53,7 +53,7 @@ int MainWindow::primernivel() //Se inicilizan los timers que generan lo elemento
 {
     niv=1;
     timer2->start(2000);
-    timer5->start(5500);
+    timer5->start(6000);
     escena->addItem(capuchoB);
     escena->addItem(capuchoB2);
     escena->addItem(nivel1);
