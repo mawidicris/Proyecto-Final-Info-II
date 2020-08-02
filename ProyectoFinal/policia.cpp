@@ -49,7 +49,7 @@ void policia::mover() //Movimiento rectilíneo del agente
     QList<QGraphicsItem *>colision1=collidingItems();
     for (int i=0,j=colision1.size();i<j;i++){
            if(typeid (*colision1[i])==typeid(aceite)){
-             mu=0.85; //Se cambia el coeficiente de fricción cuando colisiona con un objeto de la clase aceite
+             mu=0.7; //Se cambia el coeficiente de fricción cuando colisiona con un objeto de la clase aceite
          }
       }
     if((this->x()<300)){

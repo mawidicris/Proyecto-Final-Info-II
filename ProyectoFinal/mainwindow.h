@@ -57,6 +57,9 @@ public:
     QTimer *timer9= new QTimer;
     QTimer *timer10=new QTimer;
     QTimer *timer11=new QTimer;
+    QTimer *timercerrar=new QTimer;
+    QTimer *timerganar=new QTimer;
+    QTimer *timerperder=new QTimer;
 
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
@@ -70,6 +73,12 @@ public:
     puntaje *score = new puntaje();
     Gamines *gamin = new Gamines();
     baretos *bareto= new baretos();
+    tanqueta *tanque;
+
+    QList<QGraphicsItem*>agentes2;
+    QList<QGraphicsItem*>policias;
+    QList<QGraphicsItem*>policias3;
+    QList<QGraphicsItem*>agentes3;
 
     QGraphicsPixmapItem  *ganaste =new QGraphicsPixmapItem;
     int ejecucionespolicias=0;
@@ -102,6 +111,10 @@ public slots:
     void borrarnivel1();
     void borrarnivel2();
     void borrarnivel3();
+
+    void cerrar();
+    void ganar();
+    void perder();
 
 private:
 

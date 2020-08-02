@@ -5,7 +5,6 @@ piedras::piedras(QObject *parent) : QObject(parent)
     ancho=25;
     alto=25;
     piedra= new QPixmap(":/piedra.png");
-    timer= new QTimer;
     connect(timer,&QTimer::timeout,this,&piedras::mover);    
     timer->start(150);
 }

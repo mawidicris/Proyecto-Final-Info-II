@@ -1,13 +1,10 @@
 ﻿#include "gamines.h"
 
-Gamines::Gamines(QObject *parent)
+Gamines::Gamines(baretos *parent)
 {
     ancho=60;
     alto=90;
     Gamine= new QPixmap(":/gamin.png");
-    timer= new QTimer;
-    connect(timer,&QTimer::timeout,this,&Gamines::caida);
-    timer->start(100);
 }
 
 QRectF Gamines::boundingRect() const //Construye el rectángulo sobre el que se dibuja la imagen
@@ -43,11 +40,6 @@ void Gamines::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)  //Evento al li
 void Gamines::increaseGamin() //Aumentar el número de gamines
 {
     gamin++;
-}
-
-void Gamines::caida() //Caida de los gamines
-{
-    setPos(x(),y()+20);
 }
 
 
