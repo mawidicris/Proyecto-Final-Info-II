@@ -19,8 +19,8 @@ class tanqueta : public QObject, public QGraphicsItem
 public:
     explicit tanqueta(QObject *parent = nullptr);
     QPixmap *carro;
-    QTimer *timer,*timer2,*timer3,*timer4;
-    int vida=80; //Vida incial
+    QTimer *timer,*timer2,*timer3;
+    int vida=100; //Vida incial
     puntaje *_puntos=new puntaje;
     float ancho,alto;//Ancho y alto de la imagen
 
@@ -33,7 +33,6 @@ public slots:
      void lanzar();
      void colisionconpapas();
      void colisionconpiedras();
-     void retroceder();
 
 };
 

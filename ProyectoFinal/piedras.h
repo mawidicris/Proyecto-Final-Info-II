@@ -13,18 +13,16 @@ class piedras : public QObject,public QGraphicsItem
     Q_OBJECT
 public:
     explicit piedras(QObject *parent = nullptr);
-    QTimer *timer=new QTimer;
+    QPixmap *piedra;
+    QTimer *timer;
 
+    float ancho,alto;
+    QRectF boundingRect() const;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 signals:
  public slots:
    void mover();
-
-private:
-   QPixmap *piedra;
-   float ancho,alto;
-   QRectF boundingRect() const;
-   void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 };
 

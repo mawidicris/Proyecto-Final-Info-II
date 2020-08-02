@@ -18,13 +18,11 @@ class baretos : public QObject, public QGraphicsItem
     Q_OBJECT
 public:
     explicit baretos(QObject *parent = nullptr);
-     QTimer *timer=new QTimer;;
-     puntaje *punto=new puntaje();
-
-private:
     QPixmap *bareto;
+    QTimer *timer;
     int baret=0; //Numero de baretos presionados
     float ancho,alto; //Ancho y alto de la imagen
+    puntaje *punto=new puntaje();
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
