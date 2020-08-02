@@ -16,6 +16,3 @@ void papas::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 {
     painter->drawPixmap(-ancho/2,-alto/2,*papa,0,0,ancho,alto);
 }
-
-
-

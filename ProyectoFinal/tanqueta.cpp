@@ -7,13 +7,12 @@ tanqueta::tanqueta(QObject *parent) : QObject(parent)
     timer= new QTimer;
     timer2=new QTimer;
     timer3=new QTimer;
-    timer4=new QTimer;
+
     carro= new QPixmap(":/tanqueta.png");
     setPos(1135,355);
     connect(timer,&QTimer::timeout,this,&tanqueta::lanzar);
     connect(timer2,&QTimer::timeout,this,&tanqueta::colisionconpapas);
     connect(timer3,&QTimer::timeout,this,&tanqueta::colisionconpiedras);
-    connect(timer4,&QTimer::timeout,this,&tanqueta::retroceder);
     timer->start(4000);
     timer2->start(300);
     timer3->start(300);
@@ -53,11 +52,8 @@ void tanqueta::colisionconpapas() //Disminuye la vida cuando colisiona con un ob
                if(vida<=0){ //Elimina la tanqueta cuando la vida es cero
                   scene()->addItem(ganaste); //Se agrega a la escena imagen de 'ganaste'
                   _puntos->mover(500,380);
-                  timer->stop();
-                  timer4->start(500);
-
-            }
-        }
+                  delete this;
+            }        }
     }
 }
 
@@ -74,18 +70,12 @@ void tanqueta::colisionconpiedras() //Disminuye la vida cuando colisiona con un 
                delete (colisiones.at(i));
                vida-=2;
                if(vida<=0){ //Elimina la tanqueta cuando la vida es cero
-                   timer->stop();
-                   timer4->start(500);
                    scene()->addItem(ganaste); //Se agrega a la escena imagen de 'ganaste'
                    _puntos->mover(650,380);
+                   delete this;
                }
          }
     }
-}
-
-void tanqueta::retroceder()
-{
-    setPos(x()+10,y());
 }
 
 void tanqueta::lanzar() //Se crea un objeto de la clase misil cada 4 segundos

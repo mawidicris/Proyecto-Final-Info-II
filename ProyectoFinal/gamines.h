@@ -1,6 +1,7 @@
 #ifndef GAMINES_H
 #define GAMINES_H
 
+#include <QObject>
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QRectF>
@@ -10,6 +11,8 @@
 #include <QCursor>
 #include "capuchonegro.h"
 #include "puntaje.h"
+
+
 #include "baretos.h"
 
 
