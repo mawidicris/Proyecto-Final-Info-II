@@ -38,6 +38,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer8,&QTimer::timeout,this,&MainWindow::borrarnivel1);
     connect(timer9,&QTimer::timeout,this,&MainWindow::borrarnivel2);
     connect(timer10,&QTimer::timeout,this,&MainWindow::borrarnivel3);
+
+    connect(timercerrar,&QTimer::timeout,this,&MainWindow::cerrar);
+    connect(timerganar,&QTimer::timeout,this,&MainWindow::ganar);
+
 }
 
 MainWindow::~MainWindow()
@@ -93,10 +97,11 @@ int MainWindow::tercerrnivel() //Se inicilizan (o pausan) los timers que generan
 
 int MainWindow::niveltanqueta() //Se pausan los timers y se agrega la tanqueta
 {
+    timerganar->start(500);
     niv=4;
     escena->addItem(fondo);
     escena->addItem(score);
-    tanqueta *tanque= new tanqueta;
+    tanque= new tanqueta;
     tanque->_puntos=score;
     timer->stop();
     timer2->stop();
@@ -137,7 +142,7 @@ void MainWindow::generaresmad() //Genera agentes del esmad para el segundo nivel
     agentes.push_back(esm);
     agentes.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(agentes.last());
-    if(ejecucionesesmad==6){ //Si han salido 6 agentes se incia el tercer nivel
+    if(ejecucionesesmad==5){ //Si han salido 5 agentes se incia el tercer nivel
        timer4->stop();
        for (int i=0;i<agentes.length();i++){
          delete agentes.at(i);
@@ -157,7 +162,7 @@ void MainWindow::generarpolicia() //Genera policias para el primer nivel
     policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
-    if(ejecucionespolicias==6){ //Si han salido 6 policias se inicia el segundo nivel
+    if(ejecucionespolicias==5){ //Si han salido 5 policias se inicia el segundo nivel
        timer5->stop();
        for (int i=0;i<policias.length();i++){
          delete policias.at(i);
@@ -253,5 +258,22 @@ void MainWindow::borrarnivel3() //Borra el letrero de nivel 3
   delete nivel3;
     timer10->stop();
 }
+
+void MainWindow::cerrar() //Cerrar la ventana del juego y abrir el menú
+{
+    timercerrar->stop();
+    this->close();
+    partidas *nuevapartida= new partidas(1,0);
+    nuevapartida->show();
+}
+
+void MainWindow::ganar() //Evalua si se derrotó a la tanqueta
+{
+  if(tanque->x()>1180){
+      timerganar->stop();
+      timercerrar->start(500);
+  }
+}
+
 
 
