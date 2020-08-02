@@ -32,7 +32,6 @@ public slots:
 private:
     Ui::ingresar *ui;
     ifstream leer;
-    ifstream leer2;
 };
 
 #endif // INGRESAR_H

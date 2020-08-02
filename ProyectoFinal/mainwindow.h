@@ -42,7 +42,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(int jugadores,QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();
 
@@ -58,9 +58,6 @@ public:
     QTimer *timer10=new QTimer;
     QTimer *timer11=new QTimer;
 
-    QTimer *timerperder=new QTimer;
-    QTimer *timercerrar=new QTimer;
-
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
     QGraphicsPixmapItem *nivel1;
@@ -73,8 +70,6 @@ public:
     puntaje *score = new puntaje();
     Gamines *gamin = new Gamines();
     baretos *bareto= new baretos();
-
-     QList<QGraphicsItem*>policias;
 
     QGraphicsPixmapItem  *ganaste =new QGraphicsPixmapItem;
     int ejecucionespolicias=0;
@@ -93,8 +88,6 @@ public:
 
     void guardarnivel();
 
-    int jugador;
-
 
 public slots:
     void generargamines();
@@ -109,9 +102,6 @@ public slots:
     void borrarnivel1();
     void borrarnivel2();
     void borrarnivel3();
-
-    void perdernivel1();
-    void cerrar();
 
 private:
 
