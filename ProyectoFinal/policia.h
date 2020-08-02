@@ -14,11 +14,11 @@
 #include "aceite.h"
 #include <QDebug>
 #include "puntaje.h"
-#include "esmad.h"
+#include "textos.h"
 
 #define dt 0.1
 
-class policia : public QObject, public QGraphicsItem
+class policia : public QObject,public QGraphicsItem
 
 {
     Q_OBJECT

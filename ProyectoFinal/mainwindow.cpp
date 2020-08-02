@@ -38,10 +38,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer8,&QTimer::timeout,this,&MainWindow::borrarnivel1);
     connect(timer9,&QTimer::timeout,this,&MainWindow::borrarnivel2);
     connect(timer10,&QTimer::timeout,this,&MainWindow::borrarnivel3);
-
-    connect(timercerrar,&QTimer::timeout,this,&MainWindow::cerrar);
-    connect(timerganar,&QTimer::timeout,this,&MainWindow::ganar);
-    connect(timerperder,&QTimer::timeout,this,&MainWindow::perder);
 }
 
 MainWindow::~MainWindow()
@@ -56,7 +52,6 @@ MainWindow::~MainWindow()
 int MainWindow::primernivel() //Se inicilizan los timers que generan lo elementos correspondientes añ nivel 1
 {
     niv=1;
-    timerperder->start(500);
     timer2->start(2000);
     timer5->start(5500);
     escena->addItem(capuchoB);
@@ -98,11 +93,10 @@ int MainWindow::tercerrnivel() //Se inicilizan (o pausan) los timers que generan
 
 int MainWindow::niveltanqueta() //Se pausan los timers y se agrega la tanqueta
 {
-    timerganar->start(500);
-    tanque=new tanqueta;
     niv=4;
     escena->addItem(fondo);
     escena->addItem(score);
+    tanqueta *tanque= new tanqueta;
     tanque->_puntos=score;
     timer->stop();
     timer2->stop();
@@ -134,20 +128,20 @@ void MainWindow::generarbaret() //Genera baretos en posiciones aleatorias
 
 void MainWindow::generaresmad() //Genera agentes del esmad para el segundo nivel
 {
-
-    esmad *esm = new esmad;
     ejecucionesesmad++;
+    esmad *esm = new esmad;
     esm->_puntaje = score;
     int carriles[4]={150,300,450,600}; //Posiciones de los cuatro carriles
     int randomValue = rand() % 4;
-    agentes2.push_back(esm);
-    agentes2.last()->setPos(1233,carriles[randomValue]);
-    escena->addItem(agentes2.last());
+    QList<QGraphicsItem*>agentes;
+    agentes.push_back(esm);
+    agentes.last()->setPos(1233,carriles[randomValue]);
+    escena->addItem(agentes.last());
     if(ejecucionesesmad==6){ //Si han salido 6 agentes se incia el tercer nivel
        timer4->stop();
-       /*for (int i=0;i<agentes2.length();i++){
-       delete agentes2.at(i);
-       }*/
+       for (int i=0;i<agentes.length();i++){
+         delete agentes.at(i);
+       }
      tercerrnivel();
         }
 }
@@ -159,14 +153,15 @@ void MainWindow::generarpolicia() //Genera policias para el primer nivel
     em->_puntaje = score;
     int carriles[4]={150,300,450,600}; //Posiciones de los 4 carriles
     int randomValue = rand() % 4;
+    QList<QGraphicsItem*>policias;
     policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
     if(ejecucionespolicias==6){ //Si han salido 6 policias se inicia el segundo nivel
        timer5->stop();
-      /* for (int i=0;i<policias.length();i++){
+       for (int i=0;i<policias.length();i++){
          delete policias.at(i);
-       }*/
+       }
        segundonivel();
      }
 }
@@ -178,16 +173,16 @@ void MainWindow::generarpolicianivel3() //Genera policias en el nivel 3
     pol->_puntaje = score;
     int carriles[4]={150,300,450,600}; //Posiciones de los 4 carriles
     int randomValue = rand() % 4;
+    QList<QGraphicsItem*>policias;
 
-
-    policias3.push_back(pol);
-    policias3.last()->setPos(1233,carriles[randomValue]);
-    escena->addItem(policias3.last());
-    if(ejecucionespolicias3==3){ //Si han salido 4 policias se agrega la tanqueta
+    policias.push_back(pol);
+    policias.last()->setPos(1233,carriles[randomValue]);
+    escena->addItem(policias.last());
+    if(ejecucionespolicias3==4){ //Si han salido 4 policias se agrega la tanqueta
        timer3->stop();
-       /*for (int i=0;i<policias3.length();i++){
-         delete policias3.at(i);
-       }*/
+       for (int i=0;i<policias.length();i++){
+         delete policias.at(i);
+       }
        niveltanqueta();
     }
 }
@@ -199,15 +194,15 @@ void MainWindow::generaresmadnivel3() //Genera esmad en el nivel 3
     esma->_puntaje = score;
     int carriles2[4]={300,450,150,600}; //Posiciones de los 4 carriles
     int randomValue2= rand() % 4;
-
-    agentes3.push_back(esma);
-    agentes3.last()->setPos(1233,carriles2[randomValue2]);
-    escena->addItem(agentes3.last());
+    QList<QGraphicsItem*>agentes;
+    agentes.push_back(esma);
+    agentes.last()->setPos(1233,carriles2[randomValue2]);
+    escena->addItem(agentes.last());
     if(ejecucionesesmad3==4){
        timer7->stop();
-       /*for (int i=0;i<agentes3.length();i++){
-       delete agentes3.at(i);
-       }*/
+       for (int i=0;i<agentes.length();i++){
+       delete agentes.at(i);
+       }
     }
 }
 
@@ -257,44 +252,6 @@ void MainWindow::borrarnivel3() //Borra el letrero de nivel 3
 {
   delete nivel3;
     timer10->stop();
-}
-
-void MainWindow::cerrar() //Cerrar la ventana del juego y abrir el menú
-{
-    timercerrar->stop();
-    this->close();
-    partidas *nuevapartida= new partidas(1,0);
-    nuevapartida->show();
-}
-
-void MainWindow::ganar() //Evalua si se derrotó a la tanqueta
-{
-  if(tanque->x()>1180){
-      timerganar->stop();
-      timercerrar->start(500);
-  }
-}
-
-void MainWindow::perder()
-{
-
-   if(!policias.isEmpty()){
-       for(int i=0;i<policias.length();i++){
-           if(policias.at(i)->x()<0){
-              timerperder->stop();
-              timercerrar->start(500);
-          }
-      }
-   }
-
-   /*if(niv==2){
-     for(int i=0;i<agentes2.length();i++){
-         if(agentes2.at(i)->x()<0){
-             timerperder->stop();
-             timercerrar->start(500);
-         }
-      }
-   }*/
 }
 
 
