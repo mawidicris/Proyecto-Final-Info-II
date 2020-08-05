@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
+
     escena= new QGraphicsScene;
     fondo =new QGraphicsPixmapItem;
     nivel1 =new QGraphicsPixmapItem;
@@ -14,10 +15,12 @@ MainWindow::MainWindow(QWidget *parent)
     nivel3 =new QGraphicsPixmapItem;
 
     ui->graphicsView->setScene(escena);
-    escena->setSceneRect(0,0,1285,695);
+    escena->setSceneRect(0,0,1285,695); //Tamaño de la escena
+
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    fondo->setPixmap(QPixmap(":/fondo.tiff"));
+
+    fondo->setPixmap(QPixmap(":/fondo.tiff"));    
     nivel1->setPixmap(QPixmap(":/nivel1.png"));
     nivel1->setPos(500,250);
     nivel2->setPixmap(QPixmap(":/nivel2.png"));
@@ -25,9 +28,11 @@ MainWindow::MainWindow(QWidget *parent)
     nivel3->setPixmap(QPixmap(":/nivel3.png"));
     nivel3->setPos(500,250);
 
-    escena->addItem(fondo);
-    escena->addItem(score);
+    escena->addItem(fondo); //Se añade fondo
+    escena->addItem(score); //Se añade puntaje
 
+
+    //Conexión de los timer
     connect(timer,&QTimer::timeout,this,&MainWindow::generargamines);
     connect(timer2,&QTimer::timeout,this,&MainWindow::generarbaret);
     connect(timer4,&QTimer::timeout,this,&MainWindow::generaresmad);
@@ -41,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(timercerrar,&QTimer::timeout,this,&MainWindow::cerrar);
     connect(timerganar,&QTimer::timeout,this,&MainWindow::ganar);
+    //connect(timerperder,&QTimer::timeout,this,&MainWindow::perder);
 
 }
 
@@ -56,6 +62,8 @@ MainWindow::~MainWindow()
 int MainWindow::primernivel() //Se inicilizan los timers que generan lo elementos correspondientes añ nivel 1
 {
     niv=1;
+
+    //timerperder->start(500);
     timer2->start(2000);
     timer5->start(6000);
     escena->addItem(capuchoB);
@@ -68,6 +76,7 @@ int MainWindow::primernivel() //Se inicilizan los timers que generan lo elemento
 int MainWindow::segundonivel() //Se inicilizan (o pausan) los timers que generan lo elementos correspondientes al nivel 2
 {
     niv=2;
+
     timer2->stop();
     timer->start(2500);
     timer4->start(6000);
@@ -85,6 +94,7 @@ int MainWindow::segundonivel() //Se inicilizan (o pausan) los timers que generan
 int MainWindow::tercerrnivel() //Se inicilizan (o pausan) los timers que generan lo elementos correspondientes al nivel 3
 {
     niv=3;
+
     timer4->stop();
     timer5->stop();
     timer2->start(3000);
@@ -97,11 +107,12 @@ int MainWindow::tercerrnivel() //Se inicilizan (o pausan) los timers que generan
 
 int MainWindow::niveltanqueta() //Se pausan los timers y se agrega la tanqueta
 {
-    timerganar->start(500);
     niv=4;
+    tanque= new tanqueta;
+
+    timerganar->start(500);
     escena->addItem(fondo);
     escena->addItem(score);
-    tanque= new tanqueta;
     tanque->_puntos=score;
     timer->stop();
     timer2->stop();
@@ -112,6 +123,7 @@ int MainWindow::niveltanqueta() //Se pausan los timers y se agrega la tanqueta
 void MainWindow::guardarnivel() //Guarda los datos corrspondientes al nivel y puntaje en un archivo de texto
 {
     string puntos= std::to_string(score->getScore());
+
     guardar.open("registro.txt");
     if(niv==1) guardar<<"1"<<","<<puntos;
     if(niv==2) guardar<<"2"<<","<<puntos;
@@ -123,9 +135,10 @@ void MainWindow::guardarnivel() //Guarda los datos corrspondientes al nivel y pu
 
 void MainWindow::generarbaret() //Genera baretos en posiciones aleatorias
 {
-    bareto->punto=score;
     int randomValue = rand() % 1200;
     QList<QGraphicsItem*>bareti;
+    bareto->punto=score;
+
     bareti.push_back(bareto);
     bareti.last()->setPos(randomValue,50);
     escena->addItem(bareti.last());
@@ -139,9 +152,11 @@ void MainWindow::generaresmad() //Genera agentes del esmad para el segundo nivel
     int carriles[4]={150,300,450,600}; //Posiciones de los cuatro carriles
     int randomValue = rand() % 4;
     QList<QGraphicsItem*>agentes;
+
     agentes.push_back(esm);
     agentes.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(agentes.last());
+
     if(ejecucionesesmad==5){ //Si han salido 5 agentes se incia el tercer nivel
        timer4->stop();
        for (int i=0;i<agentes.length();i++){
@@ -156,12 +171,14 @@ void MainWindow::generarpolicia() //Genera policias para el primer nivel
     policia *em = new policia;
     ejecucionespolicias++;
     em->_puntaje = score;
+    QList<QGraphicsItem*>policias;
     int carriles[4]={150,300,450,600}; //Posiciones de los 4 carriles
     int randomValue = rand() % 4;
-    QList<QGraphicsItem*>policias;
+
     policias.push_back(em);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
+
     if(ejecucionespolicias==5){ //Si han salido 5 policias se inicia el segundo nivel
        timer5->stop();
        for (int i=0;i<policias.length();i++){
@@ -183,6 +200,7 @@ void MainWindow::generarpolicianivel3() //Genera policias en el nivel 3
     policias.push_back(pol);
     policias.last()->setPos(1233,carriles[randomValue]);
     escena->addItem(policias.last());
+
     if(ejecucionespolicias3==4){ //Si han salido 4 policias se agrega la tanqueta
        timer3->stop();
        for (int i=0;i<policias.length();i++){
@@ -200,9 +218,11 @@ void MainWindow::generaresmadnivel3() //Genera esmad en el nivel 3
     int carriles2[4]={300,450,150,600}; //Posiciones de los 4 carriles
     int randomValue2= rand() % 4;
     QList<QGraphicsItem*>agentes;
+
     agentes.push_back(esma);
     agentes.last()->setPos(1233,carriles2[randomValue2]);
     escena->addItem(agentes.last());
+
     if(ejecucionesesmad3==4){
        timer7->stop();
        for (int i=0;i<agentes.length();i++){
@@ -216,6 +236,7 @@ void MainWindow::generargamines() //Genera gamines en posiciones aleatorias
     gamin->puntos=score;
     int randomValue = rand() % 1200;
     QList<QGraphicsItem*>gamines;
+
     gamines.push_back(gamin);
     gamines.last()->setPos(randomValue,50);
     escena->addItem(gamines.last());
@@ -235,7 +256,9 @@ void MainWindow::on_pausar_clicked() //Eventos al presionar el botón menú
     timer10->stop();
     gamin->timer->stop();
     bareto->timer->stop();
+
     guardarnivel(); //Se activa la función que guarda los datos de la partida
+
     partidas *part=new partidas(niv,score->getScore()); //Se abre la ventana de partidas
     part->show();
     this->close();
@@ -263,16 +286,30 @@ void MainWindow::cerrar() //Cerrar la ventana del juego y abrir el menú
 {
     timercerrar->stop();
     this->close();
+
     partidas *nuevapartida= new partidas(1,0);
     nuevapartida->show();
 }
+
+/*void MainWindow::perder()
+{
+       if(!policias.isEmpty()){
+           for(int i=0;i<policias.length();i++){
+               qDebug()<<policias.at(i)->x();
+               if(policias.at(i)->x()<0){
+                  timerperder->stop();
+                  timercerrar->start(500);
+              }
+         }
+     }
+}*/
 
 void MainWindow::ganar() //Evalua si se derrotó a la tanqueta
 {
   if(tanque->x()>1180){
       timerganar->stop();
       timercerrar->start(500);
-  }
+   }
 }
 
 

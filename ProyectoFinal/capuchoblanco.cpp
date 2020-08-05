@@ -11,6 +11,8 @@ capuchoblanco::capuchoblanco(QObject *parent) : QObject(parent)
    timer3= new QTimer;
    timer4= new QTimer;
    timer5=new QTimer;
+
+   //Conexi처n de los timer
    connect(timer,&QTimer::timeout,this,&capuchoblanco::lanzarpiedras);
    connect(timer2,&QTimer::timeout,this,&capuchoblanco::colisionesmad);
    connect(timer3,&QTimer::timeout,this,&capuchoblanco::colisionpolicia);
@@ -55,6 +57,7 @@ void capuchoblanco::lanzarpiedras() //Se crea un objeto de la clase piedras cada
 {
     piedras *piedra= new piedras;
     QList<QGraphicsItem*> pied;
+
     pied.push_back(piedra);
     pied.last()->setPos(this->x(),this->y()); //La piedra sale de la posici처n del capucho
     scene()->addItem(pied.last());
@@ -63,6 +66,7 @@ void capuchoblanco::lanzarpiedras() //Se crea un objeto de la clase piedras cada
 void capuchoblanco::colisionesmad() //Se elimina el capucho si hay una colisi처n con un objeto del tipo esmad
 {
     QList<QGraphicsItem *>col=collidingItems();
+
     for (int i=0,n=col.size();i<n;i++){
            if(typeid (*col[i])==typeid(esmad)){
             delete this;
@@ -74,6 +78,7 @@ void capuchoblanco::colisionesmad() //Se elimina el capucho si hay una colisi처n
 void capuchoblanco::colisionpolicia() //Se elimina el capucho si hay una colisi처n con un objeto del tipo policia
 {
     QList<QGraphicsItem *>coli=collidingItems();
+
     for (int i=0,n=coli.size();i<n;i++){
            if(typeid (*coli[i])==typeid(policia)){
             delete this;
@@ -88,6 +93,7 @@ void capuchoblanco::colisionmisiles() //Se elimina el capucho si hay una colisi�
     sonido->setMedia(QUrl("qrc:/explosion.wav")); //Se agrega sonido de explosi처n
     Explosion *pum= new Explosion;
     QList<QGraphicsItem *>colis=collidingItems();
+
     for (int i=0,n=colis.size();i<n;i++){
            if(typeid (*colis[i])==typeid(misil)){
             pum->setPos(colis.at(i)->x(),colis.at(i)->y());

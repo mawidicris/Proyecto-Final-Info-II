@@ -30,7 +30,7 @@ public:
     double v=64,vx,vy,x=990,y=-250,a=9.8,yd,angulo=angulos[pos]; //velocidad, aceleración y posiciones del misil
 
 
-    float ancho,alto;
+    float ancho,alto; //Ancho y alto de la imagen
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 

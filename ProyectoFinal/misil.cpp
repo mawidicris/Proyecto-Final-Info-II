@@ -6,6 +6,7 @@ misil::misil(QObject *parent) : QObject(parent)
     alto=55;
     bala= new QPixmap(":/misil.png");
     timer= new QTimer;
+
     connect(timer,&QTimer::timeout,this,&misil::mover);
     timer->start(30);
 }
@@ -31,6 +32,7 @@ void misil::mover() //Genera el movimiento parabólico del misil
     v= sqrt(vx*vx+ vy*vy);
     x+=vx*dt;
     y+=vy*dt-(a/2)*dt*dt;
+
     if (this->y<-650){
         delete this;
     }

@@ -59,6 +59,7 @@ public:
     QTimer *timer11=new QTimer;
     QTimer *timerganar= new QTimer;
     QTimer *timercerrar=new QTimer;
+    //QTimer *timerperder=new QTimer;
 
     QGraphicsScene *escena;
     QGraphicsPixmapItem *fondo;
@@ -73,16 +74,16 @@ public:
     Gamines *gamin = new Gamines();
     baretos *bareto= new baretos();
     tanqueta *tanque;
-
     QGraphicsPixmapItem  *ganaste =new QGraphicsPixmapItem;
+
     int ejecucionespolicias=0;
     int ejecucionesesmad=0;
     int ejecucionespolicias3=0;
     int ejecucionesesmad3=0;
 
-    ofstream guardar;
-
     int niv;
+
+    ofstream guardar;
 
     int primernivel();
     int segundonivel();
@@ -93,6 +94,7 @@ public:
 
 
 public slots:
+
     void generargamines();
     void generarbaret();
     void generaresmad();
@@ -108,6 +110,7 @@ public slots:
 
     void ganar();
     void cerrar();
+    //void perder();
 
 private:
 

@@ -10,6 +10,8 @@ tanqueta::tanqueta(QObject *parent) : QObject(parent)
     timer4=new QTimer;
     carro= new QPixmap(":/tanqueta.png");
     setPos(1135,355);
+
+    //Conexión de los timer
     connect(timer,&QTimer::timeout,this,&tanqueta::lanzar);
     connect(timer2,&QTimer::timeout,this,&tanqueta::colisionconpapas);
     connect(timer3,&QTimer::timeout,this,&tanqueta::colisionconpiedras);
@@ -89,6 +91,7 @@ void tanqueta::lanzar() //Se crea un objeto de la clase misil cada 4 segundos
 {
     misil *bala= new misil;
     QList<QGraphicsItem*>balas;
+
     balas.push_back(bala);
     scene()->addItem(balas.last());
 }
