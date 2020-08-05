@@ -15,7 +15,7 @@ class aceite : public QObject, public QGraphicsItem
 public:
     explicit aceite(QObject *parent = nullptr);
     QPixmap *liquido;
-    QTimer *timer;
+    QTimer *timer; //timer que controla la función desaparecer
 
 
     float ancho,alto; //Ancho y alto de la imagen
@@ -24,7 +24,7 @@ public:
 
 signals:
  public slots:
-     void desaparecer();
+     void desaparecer(); //Función que desaparece el aceite
 };
 
 #endif // ACEITE_H

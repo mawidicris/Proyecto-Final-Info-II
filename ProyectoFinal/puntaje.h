@@ -18,7 +18,7 @@ public:
         void increasepuntaje(int puntos);
         int score=0; //Puntaje inicial
         int getScore();
-        void mover(int x, int y);
+        void mover(int x, int y); //Función para mover el item de puntaje
 
 signals:
 

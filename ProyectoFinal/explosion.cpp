@@ -8,7 +8,8 @@ Explosion::Explosion(QObject *parent) : QObject(parent)
   ancho=128;
   alto=128;
   bomba = new QPixmap(":/explo.png");
-  connect(timer,&QTimer::timeout,this,&Explosion::actualizarbomba);
+
+  connect(timer,&QTimer::timeout,this,&Explosion::actualizarbomba); //Conexión del timer con la función actualizar bomba
   timer->start(50);
 
 }

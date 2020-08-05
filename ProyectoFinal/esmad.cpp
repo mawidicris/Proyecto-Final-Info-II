@@ -16,6 +16,7 @@ esmad::esmad(QObject *parent) : QObject(parent)
   agente = new QPixmap(":/esmad.png");
   perdiste->setPixmap( QPixmap(":/perdiste.png"));
 
+  //Conexión de los timer
   connect(timer,&QTimer::timeout,this,&esmad::actualizar);
   connect(timer2,&QTimer::timeout,this,&esmad::mover);
   connect(timer3,&QTimer::timeout,this,&esmad::colisionpapas);
@@ -57,11 +58,12 @@ void esmad::mover() //Movimiento rectilíneo del agente
  xo-=(1/mu)*v*dt;
  setPos(xo,y());
  QList<QGraphicsItem *>colision1=collidingItems();
+
  for (int i=0,j=colision1.size();i<j;i++){
          if(typeid (*colision1[i])==typeid(aceite)){
           mu=0.85; //Se cambia el coeficiente de fricción cuando colisiona con un objeto de la clase aceite
           setPos(xo,y());
-      }
+         }
    }
  if((this->x())<=300){
      perdiste->setPos(500,250);
@@ -76,10 +78,10 @@ aumenta el puntaje y se agrega un objeto de las clases aceite y explosión*/
 {
   QMediaPlayer *sonido= new QMediaPlayer();
   sonido->setMedia(QUrl("qrc:/explosion.wav")); //Se agrega sonido de explosión
-
   Explosion *pum= new Explosion;
   aceite *liquid= new aceite;
   QList<QGraphicsItem *>colisiones=collidingItems();
+
   for (int i=0,j=colisiones.size();i<j;i++){
          if(typeid (*colisiones[i])==typeid(papas)){
 
@@ -98,6 +100,7 @@ aumenta el puntaje y se agrega un objeto de las clases aceite y explosión*/
 void esmad::colisionpiedras() //Se activa la función retroceder si colisiona con un objeto de la clase piedras y aumenta el puntaje
 {
     QList<QGraphicsItem *>colisio=collidingItems();
+
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
               timer5->start(200);
@@ -110,13 +113,14 @@ void esmad::colisionpiedras() //Se activa la función retroceder si colisiona co
 
 void esmad::retroceder() //Retocede al colisionar con una roca
 {
-   ejecuciones++;
-   xo+=10;
+   ejecuciones++; //Número de veces que se ejecuta la función
+
+   xo-=(1/mu)*(-v)*dt; //Se cambia el sentido de la velocidad
    setPos(xo,y());
-   if(ejecuciones==4){
-       timer5->stop();
+   if(ejecuciones==5){
+       timer5->stop(); //Se detiene el retroceso
        ejecuciones=0;
-       timer2->start(250);
+       timer2->start(250); //Se inicia el movimiento hacia adelante
    }
 }
 

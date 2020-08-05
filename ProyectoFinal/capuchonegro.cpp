@@ -11,6 +11,8 @@ capuchonegro::capuchonegro(QObject *parent) : QObject(parent)
   timer3= new QTimer;
   timer4= new QTimer;
   timer5=new QTimer;
+
+  //Conexión de los timer
   connect(timer,&QTimer::timeout,this,&capuchonegro::lanzarpapas);
   connect(timer2,&QTimer::timeout,this,&capuchonegro::colisionesmad);
   connect(timer3,&QTimer::timeout,this,&capuchonegro::colisionpolicia);
@@ -53,6 +55,7 @@ void capuchonegro::lanzarpapas() //Se crea un objeto de la clase papas cada 4 se
 {
    papas *papa=new papas;
    QList<QGraphicsItem*> paps;
+
    paps.push_back(papa);
    paps.last()->setPos(this->x(),this->y()); //La papa sale de la posición del capucho
    scene()->addItem(paps.last());
@@ -73,6 +76,7 @@ void capuchonegro::colisionesmad() //Se elimina el capucho si hay una colisión 
 void capuchonegro::colisionpolicia() //Se elimina el capucho si hay una colisión con un objeto del tipo policia
 {
     QList<QGraphicsItem *>coli=collidingItems();
+
     for (int i=0,n=coli.size();i<n;i++){
            if(typeid (*coli[i])==typeid(policia)){
             delete this;
@@ -87,6 +91,7 @@ void capuchonegro::colisionmisiles() //Se elimina el capucho si hay una colisió
     sonido->setMedia(QUrl("qrc:/explosion.wav")); //Se agrega sonido de explosión
     Explosion *pum= new Explosion;
     QList<QGraphicsItem *>colis=collidingItems();
+
     for (int i=0,n=colis.size();i<n;i++){
            if(typeid (*colis[i])==typeid(misil)){
                pum->setPos(colis.at(i)->x(),colis.at(i)->y());

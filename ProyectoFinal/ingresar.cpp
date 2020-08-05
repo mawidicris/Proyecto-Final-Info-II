@@ -21,11 +21,13 @@ void ingresar::on_ingresar_2_clicked() //Evento al presionar el botón ingresar
     int punt;
     string nivel;
     string puntaje;
-    QString usu=ui->usuario->text();
-    QString cla=ui->contra->text();
-    std::string usuari=usu.toUtf8().constData(); //Se recibe el usuario
-    std::string clav=cla.toUtf8().constData(); //Se recibe la clave
     string usuario,clave;
+
+    QString usu=ui->usuario->text();//Se recibe el usuario
+    QString cla=ui->contra->text(); //Se recibe la clave
+    std::string usuari=usu.toUtf8().constData(); //Se cambia de QString a string
+    std::string clav=cla.toUtf8().constData();  //Se cambia de QString a string
+
       leer.open("usuarios.txt", ios::app); // Leo el archivo donde están almacendas las claves y usuarios
       while (!leer.eof()){
       getline(leer,usuario,',');

@@ -12,6 +12,8 @@ policia::policia(QObject *parent) : QObject(parent)
     perdiste=new QGraphicsPixmapItem;
     poli = new QPixmap(":/policia.png");
     perdiste->setPixmap(QPixmap(":/perdiste.png"));
+
+    //Conexión de los timer
     connect(timer,&QTimer::timeout,this,&policia::actualizar);
     connect(timer2,&QTimer::timeout,this,&policia::mover);
     connect(timer3,&QTimer::timeout,this,&policia::colisionpapas);
@@ -47,6 +49,7 @@ void policia::mover() //Movimiento rectilíneo del agente
     xo-=(1/mu)*v*dt;
     setPos(xo,y());
     QList<QGraphicsItem *>colision1=collidingItems();
+
     for (int i=0,j=colision1.size();i<j;i++){
            if(typeid (*colision1[i])==typeid(aceite)){
              mu=0.85; //Se cambia el coeficiente de fricción cuando colisiona con un objeto de la clase aceite
@@ -69,6 +72,7 @@ void policia::colisionpapas()
     Explosion *pum= new Explosion;
     aceite *liquid= new aceite;
     QList<QGraphicsItem *>colisiones=collidingItems();
+
     for (int i=0,j=colisiones.size();i<j;i++){
            if(typeid (*colisiones[i])==typeid(papas)){
               _puntaje->increasepuntaje(10); //Se aumenta el puntaje en 10
@@ -86,6 +90,7 @@ void policia::colisionpapas()
 void policia::colisionpiedras() //Se elimina de la escena colisiona con un objeto de la clase piedras y aumenta el puntaje
 {
     QList<QGraphicsItem *>colisio=collidingItems();
+
     for (int i=0,n=colisio.size();i<n;i++){
            if(typeid (*colisio[i])==typeid(piedras)){
              scene()->removeItem(colisio.at(i));

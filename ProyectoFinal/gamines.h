@@ -12,7 +12,6 @@
 #include "capuchonegro.h"
 #include "puntaje.h"
 
-
 #include "baretos.h"
 
 

@@ -21,8 +21,10 @@ void Gamines::mousePressEvent(QGraphicsSceneMouseEvent *event) //Eventos al pres
 {
     this->setCursor(QCursor(Qt::PointingHandCursor));
     Q_UNUSED(event);
+
     increaseGamin();
     puntos->increasepuntaje(10); //Se aumenta el puntaje en 10 cada vez que presiono sobre un gamin
+
     if(gamin%5==0){
     capuchonegro *cap= new capuchonegro; //Agregar un capucho cada vez que se presione 5 veces sobre un gamin
     scene()->addItem(cap);

@@ -6,7 +6,8 @@ aceite::aceite(QObject *parent) : QObject(parent)
     alto=42;
     timer=new QTimer;
     liquido= new QPixmap(":/aceite.png");
-    connect(timer,&QTimer::timeout,this,&aceite::desaparecer);
+
+    connect(timer,&QTimer::timeout,this,&aceite::desaparecer); //Conexión del timer con la función desaparecer
     timer->start(10000);
 }
 
