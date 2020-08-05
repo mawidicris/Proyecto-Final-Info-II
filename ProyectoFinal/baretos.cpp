@@ -7,7 +7,7 @@ baretos::baretos(QObject *parent) : QObject(parent)
     bareto= new QPixmap(":/baretin.png");
 
     connect(timer,&QTimer::timeout,this,&baretos::caida); //Conexión del timer con la función caida
-    timer->start(250);
+    timer->start(150);
 
 }
 
@@ -51,14 +51,15 @@ void baretos::increasebareto() //Aumentar el número de baretos
 
 void baretos::caida() //Caida del bareto
 {
-    ejecuciones++; //Número de veces que se ejecuta la función
+   /* ejecuciones++; //Número de veces que se ejecuta la función
 
     y+=yo+vo*t+0.5*g*t*t; //Fórmula de caida libre
     setPos(x(),y);
     if(ejecuciones==12){
         y=20;
         ejecuciones=0;
-    }
+    }*/
+   setPos(x(),y()+15);
 }
 
 
