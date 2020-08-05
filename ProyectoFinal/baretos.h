@@ -20,7 +20,7 @@ public:
     explicit baretos(QObject *parent = nullptr);
      QTimer *timer=new QTimer;
      puntaje *punto=new puntaje();
-     //float y,yo=20,vo=2,t=0.001,g=-9.8;//Posicion, posición inicial, velocidad inicial,tiempo y gravedad para la caida libre del objeto
+     float y,yo=20,vo=2,t=0.001,g=-9.8;//Posicion, posición inicial, velocidad inicial,tiempo y gravedad para la caida libre del objeto
      int ejecuciones=0;
 
 private:
